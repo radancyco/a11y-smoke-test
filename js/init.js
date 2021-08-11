@@ -13,6 +13,40 @@ layout: null
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  // In-page Functionality
+
+  // Get Offset
+
+  function getOffset(el) {
+
+    var rect = el.getBoundingClientRect();
+    return {
+
+      left: rect.left + window.scrollX,
+      top: rect.top + window.scrollY
+
+    };
+
+  };
+
+  // Scroll Button 
+
+  var disclosureButton = document.querySelectorAll(".disclosure--btn");
+
+  disclosureButton.forEach(function(button, e){
+
+    button.addEventListener("click", function () {
+
+      window.scrollTo({
+
+        top: getOffset(this).top - 8
+
+      });
+
+    });
+
+  });
+
   // New Tab Buttons and Links
 
   function openNewTab() {
