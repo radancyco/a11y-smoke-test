@@ -11,7 +11,7 @@ exclude: [
   README.md,
   packages
 ]
-description: "A tool to help developers and QA engineers quickly find and fix baseline accessibility issues."
+description: "A tool to help everybody quickly identify baseline accessibility issues."
 destination: _httpdocs
 git-url: https://radancy.dev
 highlighter: rouge

@@ -49,9 +49,9 @@ Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Sp
 
 * Initial Revision
 
-## Bugs
+## Issue Reporting
 
-Find a bug or need an enhancement? Report it on [JIRA](https://jira.tmp.com/browse/TCDQ-60657) or [GitHub](https://github.com/radancyco/a11y-smoke-test/issues)! You're so awesome!
+Find an issue or need an enhancement? Report it on [JIRA](https://jira.tmp.com/browse/TCDQ-60657) or [GitHub](https://github.com/radancyco/a11y-smoke-test/issues)! You're so awesome!
 
 ## Links & Tips for Extension Developers
 
