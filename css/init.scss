@@ -57,6 +57,7 @@ margin: 1em 0;
 footer {
 font-size: .9rem;
 margin-top: 2em;
+text-align: center;
 
   ul {
   padding-left: 0;
@@ -173,8 +174,8 @@ p, ul {
 }
 
 ul, ol {
-margin-bottom: 1em;
-margin-top: 1em;
+margin: 1em 0 1em 0;
+padding: 0 0 0 1.5em;
 }
 
 .a11y-info {
@@ -228,8 +229,8 @@ height: 40px;
 min-width: 0;
 padding: 0;
 position: fixed;
-right: 1.5em;
-top: 22px;
+right: 27px;
+top: 16px;
 width: 40px;
 }
 
