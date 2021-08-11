@@ -1,0 +1,29 @@
+charset: utf-8
+company-name: Radancy
+company-url: https://radancy.com
+defaults:
+-
+  values:
+    layout: "default"
+exclude: [
+  CNAME,
+  _config.yml,
+  README.md,
+  packages
+]
+description: "A tool to help developers and QA engineers quickly find and fix baseline accessibility issues."
+destination: _httpdocs
+git-url: https://radancy.dev
+highlighter: rouge
+lang: en-US
+markdown: kramdown
+name: "Radancy: Accessibility Smoke Test"
+owner-name: Michael Spellacy
+owner-email: michael.spellacy@radancy.com
+owner-image: https://www.gravatar.com/avatar/89e429d4a3effa9601cd19a851c0003e.jpg
+repo: https://github.com/radancyco/a11y-smoke-test
+sass:
+  style: :compressed
+theme-color: "#6E00EE"
+title: "A11y Smoke Test"
+version: "1.0.0"

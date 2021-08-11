@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+  <link href="css/init.css" rel="stylesheet">
+  <link href="img/icon-32.png" rel="icon">
+  <title>{{ page.title }} - {{ site.company-name }}</title>
+</head>
+<body id="{{ page.path | replace:'.html',''|  replace:'.md','' | replace:'_','' | replace: '/', '-'}}">
+
+  <header>
+
+    <img alt="Radancy" height="56" src="img/logo.png" width="240">
+
+    {% if page.id == "home" %}
+
+    <button aria-label="Reset Page" class="btn reset" id="btn-reset"></button>
+
+    {% endif %}
+
+  </header> 
+
+  <main>
+
+    {{ content }}
+
+  </main>
+
+  <footer>
+
+    <ul>
+      <li><a class="new-tab" href="https://jira.tmp.com/browse/TCDQ-60657">Report Bug</a></li>
+      <li><a class="new-tab" href="about.html">About</a></li>
+    </ul>
+
+    <p><small>&copy; 2021 Radancy. An equal opportunity employer.</small></p>
+
+  </footer>
+
+  {% if page.script %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://radancy.dev/pattern-library/disclosure/init.js"></script>
+
+  {% endif %}
+
+  <script src="js/init.js"></script>
+
+</body>
+</html>
