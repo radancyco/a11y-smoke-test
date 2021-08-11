@@ -25,16 +25,16 @@ title: Accessibility Smoke Test
         <h3>Advanced</h3>
 
         <ul>
-          <li><button aria-describedby="validate-dom" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
+          <li><button aria-describedby="validate-dom-1" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-            - <span id="validate-dom">Runs validation on entire DOM (Document Object Model), including script generated content and enhancements.</span>
+            - <span id="validate-dom-1">Runs validation on entire DOM (Document Object Model), including script generated content and enhancements.</span>
 
           </li>
           <li>
 
-            <button aria-describedby="wcag-parsing" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
+            <button aria-describedby="wcag-parsing-1" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
 
-            - <span id="wcag-parsing">Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
+            - <span id="wcag-parsing-1">Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
 
           </li>
         </ul>
@@ -107,7 +107,7 @@ title: Accessibility Smoke Test
 
     <figure>
 
-      <img alt="" src="img/example-alt.jpg">
+      <img alt="" src="img/example-alt.jpg" loading="lazy">
 
       <figcaption>A little boy sitting on mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
 
@@ -404,7 +404,7 @@ title: Accessibility Smoke Test
 
     <figure>
 
-      <img alt="" src="img/example-skip-link.png">
+      <img alt="" src="img/example-skip-link.png" loading="lazy">
 
       <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed.</figcaption>
 
@@ -448,36 +448,36 @@ title: Accessibility Smoke Test
 
   <p>No major code errors. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">Understanding 4.1.1</a></p>
 
-  <h2>Testing</h2>
+  <div class="qa-info">
 
-  <ul>
-    <li>Validate the page and address or report any major code errors you may discover. Warnings can be omitted, but should be addressed if time permits. Also note that not all errors may pertain specifically to accessibility or WCAG so you may prune the validator results using the WCAG Parsing feature.
+    <h2>Testing</h2>
 
+    <p>Validate the page and address or report any major code errors you may discover. Warnings may be omitted, but should be addressed if time permits.</p>
 
-      <ul>
-        <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">Validate Accessibility</a></li>
-        <li><a class="validate-html new-tab" href="https://validator.w3.org/">Validate HTML</a>
+    <ul>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
 
-          <ul>
-            <li><button aria-describedby="validate-dom" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">Validate Serialized DOM</button>
+        <h3>Advanced</h3>
 
-              - <span id="validate-dom">Runs validation on entire DOM, including script generated content and enhancements.</span>
+        <ul>
+          <li><button aria-describedby="validate-dom-2" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-            </li>
-            <li>
+            - <span id="validate-dom-2">Runs validation on entire DOM (Document Object Model), including script generated content and enhancements.</span>
 
-              <button aria-describedby="wcag-parsing" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
+          </li>
+          <li>
 
-              - <span id="wcag-parsing">Not all errors may affect accessibility. Run this on the W3C Validator results page to remove non-WCAG issues.</span>
+            <button aria-describedby="wcag-parsing-2" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
 
-            </li>
-          </ul>
+            - <span id="wcag-parsing-2">Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
 
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-    </li>
-  </ul>
+      </li>
+    </ul>
+
+  </div>
 
 </div>
 
