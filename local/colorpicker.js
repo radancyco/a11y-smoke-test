@@ -45,10 +45,10 @@
 
     xhr.send();
 
-    alert("test");
+    //alert("test");
 
   }
 
- myLoad("https://radancy.dev/a11y-smoke-test/contrast.html", "#index", "#link-contrast");
+ myLoad("https://radancy.dev/a11y-smoke-test/contrast.html", "#link-contrast", "#container");
 
 })();

@@ -5,6 +5,8 @@ script: true
 title: Accessibility Smoke Test
 ---
 
+<div id="container"></div> 
+
 <h1 class="heading-small">{{ page.title }} {{ site.version }}</h1>
 
 <button class="disclosure--btn" data-disclosure-icon>Page Validation</button>
@@ -12,6 +14,10 @@ title: Accessibility Smoke Test
 <div class="disclosure--content">
 
   <h2>Overview</h2>
+
+  <button data-script="https://radancy.dev/a11y-smoke-test/local/colorpicker.js">color</button>
+
+  <div id="container"></div>
 
   <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
 
@@ -258,51 +264,7 @@ title: Accessibility Smoke Test
 
   </div>
 
-  <form action="https://webaim.org/resources/linkcontrastchecker/" target="_blank">
-
-    <fieldset>
-
-      <legend>Check Link Contrast</legend>
-
-      <p>Use this form to validate specific color combinations.</p>
-
-      <div class="form-fields">
-
-        <div>
-
-          <label for="lcolor-1">Link:</label>
-
-          <input id="lcolor-1" name="lcolor" type="text" placeholder="#3333FF">
-
-        </div>
-
-        <div>
-
-          <label for="fcolor-1">Body Text:</label>
-
-          <input id="fcolor-1" name="fcolor" type="text" placeholder="#000000">
-
-        </div>
-
-        <div>
-
-          <label for="bcolor-1">Background:</label>
-
-          <input id="bcolor-1" name="bcolor" type="text" placeholder="#FFFFFF">
-
-        </div>
-
-        <div>
-
-          <button class="btn">Check</button>
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-  </form>
+  <!-- Form -->
 
 </div>
 
