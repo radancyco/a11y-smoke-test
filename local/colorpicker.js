@@ -49,6 +49,6 @@
 
   }
 
- myLoad("https://radancy.dev/a11y-smoke-test/contrast.html", "#link-contrast", "#index");
+ myLoad("https://radancy.dev/a11y-smoke-test/contrast.html", "#index", "#link-contrast");
 
 })();
