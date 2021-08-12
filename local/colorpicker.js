@@ -1,48 +1,52 @@
 (function() {
-    document.cE = document.createElement;
-    var s = [], div = document.cE('div');
-    var text = document.cE('input');
-    var col = [0, 0, 0];
-    var aE = "attachEvent", oc = "onchange", ok = "onkeyup";
-    var uB  = function() {
-        var c = text.value.match(/\w\w?/g), n, i;
-        for(i in c) {
-            s[i].value = col[i] = parseInt(c[i], 16) || 0;
-        }
-        div.style.backgroundColor = text.value;
-    }
-    var uC = function(c, val) {
-        col[c] = parseInt(val, 10);
-        text.value = '#';
-        for(var i in col) {
-            n = col[i];
-            var v = ((n < 16) ? '0' : '') + n.toString(16).toUpperCase();
-            text.value += v;
-        }
-        div.style.backgroundColor = text.value;
-    }
-    if(!(text.attachEvent)) { aE = "addEventListener"; oc  = "change"; ok = "keyup" }
-    text.size = 7;
-    text[aE](ok, uB);
-    div.appendChild(text);
-    div.appendChild(document.cE('br'));
-    with(div.style) {
-        position = 'fixed';
-        padding = top = left = '5px';
-        boxShadow = '0 0 5px black';
-        backgroundColor = '#000';
-    }
-    for(var c in ['r','g','b']) {
-        s[c] = document.cE('input');
-        s[c].type = 'color';
-        s[c].value = 0;
-        s[c].min = 0;
-        s[c].max = 255;
-        s[c].step = 1;
-        s[c][aE](oc, (function() { var col = c; return function() { uC(col, this.value); }})());
-        div.appendChild(s[c]);
-        div.appendChild(document.cE('br'));
-    }
 
-    document.body.appendChild(div);
-})()
+  // Ajax Call
+
+  function myLoad(url, sourceContainer, targetContainer, replace) {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.onerror = function() {
+
+      throw "Request failed. HTTP code " + xhr.status;
+
+    };
+
+    xhr.onload = function() {
+
+      if (!xhr.status || (xhr.status >= 400)) {
+
+        throw "Request failed. HTTP code " + xhr.status;
+
+      }
+
+      var temp = document.createElement("DIV");
+
+      temp.innerHTML = xhr.responseText;
+      var ele = temp.querySelector(sourceContainer);
+
+      if (ele) {
+
+        if (replace) {
+
+          targetContainer.innerHTML = ele.outerHTML;
+
+        } else {
+
+          targetContainer.appendChild(ele);
+
+        }
+
+      }
+
+    };
+
+    xhr.open("GET", url, true);
+
+    xhr.send();
+
+  }
+
+ myLoad("../contrast.html", "#link-contrast", "#index");
+
+})();
