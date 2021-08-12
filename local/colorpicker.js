@@ -45,8 +45,10 @@
 
     xhr.send();
 
+    alert("test");
+
   }
 
- myLoad("../contrast.html", "#link-contrast", "#index");
+ myLoad("https://radancy.dev/a11y-smoke-test/contrast.html", "#link-contrast", "#index");
 
 })();
