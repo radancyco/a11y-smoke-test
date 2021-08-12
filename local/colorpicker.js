@@ -34,7 +34,7 @@
     }
     for(var c in ['r','g','b']) {
         s[c] = document.cE('input');
-        s[c].type = 'range';
+        s[c].type = 'color';
         s[c].value = 0;
         s[c].min = 0;
         s[c].max = 255;
