@@ -65,11 +65,33 @@ body {
 }
 
 #a11y-smoke-test-contrast {
-position: absolute;
-z-index: 99999;
-top: 0;
-left: 0;
-width: 500px;
-background-color: #fff;
-border: 1px red solid;
+background-color: #fff !important;
+border-radius: 5px !important;
+border: 1px #000 solid !important;
+box-shadow: 5px 5px 0 0 rgba(71, 71, 71, .5) !important;
+font-family: "Graphik","Helvetica","Arial",sans-serif !important;
+font-size: 100% !important;
+font-style: normal !important;
+font-variant: normal !important;
+left: 20px !important;
+line-height: 2 !important;
+padding: 1em 1em 0;
+position: fixed;
+text-align: left !important;
+top: 20px !important;
+width: 600px !important;
+z-index: 2147483647 !important;
+
+  * {
+  font: inherit !important;
+  line-height: inherit !important;
+  color: #000 !important;
+  }
+
+  *, *::before, *::after {
+  box-sizing: inherit !important;
+  }
+
+  @import "form";
+
 }

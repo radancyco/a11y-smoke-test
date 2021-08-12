@@ -21,7 +21,8 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a></li>
+      <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a>
 
         <h3>Advanced</h3>
 
@@ -43,25 +44,24 @@ title: Accessibility Smoke Test
       </li>
     </ul>
 
-    <h3>Other Validation Tests</h3>
-
-    <ul>
-      <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
-      <li><a class="validate-heading new-tab" href="heading.html">Validate Headings</a></li>
-      <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
-    </ul>
-
     <h3>Color Contrast</h3>
 
     <ul>
-      <li><button data-script="contrast" data-fragment="color-contrast">Color Contrast</button>
-      <li><button data-script="contrast" data-fragment="link-contrast">Link Color Contrast</button>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Contrast</button>
+      <li><button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
     </ul>
 
     <h3>PDF Validation</h3>
 
     <ul>
-      <li><a class="new-tab" href="https://pdfua.foundation/en/pdf-accessibility-checker-pac">Download PAC (PDF Accessibility Checker)</a></li>
+      <li><a class="new-tab" href="https://pdfua.foundation/en/pdf-accessibility-checker-pac/register">Download PAC (PDF Accessibility Checker)</a></li>
+    </ul>
+
+    <h3>Other Validation Tests</h3>
+
+    <ul>
+      <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
+      <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
     </ul>
 
   </div>
@@ -78,25 +78,25 @@ title: Accessibility Smoke Test
 
   <h3>Images: Know the Differnce</h3>
 
-  <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision.</p>
+  <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
 
   <ul>
     <li><strong>Decorative:</strong> Images of a non-important nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
-    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, then an alternative text value is required.</li>
+    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience without these images, then an alternative text value is required.</li>
   </ul>
 
   <h3>Images: Basic Rules</h3>
 
   <ol>
-    <li>All images require an alt attribute, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with no alt attribute value is known as a "null alt".</li>
+    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribut that has no value, is known as a "null alt".</li>
     <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value.</li>
     <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
     <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
     <li>If image is purely decorative, then it requires no alternative text value.</li>
     <li>If image is contained within a hyperlink or button, then it <em>must</em> contain <em>functional</em> alternative text. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code>.</li>
-    <li>If image within hyperlink or button contains adjacent or nearby text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
+    <li>If image within hyperlink or button contains adjacent or nearby text that is also included in the hyperlink, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
     <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-    <li>If image is deemed informative and is found to be a background image, alternaive techniques must be taken to ensure that this information is conveyed to AT users. Here it may be easier to simply use an inline image instead.</li>
+    <li>If image is deemed informative and is found to be a background image, alternaive techniques must be taken to ensure that this information is conveyed to AT users. In this case, it may be wise to use an inline image.</li>
   </ol>
 
   <div class="qa-info">
@@ -133,10 +133,10 @@ title: Accessibility Smoke Test
   <h3>Components and Multimedia: Basic Rules</h3>
 
   <ol>
-    <li>All web form and interactive buttons must have a descriptive value. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual labeling, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
+    <li>All interactive componenets, like form inputs, button and hyperlinks, must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
     <li>Form inputs have associated text labels. Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
     <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." title="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-    <li>Inline frames (iframe) are appropriately titled and describe contents of frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code></li>
+    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code></li>
   </ol>
 
   <div class="qa-info">
@@ -146,11 +146,9 @@ title: Accessibility Smoke Test
     <p>Review page components and ensure that the aforementioned rules are met. You can run the following tests to review components in more depth:</p>
 
     <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button></li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markedup properly? Is labeling present and correctly associated with its input field?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
     </ul>
 
   </div>
@@ -187,7 +185,7 @@ title: Accessibility Smoke Test
       <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
     </ul>
 
-    <p><strong>Note:</strong> While not a failure, providing transcripts with video and audio content is becoming a growing necessity, so including them is <strong>strongly</strong> reccomended.</p>
+    <p><strong>Note:</strong> While not a failure, providing transcripts with video and audio content is becoming a growing necessity, so including them is now <strong>strongly</strong> encouraged.</p>
 
   </div>
 
@@ -216,17 +214,18 @@ title: Accessibility Smoke Test
 
     <h2>Testing</h2>
 
+    <p>In addition to validating your page, HTML should be structured and labled appropriately so that is makes sense to all users. Some of the tests below will offer deeper insight into the more important aspects of structural markup.</p>
+
     <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/headings.js">Headings</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tabindex.js">Tabindex</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button></li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markedup properly? Is labeling present and correctly associated with its input field?</li>
+      <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are landmaks being used on the page? Do they have an accessible name? Are there too many landmarks? (Less is more.)</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page changes language.</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Are they markedup and nested properly?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they markedup and nested properly? Are they used for layout purposes?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances (like labeling the <code>iframe</code>).</li>
     </ul>
 
   </div>
@@ -328,7 +327,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure. Web animations, such as micro animations, are exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work.</li>
+      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure. Web animations, such as micro animations, are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work.</li>
     </ul>
 
   </div>
@@ -351,7 +350,7 @@ title: Accessibility Smoke Test
       <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that an element on a page may be harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test.</li>
     </ul>
 
-    <p><strong>Note:</strong> Any concerns or failures should also be immediately brought to the attention of the <a href="mailto:{{ site.team-email }}">Accessibility Team</a>.</p>
+    <p><strong>Note:</strong> Any failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
 
   </div>
 
@@ -370,14 +369,14 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Areas of a web page that may be cumbersome to navigate through via keyboard or assistive technology, must provide a mechanism to skip over that content. These "Skip" links should be available to <em>all</em> users when needed and not obscure other content on the page when visible. You will often find these links placed before a websites primary navigation. If it takes you a long time to tab through a certain portion of the interface, then this may be a good indication that a skip link is necessary.</li>
+      <li>Areas of a web page that may be cumbersome to navigate through via keyboard or assistive technology, must provide a mechanism to skip over that content. These "Skip" links should be available to <em>all</em> users when needed and not obscure other content on the page when visible. You will often find these links placed before a websites primary navigation, but they can be useful elsewhere. If it takes you a long time to tab through a certain portion of the interface, then this may be a good indication that a skip link is necessary.</li>
     </ul>
 
     <figure>
 
       <img alt="" height="104" loading="lazy" src="img/example-skip-link.png" width="506">
 
-      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed.</figcaption>
+      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanisim to be present for all user types.</figcaption>
 
     </figure>
 
@@ -401,6 +400,39 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon>2.4.3: Focus Order (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>The navigation order of links, form elements, etc. is logical and intuitive.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">Understanding 2.4.3</a></p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Tab through the page using the TAB key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considerd a failure. You can view the focus order with the following tool:
+
+        <ul>
+          <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
+        </ul>
+
+      </li>
+      <li>An interactive element with a tabindex other than 0 will interfere with a pages natural tab order and should be considered a failure. A tabindex with -1 will not interfere with tabbing. You can view tabindexs with the following tool:
+
+        <ul>
+          <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tabindex.js">View Tabindexs</button></li>
+        </ul>
+
+      </li>
     </ul>
 
   </div>
@@ -539,20 +571,6 @@ title: Accessibility Smoke Test
 
     <ul>
       <li>Tab through a page to review focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
-      <li>Be mindful of focus order. If tab stops are not in a fairly linear order, then this should be flagged as a failure.
-
-        <ul>
-          <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
-        </ul>
-
-      </li>
-      <li>An interactive element with a tabindex other than 0 will interfere with a pages natural tab order and should be considered a failure. A tabindex with -1 will not interfere with tabbing.
-
-        <ul>
-          <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tabindex.js">View Tabindexs</button></li>
-        </ul>
-
-      </li>
       <li>Non-interactive elements should not contain a focus state.</li>
     </ul>
 
