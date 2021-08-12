@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
 
-  // Scroll Button 
+  // Scroll Button
 
   var disclosureButton = document.querySelectorAll(".disclosure--btn");
 
@@ -173,11 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function runBookmarklet(scriptName, scriptType) {
+    function runBookmarklet(scriptName, scriptFragment) {
 
       chrome.tabs.executeScript({
 
-        code: "var scriptName = " + JSON.stringify(scriptName)
+        code: "var scriptName = " + JSON.stringify(scriptName) + "; var scriptFragment = " + JSON.stringify(scriptFragment) 
 
       },
 
@@ -221,8 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
 
           let dataScript = button.getAttribute("data-script");
+          let dataFragment = button.getAttribute("data-fragment");
 
-          runBookmarklet(dataScript);
+          runBookmarklet(dataScript, dataFragment);
           button.setAttribute("disabled", true);
           window.localStorage.setItem(button.id, dataScript);
 

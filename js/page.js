@@ -30,6 +30,52 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
   document.body.removeAttribute("data-color-blindness");
   document.body.setAttribute("data-color-blindness", scriptName);
 
+} else if (scriptName === "contrast") {
+
+  // Ajax Call
+
+  var isContrastContainer = document.getElementById("a11y-smoke-test-contrast");
+
+  if (isContrastContainer === null) {
+
+    var contrastContainer = document.createElement("div");
+    contrastContainer.setAttribute("id", "a11y-smoke-test-contrast");
+    document.body.appendChild(contrastContainer);
+
+  }
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.onerror = function() {
+
+    throw "Request failed. HTTP code " + xhr.status;
+
+  };
+
+  xhr.onload = function() {
+
+    if (!xhr.status || (xhr.status >= 400)) {
+
+      throw "Request failed. HTTP code " + xhr.status;
+
+    }
+
+    var temp = document.createElement("div");
+
+    temp.innerHTML = xhr.responseText;
+    var ele = temp.querySelector("#" + scriptFragment);
+
+    if (ele) {
+
+        document.getElementById("a11y-smoke-test-contrast").innerHTML = ele.outerHTML;
+
+    }
+
+  };
+
+  xhr.open("GET", "https://radancy.dev/a11y-smoke-test/contrast.html", true);
+  xhr.send();
+
 } else {
 
   document.body.appendChild(document.createElement("script")).src=scriptName;

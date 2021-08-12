@@ -63,3 +63,13 @@ body {
   }
 
 }
+
+#a11y-smoke-test-contrast {
+position: absolute;
+z-index: 99999;
+top: 0;
+left: 0;
+width: 500px;
+background-color: #fff;
+border: 1px red solid;
+}

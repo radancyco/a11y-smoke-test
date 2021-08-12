@@ -5,8 +5,6 @@ script: true
 title: Accessibility Smoke Test
 ---
 
-<div id="container"></div> 
-
 <h1 class="heading-small">{{ page.title }} {{ site.version }}</h1>
 
 <button class="disclosure--btn" data-disclosure-icon>Page Validation</button>
@@ -14,10 +12,6 @@ title: Accessibility Smoke Test
 <div class="disclosure--content">
 
   <h2>Overview</h2>
-
-  <button data-script="https://radancy.dev/a11y-smoke-test/local/colorpicker.js">color</button>
-
-  <div id="container"></div>
 
   <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
 
@@ -55,6 +49,13 @@ title: Accessibility Smoke Test
       <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
       <li><a class="validate-heading new-tab" href="heading.html">Validate Headings</a></li>
       <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
+    </ul>
+
+    <h3>Color Contrast</h3>
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Color Contrast</button>
+      <li><button data-script="contrast" data-fragment="link-contrast">Link Color Contrast</button>
     </ul>
 
     <h3>PDF Validation</h3>
@@ -494,44 +495,6 @@ title: Accessibility Smoke Test
 
   </div>
 
-  <form action="https://webaim.org/resources/contrastchecker/" target="_blank">
-
-    <fieldset>
-
-      <legend>Check Image Contrast</legend>
-
-      <p>Use this form to validate specific colors combinations.</p>
-
-      <div class="form-fields">
-
-        <div>
-
-          <label for="fcolor-2">Foreground:</label>
-
-          <input id="fcolor-2" name="fcolor" type="text" placeholder="#0000FF">
-
-        </div>
-
-        <div>
-
-          <label for="bcolor-2">Background:</label>
-
-          <input id="bcolor-2" name="bcolor" type="text" placeholder="#FFFFFF">
-
-        </div>
-
-        <div>
-
-          <button class="btn">Check</button>
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-  </form>
-
 </div>
 
 <button class="disclosure--btn" data-disclosure-icon>1.4.3: Contrast (Minimum) (Level AA)</button>
@@ -559,44 +522,6 @@ title: Accessibility Smoke Test
     </ul>
 
   </div>
-
-  <form action="https://webaim.org/resources/contrastchecker/" target="_blank">
-
-    <fieldset>
-
-      <legend>Check Text Contrast</legend>
-
-      <p>Use this form to validate specific colors combinations.</p>
-
-      <div class="form-fields">
-
-        <div>
-
-          <label for="fcolor-3">Foreground:</label>
-
-          <input id="fcolor-3" name="fcolor" type="text" placeholder="#0000FF">
-
-        </div>
-
-        <div>
-
-          <label for="bcolor-3">Background:</label>
-
-          <input id="bcolor-3" name="bcolor" type="text" placeholder="#FFFFFF">
-
-        </div>
-
-        <div>
-
-          <button class="btn">Check</button>
-
-        </div>
-
-      </div>
-
-    </fieldset>
-
-  </form>
 
 </div>
 
