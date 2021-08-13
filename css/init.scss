@@ -71,12 +71,13 @@ text-align: center;
 
 @import "form";
 
-h2, h3 {
+h2 {
 font-size: 18px;
 }
 
 h3 {
 color: $highlight-color;
+font-size: 16px;
 }
 
 main {
