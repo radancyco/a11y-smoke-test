@@ -23,7 +23,7 @@ Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Sp
 
 ### PDF Validation
 
-* Validate PDF (Download PAC 2021)
+* [Download PAC (PDF Accessibility Checker)](https://pdfua.foundation/en/pdf-accessibility-checker-pac/register)
 
 ### Other Validation Tests
 
@@ -65,7 +65,7 @@ Review details of current page structure.
 
 ### Epilepsy
 
-* PEAT (Photosensitive Epilepsy Analysis Tool)
+* [Download PEAT (Photosensitive Epilepsy Analysis Tool)](https://trace.umd.edu/peat/)
 
 ### Utilities
 
@@ -87,6 +87,5 @@ Find an issue or need an enhancement? Report it on [JIRA](https://jira.tmp.com/b
 * [Schoox Training](https://www.schoox.com/3357985/radancy-browser-extension-developers)
 * [Chrome Dashboard](https://chrome.google.com/webstore/devconsole/)
 * [Firefox Dashboard](https://addons.mozilla.org/en-US/developers/addons)
-  * Firefox updates go under `//AdCommsNA/dev/webdev/services1_tmpwebeng_com/web/browser-plugin/a11y-smoke-test/firefox/`
-    * Don't forget to update `updates.json` in the firefox path
-    * Note that the `index.html` file in the install path auto updates based on the `updates.json` in the firefox path
+  * Firefox updates go in `//AdCommsNA/dev/webdev/services1_tmpwebeng_com/web/browser-plugin/a11y-smoke-test/firefox/`
+    * Update `updates.json` - Note: Update made to this file will display in the `index.html` file of the `install` directory
