@@ -76,7 +76,7 @@ title: Accessibility Smoke Test
 
   <p>Provide text alternatives for non-text content. Typically, this involves multimedia (audio, images, video), and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
 
-  <h3>Images: Know the Differnce</h3>
+  <h3>Images: Know the Difference</h3>
 
   <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
 
@@ -88,15 +88,15 @@ title: Accessibility Smoke Test
   <h3>Images: Basic Rules</h3>
 
   <ol>
-    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribut that has no value, is known as a "null alt".</li>
+    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt".</li>
     <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value.</li>
     <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
     <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
     <li>If image is purely decorative, then it requires no alternative text value.</li>
     <li>If image is contained within an interactive element (e.g., a hyperlink or button), then it <em>must</em> contain <em>functional</em> alternative text. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code>.</li>
-    <li>If image within interactive element also contains contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
+    <li>If image within interactive element also contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
     <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-    <li>If image is deemed informative and is found to be a background image, alternaive techniques should be taken to ensure that this information is conveyed to AT users. For example, instead of using background image, use an inline image instead.</li>
+    <li>If image is deemed informative and is found to be a background image, alternative techniques should be taken to ensure that this information is conveyed to AT users. For example, instead of using background image, use an inline image instead.</li>
   </ol>
 
   <div class="qa-info">
@@ -133,7 +133,7 @@ title: Accessibility Smoke Test
   <h3>Components and Multimedia: Basic Rules</h3>
 
   <ol>
-    <li>All interactive componenets (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
+    <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
     <li>Form inputs have associated text labels. Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
     <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." title="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
     <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>. This is a rare case of where the <code>title</code> attribute may be used.</li>
@@ -147,7 +147,7 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markeup correct? Is labeling present and correctly associated with its input field?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
     </ul>
 
@@ -214,14 +214,14 @@ title: Accessibility Smoke Test
 
     <h2>Testing</h2>
 
-    <p>In addition to validating your page, HTML should be structured and labled accordingly, so that is makes sense to everybody. Some of the tests below will offer deeper insight into the implementation of the page markup.</p>
+    <p>In addition to validating your page, HTML should be structured and labeled accordingly, so that is makes sense to everybody. Some of the tests below will offer deeper insight into the implementation of the page markup.</p>
 
     <ul>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markeup correct? Is labeling present and correctly associated with its input field?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
       <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are landmaks being used on the page? Do they have an accessible name? Are there too many landmarks? (Less is more.)</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are page landmarks being used? Do they have an accessible name? Are there too many page landmarks?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page shifts into a different language.</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Is the markup correct and nested properly?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they used for layout purposes?</li>
@@ -246,25 +246,32 @@ title: Accessibility Smoke Test
 
     <ul>
       <li>Manually ensure that color is not used as the sole method of conveying content or distinguishing visual elements. For example, saying "Please correct all text highlighted in red", would be a failure.</li>
-      <li>Ensure that hyperlinks meet a <strong>3:1</strong> color contrast ratio between its own color and surrounding text color and background color, particularly if no underline is present. If no underline is present, an additional distinction must be provided when the link is hovered on or receives focus. Hyperlinks in the header and footer are typically distinct enough for this rule to be ignored here and generally only applies to links in blocks of text within the main content, but be mindful.</li>
-      <li>Test the interface under various color-blindness simulations to see if there are any potential contrast issue:
+      <li>For better usability, links should be <strong>underlined by default</strong>. Otherwise, link text must:
 
-        <ul>
-          <li><button data-script="achromatomaly">Achromatomaly</button></li>
-          <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
-          <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
-          <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
-          <li><button data-script="protanomaly">Protanomaly</button></li>
-          <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
-          <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
-        </ul>
+        <ol>
+          <li>Have a 3:1 contrast ratio with surrounding body text, and must present a visual indicator (typically an underline) when hovering over or receiving focus.</li>
+          <li>Both link and body text must have a 4.5:1 contrast ratio with the background (3:1 for large text).</li>
+          <li>Links in the header and footer are typically understood to be a link, so the above rules may not apply.</li>
+        </ol>
+
+        <button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
 
       </li>
     </ul>
 
-  </div>
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be added to your report.</p>
 
-  <!-- Form -->
+    <ul>
+      <li><button data-script="achromatomaly">Achromatomaly</button></li>
+      <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
+      <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
+      <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
+      <li><button data-script="protanomaly">Protanomaly</button></li>
+      <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
+      <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
+    </ul>
+
+  </div>
 
 </div>
 
@@ -301,7 +308,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Using your <kbd>TAB</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
+      <li>Using your <kbd>Tab</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
       <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
       <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
       <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
@@ -318,7 +325,7 @@ title: Accessibility Smoke Test
 
     <p><em>Buttons do things; hyperlinks navigate.</em></p>
 
-    <p>The difference between using a hyperlink and a button can have a very big impact on accessibility. By using the correct element for the job, we can set the right expectation for AT users and make our code much easier to write. Be sure to read <a class="new-tab" href="https://michaelspellacy.com/pushing-buttons/">Pushing Buttons</a> for more details on why this is important.</p>
+    <p>The difference between using a hyperlink and a button can have a very big impact on accessibility. By using the correct element for the job, we can set the right expectation for AT users and make our code much easier to write. Be sure to read <a class="new-tab" href="https://michaelspellacy.com/pushing-buttons/">Pushing Buttons</a> for more details on why this distinction is critical.</p>
 
   </div>
 
@@ -346,7 +353,7 @@ title: Accessibility Smoke Test
 
     <h2>Accessibility Tip</h2>
 
-    <p>Unless there is continuous movement, web (a.k.a micro) animations are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work to avoid creating an unplesant experience for those who may find animation problematic.</p>
+    <p>Unless there is continuous movement, web (a.k.a micro) animations are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work to avoid creating an unpleasant experience for those who may find animation problematic.</p>
 
   </div>
 
@@ -394,7 +401,7 @@ title: Accessibility Smoke Test
 
       <img alt="" height="104" loading="lazy" src="img/example-skip-link.png" width="506">
 
-      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanisim to be present for all user types.</figcaption>
+      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanism to be present for all user types.</figcaption>
 
     </figure>
 
@@ -417,7 +424,7 @@ title: Accessibility Smoke Test
     <p>Ensure that all pages have a title and that it is useful and adequately describes the page at hand:</p>
 
     <ul>
-      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialoge will appear.)</li>
+      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialog will appear.)</li>
     </ul>
 
   </div>
@@ -437,7 +444,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Navigate through the page using the <kbd>TAB</kbd> key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considerd a failure. You can view the focus order with the following tool:
+      <li>Navigate through the page using the <kbd>Tab</kbd> key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considered a failure. You can view the focus order with the following tool:
 
         <ul>
           <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
@@ -559,7 +566,22 @@ title: Accessibility Smoke Test
 
     <h2>Testing</h2>
 
-    <p>Test the interface under various color-blindness simulations to see if there are any potential contrast issue:</p>
+    <p>Review page and test any <strong>text</strong> or <strong>images of text</strong> that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
+      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+    </ul>
+
+    <p>This rule does not apply to the following:</p>
+
+    <ul>
+      <li><strong>Large Text</strong> - Large text and images of large text have a contrast ratio of at least 3:1. <strong>Note:</strong> In WCAG, points are often referred to as the unit of measure in determining the size between regular and large text. However, pixels are much more common on the web. 18pt maps to 24px and 14pt to approximately 18.67px. In CSS, bold text typically has <code>font-weight: bold</code>, or <code>font-weight: 700</code> or greater.</li>
+      <li><strong>Incidental</strong> - Text or images of text that are part of an inactive user interface component (i.e., disabled button), that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
+      <li><strong>Logotypes</strong> - Text that is part of a logo or brand name has no contrast requirement.</li>
+    </ul>
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be added to your report.</p>
 
     <ul>
       <li><button data-script="achromatomaly">Achromatomaly</button></li>
@@ -581,15 +603,16 @@ title: Accessibility Smoke Test
 
   <h2>Overview</h2>
 
-  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
+  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must then meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
 
   <div class="qa-info">
 
     <h2>Testing</h2>
 
     <ul>
-      <li>Using your <kbd>TAB</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
-      <li>Non-interactive elements should not contain a focus state.</li>
+      <li>Using your <kbd>Tab</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
+      <li>Again, any redesigned focus state must meet a <strong>3:1</strong> contrast ratio. You can run <button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button> to test your foreground and background color of the alternative outline or state.</li>
+      <li>Non-interactive elements should not contain a focus state. The only exception to this rule is if the non-interactive element is accepting temporary focus via <code>tabindex="-1"</code>.</li>
     </ul>
 
   </div>
@@ -606,7 +629,7 @@ title: Accessibility Smoke Test
 
   <ul>
     <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
-    <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button></li>
+    <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimantal, open console to see results)</li>
     <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
   </ul>
 
