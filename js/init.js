@@ -134,6 +134,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    let SpellingLink = document.querySelectorAll(".validate-spelling");
+
+    if(SpellingLink){
+
+      SpellingLink.forEach(function(link, e){
+
+        let SpellingHref = link.href;
+        link.setAttribute("href", SpellingHref + "?uri=" + url + "&lang=en_US");
+
+      });
+
+    }
+
     let PDFLink = document.querySelectorAll(".validate-pdf");
 
     if(PDFLink){

@@ -16,7 +16,7 @@ Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Sp
 * W3C Validation (Serialized DOM) - Runs validation on entire DOM (Document Object Model), including script generated content.
   * WCAG Parsing - Run on W3C Validator results page to remove non-WCAG issues.
 
-### Color Contrast
+### Validate Color
 
 * Validate Contrast
 * Validate Link & Text Contrast
@@ -29,6 +29,7 @@ Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Sp
 
 * Validate CSS - Validates all CSS on the current page.
 * Validate Links - Validates all hyperlinks on current page.
+* Validate Spelling - Validates spelling on page.
 
 ### Color Blindness Simulation
 
