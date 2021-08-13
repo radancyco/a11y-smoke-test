@@ -3,10 +3,9 @@
 
 /*!
 
-  Radancy: Smoke Test Extension - Page Styles
+  {{ site.name }} {{ site.version }} - Page Styles
 
-  Contributor(s):
-  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
+  {% include contribute.html %}
 
   Dependencies: Sass
   Instructions: To run locally, install Sass (https://sass-lang.com/install), CL to directory this file in and run:
@@ -70,7 +69,7 @@ border-radius: 5px !important;
 border: 1px #000 solid !important;
 box-shadow: 5px 5px 0 0 rgba(71, 71, 71, .5) !important;
 font-family: "Graphik","Helvetica","Arial",sans-serif !important;
-font-size: 100% !important;
+font-size: 14px !important;
 font-style: normal !important;
 font-variant: normal !important;
 left: 20px !important;

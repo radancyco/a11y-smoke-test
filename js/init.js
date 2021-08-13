@@ -4,7 +4,7 @@ layout: null
 
 /*!
 
-  Radancy: Smoke Test Extension - Extension Functionality
+  {{ site.name }} {{ site.version }} - Extension Functionality
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       chrome.tabs.executeScript({
 
-        code: "var scriptName = " + JSON.stringify(scriptName) + "; var scriptFragment = " + JSON.stringify(scriptFragment) 
+        code: "var scriptName = " + JSON.stringify(scriptName) + "; var scriptFragment = " + JSON.stringify(scriptFragment)
 
       },
 

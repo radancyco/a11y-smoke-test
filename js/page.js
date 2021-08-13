@@ -4,7 +4,7 @@ layout: null
 
 /*!
 
-  Radancy: Smoke Test Extension - Page (Tab) Functionality
+  {{ site.name }} {{ site.version }} - Page (Tab) Functionality
 
   Contributor(s):
   Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy

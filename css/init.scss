@@ -3,10 +3,9 @@
 
 /*!
 
-  Radancy: Smoke Test Extension - Extension Styles
+  {{ site.name }} {{ site.version }} - Extension Styles
 
-  Contributor(s):
-  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
+  {% include contribute.html %}
 
   Dependencies: Sass
   Instructions: To run locally, install Sass (https://sass-lang.com/install), CL to directory this file in and run:
@@ -116,19 +115,6 @@ p, ul {
 ul, ol {
 margin: 1em 0 1em 0;
 padding: 0 0 0 1.5em;
-}
-
-.a11y-info {
-margin-bottom: 2em;
-
-  figcaption {
-  color: #000;
-  }
-
-  img {
-  border: 1px #000 solid;
-  }
-
 }
 
 .btn {

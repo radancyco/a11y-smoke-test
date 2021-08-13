@@ -29,7 +29,7 @@ title: Accessibility Smoke Test
         <ul>
           <li><button aria-describedby="validate-dom-1" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-            - <span id="validate-dom-1">Runs validation on entire DOM (Document Object Model), including script generated content and enhancements.</span>
+            - <span id="validate-dom-1">Runs validation on entire DOM (Document Object Model), including script generated content.</span>
 
           </li>
           <li>
@@ -74,15 +74,15 @@ title: Accessibility Smoke Test
 
   <h2>Overview</h2>
 
-  <p>Provide text alternatives for non-text content. Typically, this involves multimedia (images, video), and interactive components (controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
+  <p>Provide text alternatives for non-text content. Typically, this involves multimedia (audio, images, video), and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
 
   <h3>Images: Know the Differnce</h3>
 
   <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
 
   <ul>
-    <li><strong>Decorative:</strong> Images of a non-important nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
-    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience without these images, then an alternative text value is required.</li>
+    <li><strong>Decorative:</strong> Images of an unimportant nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
+    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, without these images, then an alternative text value is required.</li>
   </ul>
 
   <h3>Images: Basic Rules</h3>
@@ -93,10 +93,10 @@ title: Accessibility Smoke Test
     <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
     <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
     <li>If image is purely decorative, then it requires no alternative text value.</li>
-    <li>If image is contained within a hyperlink or button, then it <em>must</em> contain <em>functional</em> alternative text. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code>.</li>
-    <li>If image within hyperlink or button contains adjacent or nearby text that is also included in the hyperlink, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
+    <li>If image is contained within an interactive element (e.g., a hyperlink or button), then it <em>must</em> contain <em>functional</em> alternative text. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code>.</li>
+    <li>If image within interactive element also contains contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
     <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-    <li>If image is deemed informative and is found to be a background image, alternaive techniques must be taken to ensure that this information is conveyed to AT users. In this case, it may be wise to use an inline image.</li>
+    <li>If image is deemed informative and is found to be a background image, alternaive techniques should be taken to ensure that this information is conveyed to AT users. For example, instead of using background image, use an inline image instead.</li>
   </ol>
 
   <div class="qa-info">
@@ -106,8 +106,8 @@ title: Accessibility Smoke Test
     <p>Review images and ensure that the aforementioned rules are met. You can run the following tests to review page images in more depth:</p>
 
     <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/images.js">View Alternative Text</button></li>
-      <li><a class="validate-images new-tab" href="images.html">View Page Images</a></li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/images.js">Check Alternative Text</button></li>
+      <li><a class="validate-images new-tab" href="images.html">Review All Page Images</a></li>
     </ul>
 
   </div>
@@ -126,17 +126,17 @@ title: Accessibility Smoke Test
 
     </figure>
 
-    <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. Websites are for people; not machines.</p>
+    <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. <em>Websites are for people; not machines.</em></p>
 
   </div>
 
   <h3>Components and Multimedia: Basic Rules</h3>
 
   <ol>
-    <li>All interactive componenets, like form inputs, button and hyperlinks, must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
+    <li>All interactive componenets (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
     <li>Form inputs have associated text labels. Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
     <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." title="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code></li>
+    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>. This is a rare case of where the <code>title</code> attribute may be used.</li>
   </ol>
 
   <div class="qa-info">
@@ -147,7 +147,7 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markedup properly? Is labeling present and correctly associated with its input field?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markeup correct? Is labeling present and correctly associated with its input field?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
     </ul>
 
@@ -158,7 +158,7 @@ title: Accessibility Smoke Test
     <h2>Resources</h2>
 
     <ul>
-      <li>Not sure if image should contain alternative text? Check out <a class="new-tab" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt Decision Tree</a></li>
+      <li>Not sure if an image should contain alternative text? Check out <a class="new-tab" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt Decision Tree</a></li>
       <li><a class="new-tab" href="https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/">Your Image Is Probably Not Decorative</a></li>
       <li><a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">The Anatomy of Accessible Forms: The Problem with Placeholders</a></li>
       <li><a class="new-tab" href="https://www.nngroup.com/articles/form-design-placeholders/">Placeholders in Form Fields Are Harmful</a></li>
@@ -185,7 +185,7 @@ title: Accessibility Smoke Test
       <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
     </ul>
 
-    <p><strong>Note:</strong> While not a failure, providing transcripts with video and audio content is becoming a growing necessity, so including them is now <strong>strongly</strong> encouraged.</p>
+    <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity, so including them is considered best practice and <strong>strongly</strong> encouraged.</p>
 
   </div>
 
@@ -214,18 +214,18 @@ title: Accessibility Smoke Test
 
     <h2>Testing</h2>
 
-    <p>In addition to validating your page, HTML should be structured and labled appropriately so that is makes sense to all users. Some of the tests below will offer deeper insight into the more important aspects of structural markup.</p>
+    <p>In addition to validating your page, HTML should be structured and labled accordingly, so that is makes sense to everybody. Some of the tests below will offer deeper insight into the implementation of the page markup.</p>
 
     <ul>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markedup properly? Is labeling present and correctly associated with its input field?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markeup correct? Is labeling present and correctly associated with its input field?</li>
       <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
       <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are landmaks being used on the page? Do they have an accessible name? Are there too many landmarks? (Less is more.)</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page changes language.</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Are they markedup and nested properly?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they markedup and nested properly? Are they used for layout purposes?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances (like labeling the <code>iframe</code>).</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page shifts into a different language.</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Is the markup correct and nested properly?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they used for layout purposes?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances, like providing an accessible name to an <code>iframe</code>.</li>
     </ul>
 
   </div>
@@ -281,7 +281,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Use Control or Command and Plus (+) keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be operable.</li>
+      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable.</li>
     </ul>
 
   </div>
@@ -301,14 +301,24 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Tab through and engage with interactive components on the page. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
-      <li>Ensure that interactive components on the page work when accessed with Enter key. Buttons will be expected to work with both the Enter and Spacebar keys.</li>
-      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal or within the modal itself?</li>
-      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? In modal windows, this is acceptable behavior, but in other scenarios it could be an indication of a keyboard trap.</li>
+      <li>Using your <kbd>TAB</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
+      <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
+      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
+      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
       <li>Non-interactive elements, such as a <code>div</code>, should not receive keyboard focus while tabbing.</li>
     </ul>
 
     <p><strong>Note:</strong> If focus outlines have been suppressed (which is also a failure), you can <button data-script="https://rawgit.com/pauljadam/bookmarklets/master/focus.js">force focus</button> on the page to see where you are navigating.</p>
+
+  </div>
+
+  <div class="a11y-info">
+
+    <h2>Accessibility Tip</h2>
+
+    <p><em>Buttons do things; hyperlinks navigate.</em></p>
+
+    <p>The difference between using a hyperlink and a button can have a very big impact on accessibility. By using the correct element for the job, we can set the right expectation for AT users and make our code much easier to write. Be sure to read <a class="new-tab" href="https://michaelspellacy.com/pushing-buttons/">Pushing Buttons</a> for more details on why this is important.</p>
 
   </div>
 
@@ -327,8 +337,16 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure. Web animations, such as micro animations, are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work.</li>
+      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure.</li>
     </ul>
+
+  </div>
+
+  <div class="a11y-info">
+
+    <h2>Accessibility Tip</h2>
+
+    <p>Unless there is continuous movement, web (a.k.a micro) animations are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work to avoid creating an unplesant experience for those who may find animation problematic.</p>
 
   </div>
 
@@ -399,7 +417,7 @@ title: Accessibility Smoke Test
     <p>Ensure that all pages have a title and that it is useful and adequately describes the page at hand:</p>
 
     <ul>
-      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button></li>
+      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialoge will appear.)</li>
     </ul>
 
   </div>
@@ -419,7 +437,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Tab through the page using the TAB key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considerd a failure. You can view the focus order with the following tool:
+      <li>Navigate through the page using the <kbd>TAB</kbd> key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considerd a failure. You can view the focus order with the following tool:
 
         <ul>
           <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
@@ -461,7 +479,7 @@ title: Accessibility Smoke Test
         <ul>
           <li><button aria-describedby="validate-dom-2" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-            - <span id="validate-dom-2">Runs validation on entire DOM (Document Object Model), including script generated content and enhancements.</span>
+            - <span id="validate-dom-2">Runs validation on entire DOM (Document Object Model), including script generated content.</span>
 
           </li>
           <li>
@@ -570,7 +588,7 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Tab through a page to review focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
+      <li>Using your <kbd>TAB</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
       <li>Non-interactive elements should not contain a focus state.</li>
     </ul>
 
