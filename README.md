@@ -10,62 +10,67 @@ Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Sp
 
 ### Page Validation  
 
-  * WAVE Validation - Runs WAVE on current page. Link can be easily shared or added to a report.
-  * W3C Validation - Runs W3C validation on current page. Link can be easily shared or added to a report.
-  * Validate Headings - Validates heading structure on current page.
-  * W3C Validation (Serialized DOM) - Runs validation on entire DOM (Document Object Model), including script generated content.
-    * WCAG Parsing - Run on W3C Validator results page to remove non-WCAG issues.
+* WAVE Validation - Runs WAVE on current page. Link can be easily shared or added to a report.
+* W3C Validation - Runs W3C validation on current page. Link can be easily shared or added to a report.
+* Validate Headings - Validates heading structure on current page.
+* W3C Validation (Serialized DOM) - Runs validation on entire DOM (Document Object Model), including script generated content.
+  * WCAG Parsing - Run on W3C Validator results page to remove non-WCAG issues.
 
-#### Color Contrast
+### Color Contrast
 
-  * Validate Contrast
-  * Validate Link & Text Contrast
+* Validate Contrast
+* Validate Link & Text Contrast
 
-#### PDF Validation
+### PDF Validation
 
-  * Validate PDF (Download PAC 2021)
+* Validate PDF (Download PAC 2021)
 
-#### Other Validation Tests
-  * Validate CSS - Validates all CSS on the current page.
-  * Validate Links - Validates all hyperlinks on current page.
+### Other Validation Tests
+
+* Validate CSS - Validates all CSS on the current page.
+* Validate Links - Validates all hyperlinks on current page.
 
 ### Color Blindness Simulation
 
 Can be used on current page or in-browser design comp
 
-  * Achromatomaly
-  * Achromatopsia (Grayscale)
-  * Deuteranomaly
-  * Deuteranopia (Green-Blind, Most Common)
-  * Protanomaly
-  * Protanopia (Red-Blind, Most Common)
-  * Tritanopia (Blue-Blind)
+* Achromatomaly
+* Achromatopsia (Grayscale)
+* Deuteranomaly
+* Deuteranopia (Green-Blind, Most Common)
+* Protanomaly
+* Protanopia (Red-Blind, Most Common)
+* Tritanopia (Blue-Blind)
 
 ### Images
 
 Review image alternative text values on current page.
 
-  * Check Alternative Text
-  * Review All Page Images
+* Check Alternative Text
+* Review All Page Images
 
 ### Structure
 
 Review details of current page structure.  
 
-  * ARIA
-  * Forms
-  * Iframes
-  * Landmarks
-  * Language Attributes
-  * Lists
-  * Tabindex
-  * Tables
-  * Title Attributes
+* ARIA
+* Forms
+* Iframes
+* Landmarks
+* Language Attributes
+* Lists
+* Tabindex
+* Tables
+* Title Attributes
+
+### Epilepsy
+
+* PEAT (Photosensitive Epilepsy Analysis Tool)
 
 ### Utilities
 
-  * Force Focus
-  * View Focus Order
+* Force Focus
+* View Focus Order
 
 ## Release Notes
 
