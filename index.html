@@ -27,16 +27,16 @@ title: Accessibility Smoke Test
         <h3>Advanced (Dev Only)</h3>
 
         <ul>
-          <li><button aria-describedby="validate-dom-1" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
+          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-            - <span id="validate-dom-1">Runs validation on entire DOM (Document Object Model), including script generated content.</span>
+            - <span>Runs validation on entire DOM (Document Object Model), including script generated content.</span>
 
           </li>
           <li>
 
-            <button aria-describedby="wcag-parsing-1" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
+            <button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
 
-            - <span id="wcag-parsing-1">Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
+            - <span>Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
 
           </li>
         </ul>
@@ -276,6 +276,49 @@ title: Accessibility Smoke Test
 
 </div>
 
+<button class="disclosure--btn" data-disclosure-icon>1.4.3: Contrast (Minimum) (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Contrast ratio between text and background is at least <strong>4.5:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">Understanding 1.4.3</a></p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Review page and test any <strong>text</strong> or <strong>images of text</strong> that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
+      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+    </ul>
+
+    <p>This rule does not apply to the following:</p>
+
+    <ul>
+      <li><strong>Large Text:</strong> Large text and images of large text have a contrast ratio of at least 3:1. <strong>Note:</strong> In WCAG, points are often referred to as the unit of measure in determining the size between regular and large text. However, pixels are much more common on the web. 18pt maps to 24px and 14pt to approximately 18.67px. In CSS, bold text typically has <code>font-weight: bold</code>, or <code>font-weight: 700</code> or greater.</li>
+      <li><strong>Incidental:</strong> Text or images of text that are part of an inactive user interface component (i.e., disabled button), that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
+      <li><strong>Logotypes:</strong> Text that is part of a logo or brand name has no contrast requirement.</li>
+    </ul>
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be added to your report.</p>
+
+    <ul>
+      <li><button data-script="achromatomaly">Achromatomaly</button></li>
+      <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
+      <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
+      <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
+      <li><button data-script="protanomaly">Protanomaly</button></li>
+      <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
+      <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
+    </ul>
+
+  </div>
+
+</div>
+
 <button class="disclosure--btn" data-disclosure-icon>1.4.4: Resize Text (Level AA)</button>
 
 <div class="disclosure--content">
@@ -296,6 +339,48 @@ title: Accessibility Smoke Test
 
 </div>
 
+<button class="disclosure--btn" data-disclosure-icon>1.4.11: Non-text Contrast (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Ensure <em>important</em> visual components, such as images, icons, and buttons, have a contrast ratio of at least <strong>3:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast">Understanding 1.4.11</a></p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Ensure that the visual presentation of the following have a contrast ratio of at least <strong>3:1</strong> against adjacent color(s):</p>
+
+    <ul>
+      <li><strong>User Interface (UI) Components:</strong> Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the browser.</li>
+      <li><strong>Graphical Objects:</strong> Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.</li>
+    </ul>
+
+    <p>Review page and test any UI components or images that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
+      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+    </ul>
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be added to your report.</p>
+
+    <ul>
+      <li><button data-script="achromatomaly">Achromatomaly</button></li>
+      <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
+      <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
+      <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
+      <li><button data-script="protanomaly">Protanomaly</button></li>
+      <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
+      <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
+    </ul>
+
+  </div>
+
+</div>
+
 <button class="disclosure--btn" data-disclosure-icon>2.1.1: Keyboard (Level A)</button>
 
 <div class="disclosure--content">
@@ -310,6 +395,7 @@ title: Accessibility Smoke Test
 
     <ul>
       <li>Using your <kbd>Tab</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
+      <li>Anything that receives focus must have an accessible name.</li>
       <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
       <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
       <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
@@ -465,6 +551,28 @@ title: Accessibility Smoke Test
 
 </div>
 
+<button class="disclosure--btn" data-disclosure-icon>2.4.7: Focus Visible (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must then meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Using your <kbd>Tab</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
+      <li>Again, any redesigned focus state must meet a <strong>3:1</strong> contrast ratio. You can run <button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button> to test your foreground and background color of the alternative outline or state.</li>
+      <li>Non-interactive elements should not contain a focus state. The only exception to this rule is if the non-interactive element is accepting temporary focus via <code>tabindex="-1"</code>.</li>
+    </ul>
+
+  </div>
+
+</div>
+
 <button class="disclosure--btn" data-disclosure-icon>4.1.1: Parsing (Level A)</button>
 
 <div class="disclosure--content">
@@ -482,21 +590,11 @@ title: Accessibility Smoke Test
     <ul>
       <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
 
-        <h3>Advanced</h3>
+        <h3>Advanced (Dev Only)</h3>
 
         <ul>
-          <li><button aria-describedby="validate-dom-2" class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
-
-            - <span id="validate-dom-2">Runs validation on entire DOM (Document Object Model), including script generated content.</span>
-
-          </li>
-          <li>
-
-            <button aria-describedby="wcag-parsing-2" data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
-
-            - <span id="wcag-parsing-2">Not all errors may affect accessibility. Run on W3C Validator results page to remove non-WCAG issues.</span>
-
-          </li>
+          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+          <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
         </ul>
 
       </li>
@@ -514,106 +612,39 @@ title: Accessibility Smoke Test
 
   <p>Build all elements for accessibility. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value">Understanding 4.1.2</a></p>
 
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button></li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button></li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.11: Non-text Contrast (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Ensure <em>important</em> visual information, such as images and icons, have a contrast ratio of at least <strong>3:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast">Understanding 1.4.11</a></p>
+  <p>Ensure that each element has an accessible name, role, value, state and property which can be properly conveyed to AT users. Using the correct HTML is the first step in creating a more robust UI. For example, one should not use a <code>div</code> element to create a button, but a <code>button</code> element instead! Using the right elements for the job has built in advantages that help convey additional information that allow disabled users to better understrand the component they are engaging with.</p>
 
   <div class="qa-info">
 
     <h2>Testing</h2>
 
-    <p>Test the interface under various color-blindness simulations to see if there are any potential contrast issue:
+    <p>The usual suite of tests can be run to take a deep into the code.</p>
 
     <ul>
-      <li><button data-script="achromatomaly">Achromatomaly</button></li>
-      <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
-      <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
-      <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
-      <li><button data-script="protanomaly">Protanomaly</button></li>
-      <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
-      <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
+      <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are page landmarks being used? Do they have an accessible name? Are there too many page landmarks?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page shifts into a different language.</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Is the markup correct and nested properly?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they used for layout purposes?</li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances, like providing an accessible name to an <code>iframe</code>.</li>
     </ul>
 
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.3: Contrast (Minimum) (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Contrast ratio between text and background is at least <strong>4.5:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">Understanding 1.4.3</a></p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Review page and test any <strong>text</strong> or <strong>images of text</strong> that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+    <h3>Validation</h3>
 
     <ul>
-      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
-      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-    </ul>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
 
-    <p>This rule does not apply to the following:</p>
+        <h3>Advanced (Dev Only)</h3>
 
-    <ul>
-      <li><strong>Large Text</strong> - Large text and images of large text have a contrast ratio of at least 3:1. <strong>Note:</strong> In WCAG, points are often referred to as the unit of measure in determining the size between regular and large text. However, pixels are much more common on the web. 18pt maps to 24px and 14pt to approximately 18.67px. In CSS, bold text typically has <code>font-weight: bold</code>, or <code>font-weight: 700</code> or greater.</li>
-      <li><strong>Incidental</strong> - Text or images of text that are part of an inactive user interface component (i.e., disabled button), that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
-      <li><strong>Logotypes</strong> - Text that is part of a logo or brand name has no contrast requirement.</li>
-    </ul>
+        <ul>
+          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+          <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
+        </ul>
 
-    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be added to your report.</p>
-
-    <ul>
-      <li><button data-script="achromatomaly">Achromatomaly</button></li>
-      <li><button data-script="achromatopsia">Achromatopsia (Grayscale)</button></li>
-      <li><button data-script="deuteranomaly">Deuteranomaly</button></li>
-      <li><button data-script="deuteranopia">Deuteranopia (Green-Blind, Most Common)</button></li>
-      <li><button data-script="protanomaly">Protanomaly</button></li>
-      <li><button data-script="protanopia">Protanopia (Red-Blind, Most Common)</button></li>
-      <li><button data-script="tritanopia">Tritanopia (Blue-Blind)</button></li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.4.7: Focus Visible (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must then meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Using your <kbd>Tab</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
-      <li>Again, any redesigned focus state must meet a <strong>3:1</strong> contrast ratio. You can run <button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button> to test your foreground and background color of the alternative outline or state.</li>
-      <li>Non-interactive elements should not contain a focus state. The only exception to this rule is if the non-interactive element is accepting temporary focus via <code>tabindex="-1"</code>.</li>
+      </li>
     </ul>
 
   </div>
@@ -690,6 +721,9 @@ title: Accessibility Smoke Test
   </ul>
 
 </div>
+
+
+<!-- include label in name 2.5.3 Label in Name -->
 
 <!-- h2>Bookmarklets</h2>
 
