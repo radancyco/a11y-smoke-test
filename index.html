@@ -137,7 +137,7 @@ title: Accessibility Smoke Test
     <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
     <li>Form inputs have associated text labels. Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
     <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." title="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>. This is a rare case of where the <code>title</code> attribute may be used.</li>
+    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
   </ol>
 
   <div class="qa-info">
@@ -186,7 +186,7 @@ title: Accessibility Smoke Test
       <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
     </ul>
 
-    <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity, so including them is considered best practice and <strong>strongly</strong> encouraged.</p>
+    <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity and <strong>strongly</strong> encouraged. Including them would pass <a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded">1.2.1 Prerecorded Audio-only and Video-only</a>, which is not currently included in our baselines, but will be eventually.</p>
 
   </div>
 
