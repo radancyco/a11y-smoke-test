@@ -1,6 +1,6 @@
 # A11y Smoke Test Extension
 
-This is a Chrome and Firefox browser extension that allows Radancy employees to learn about and run automated tests against the [accessibility baselines](https://radancy.dev/a11y/baseline) we have selected to strive for on every website and product we produce. Each list item presents an overview of the Web Content and Accessibility Guideline (WCAG) Success Criterion (SC), method for testing, helpful resources, and automated tests that can be run on the current page. Many automated tests are directly leveraged from popular accessibility testing bookmarklets curated from across the web or have been custom built.
+This is a browser extension that allows Radancy employees to learn about and run automated tests against the [accessibility baselines](https://radancy.dev/a11y/baseline) we have selected to strive for on every website and product we produce. Each list item presents an overview of the Web Content and Accessibility Guideline (WCAG) Success Criterion (SC), method for testing, helpful resources, and automated tests that can be run on the current page. Many automated tests are directly leveraged from popular accessibility testing bookmarklets curated from across the web or have been custom built.
 
 ## Installation
 
