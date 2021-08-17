@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if(dataScriptID !== "extensionURL") {
 
-        console.log(dataScriptID);
+        // console.log(dataScriptID);
 
         document.getElementById(dataScriptID).setAttribute("disabled", true)
 
