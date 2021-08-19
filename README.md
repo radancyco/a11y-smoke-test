@@ -6,7 +6,7 @@ This is a browser extension that allows Radancy employees to learn about and run
 
 Go to the [login](https://radancy.dev/a11y/extension/) page. Contact [Michael Spellacy](mailto:michael.spellacy@radancy.com) for credentials.
 
-## Current Tests
+## Current Features
 
 ### Page Validation  
 
