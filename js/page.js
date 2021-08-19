@@ -67,7 +67,21 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
 
     if (ele) {
 
-        document.getElementById("a11y-smoke-test-contrast").innerHTML = ele.outerHTML;
+      let contrastContainer = document.getElementById("a11y-smoke-test-contrast");
+
+      contrastContainer.innerHTML = ele.outerHTML;
+
+      let contrastButton = document.createElement("button");
+      contrastButton.setAttribute("aria-label", "Close");
+      contrastButton.setAttribute("id", "contrast-button");
+      contrastButton.addEventListener("click", closeContrast);
+      contrastContainer.appendChild(contrastButton);
+
+      function closeContrast(){
+
+        this.parentNode.remove();
+
+      }
 
     }
 

@@ -71,7 +71,7 @@ title: Accessibility Smoke Test
 
     <h2>Reminder!</h2>
 
-    <p>Have you tested your page in Axe? All developers should have the Axe devTools extension installed and be regurally using it, during development, to address any critical and serious accessibility issues.</p>
+    <p>Have you tested your page in Axe? All developers should have the Axe devTools extension installed and should be using it regularly, during development, to address any critical and serious accessibility issues.</p>
 
     <ul>
       <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US">Chrome</a></li>
@@ -91,7 +91,9 @@ title: Accessibility Smoke Test
 
   <p>Provide text alternatives for non-text content. Typically, this involves multimedia (audio, images, video), and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
 
-  <h3>Images: Know the Difference</h3>
+  <h3>Images</h3>
+
+  <h4>Know the Difference</h4>
 
   <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
 
@@ -100,7 +102,7 @@ title: Accessibility Smoke Test
     <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, without these images, then an alternative text value is required.</li>
   </ul>
 
-  <h3>Images: Basic Rules</h3>
+  <h4>Basic Rules</h4>
 
   <ol>
     <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt".</li>
@@ -145,7 +147,9 @@ title: Accessibility Smoke Test
 
   </div>
 
-  <h3>Components and Multimedia: Basic Rules</h3>
+  <h3>Components and Multimedia</h3>
+
+  <h4>Basic Rules</h4>
 
   <ol>
     <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
