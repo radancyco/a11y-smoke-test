@@ -4,86 +4,94 @@ title: Color Contrast Forms
 
 <h1 id="primary-heading">{{ page.title }}</h1>
 
-<form action="https://webaim.org/resources/contrastchecker/" id="color-contrast" target="_blank">
+<div id="color-contrast">
 
-  <fieldset>
+  <form action="https://webaim.org/resources/contrastchecker/" target="_blank">
 
-    <legend>Check Color Contrast</legend>
+    <fieldset>
 
-    <p>Use this form to validate the contrast of two specific colors combinations.</p>
+      <legend>Check Color Contrast</legend>
 
-    <div class="form-fields">
+      <p>Use this form to validate the contrast of two specific colors combinations.</p>
 
-      <div>
+      <div class="form-fields">
 
-        <label for="fcolor-2">Foreground:</label>
+        <div>
 
-        <input id="fcolor-2" name="fcolor" type="color" value="#0000FF">
+          <label for="fcolor-2">Foreground:</label>
 
-      </div>
+          <input id="fcolor-2" name="fcolor" type="color" value="#0000FF">
 
-      <div>
+        </div>
 
-        <label for="bcolor-2">Background:</label>
+        <div>
 
-        <input id="bcolor-2" name="bcolor" type="color" value="#FFFFFF">
+          <label for="bcolor-2">Background:</label>
 
-      </div>
+          <input id="bcolor-2" name="bcolor" type="color" value="#FFFFFF">
 
-      <div>
+        </div>
 
-        <button class="btn">Check</button>
+        <div>
 
-      </div>
+          <button class="btn">Check</button>
 
-    </div>
-
-  </fieldset>
-
-</form>
-
-<form action="https://webaim.org/resources/linkcontrastchecker/" id="link-contrast" target="_blank">
-
-  <fieldset>
-
-    <legend>Check Link & Text Contrast</legend>
-
-    <p>Use this form to validate specific color combinations.</p>
-
-    <div class="form-fields">
-
-      <div>
-
-        <label for="lcolor-1">Link:</label>
-
-        <input id="lcolor-1" name="lcolor" type="color" value="#3333FF">
+        </div>
 
       </div>
 
-      <div>
+    </fieldset>
 
-        <label for="fcolor-1">Body Text:</label>
+  </form>
 
-        <input id="fcolor-1" name="fcolor" type="color" value="#000000">
+</div>
+
+<div id="link-contrast">
+
+  <form action="https://webaim.org/resources/linkcontrastchecker/" target="_blank">
+
+    <fieldset>
+
+      <legend>Check Link & Text Contrast</legend>
+
+      <p>Use this form to validate specific color combinations.</p>
+
+      <div class="form-fields">
+
+        <div>
+
+          <label for="lcolor-1">Link:</label>
+
+          <input id="lcolor-1" name="lcolor" type="color" value="#3333FF">
+
+        </div>
+
+        <div>
+
+          <label for="fcolor-1">Body Text:</label>
+
+          <input id="fcolor-1" name="fcolor" type="color" value="#000000">
+
+        </div>
+
+        <div>
+
+          <label for="bcolor-1">Background:</label>
+
+          <input id="bcolor-1" name="bcolor" type="color" value="#FFFFFF">
+
+        </div>
+
+        <div>
+
+          <button class="btn">Check</button>
+
+        </div>
 
       </div>
 
-      <div>
+    </fieldset>
 
-        <label for="bcolor-1">Background:</label>
+  </form>
 
-        <input id="bcolor-1" name="bcolor" type="color" value="#FFFFFF">
-
-      </div>
-
-      <div>
-
-        <button class="btn">Check</button>
-
-      </div>
-
-    </div>
-
-  </fieldset>
-
-</form>
+</div>
