@@ -4,94 +4,113 @@ title: Color Contrast Forms
 
 <h1 id="primary-heading">{{ page.title }}</h1>
 
-<div id="color-contrast">
+<form action="https://webaim.org/resources/contrastchecker/" id="color-contrast" target="_blank">
 
-  <form action="https://webaim.org/resources/contrastchecker/" target="_blank">
+  <fieldset>
 
-    <fieldset>
+    <legend>Check Color Contrast</legend>
 
-      <legend>Check Color Contrast</legend>
+    <p>Use this form to validate the contrast of two specific colors combinations.</p>
 
-      <p>Use this form to validate the contrast of two specific colors combinations.</p>
+    <div class="form-fields">
 
-      <div class="form-fields">
+      <div>
 
-        <div>
+        <label for="fcolor-2">Foreground:</label>
 
-          <label for="fcolor-2">Foreground:</label>
-
-          <input id="fcolor-2" name="fcolor" type="color" value="#0000FF">
-
-        </div>
-
-        <div>
-
-          <label for="bcolor-2">Background:</label>
-
-          <input id="bcolor-2" name="bcolor" type="color" value="#FFFFFF">
-
-        </div>
-
-        <div>
-
-          <button class="btn">Check</button>
-
-        </div>
+        <input id="fcolor-2" name="fcolor" type="color" value="#0000FF">
 
       </div>
 
-    </fieldset>
+      <div>
 
-  </form>
+        <label for="bcolor-2">Background:</label>
 
-</div>
-
-<div id="link-contrast">
-
-  <form action="https://webaim.org/resources/linkcontrastchecker/" target="_blank">
-
-    <fieldset>
-
-      <legend>Check Link & Text Contrast</legend>
-
-      <p>Use this form to validate specific color combinations.</p>
-
-      <div class="form-fields">
-
-        <div>
-
-          <label for="lcolor-1">Link:</label>
-
-          <input id="lcolor-1" name="lcolor" type="color" value="#3333FF">
-
-        </div>
-
-        <div>
-
-          <label for="fcolor-1">Body Text:</label>
-
-          <input id="fcolor-1" name="fcolor" type="color" value="#000000">
-
-        </div>
-
-        <div>
-
-          <label for="bcolor-1">Background:</label>
-
-          <input id="bcolor-1" name="bcolor" type="color" value="#FFFFFF">
-
-        </div>
-
-        <div>
-
-          <button class="btn">Check</button>
-
-        </div>
+        <input id="bcolor-2" name="bcolor" type="color" value="#FFFFFF">
 
       </div>
 
-    </fieldset>
+      <div>
 
-  </form>
+        <button class="btn">Check</button>
 
-</div>
+      </div>
+
+    </div>
+
+  </fieldset>
+
+</form>
+
+<form action="https://webaim.org/resources/linkcontrastchecker/" id="link-contrast" target="_blank">
+
+  <fieldset>
+
+    <legend>Check Link & Text Contrast</legend>
+
+    <p>Use this form to validate specific color combinations.</p>
+
+    <div class="form-fields">
+
+      <div>
+
+        <label for="lcolor-1">Link:</label>
+
+        <input id="lcolor-1" name="lcolor" type="color" value="#3333FF">
+
+      </div>
+
+      <div>
+
+        <label for="fcolor-1">Body Text:</label>
+
+        <input id="fcolor-1" name="fcolor" type="color" value="#000000">
+
+      </div>
+
+      <div>
+
+        <label for="bcolor-1">Background:</label>
+
+        <input id="bcolor-1" name="bcolor" type="color" value="#FFFFFF">
+
+      </div>
+
+      <div>
+
+        <button class="btn">Check</button>
+
+      </div>
+
+    </div>
+
+  </fieldset>
+
+</form>
+
+<svg id="color-blindness-filter" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="protanopia">
+    <feColorMatrix in="SourceGraphic" values="0.567, 0.433, 0, 0, 0 0.558, 0.442, 0, 0, 0 0, 0.242, 0.758, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="protanomaly">
+    <feColorMatrix in="SourceGraphic" values="0.817, 0.183, 0, 0, 0 0.333, 0.667, 0, 0, 0 0, 0.125, 0.875, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="deuteranopia">
+    <feColorMatrix in="SourceGraphic" values="0.625, 0.375, 0, 0, 0 0.7, 0.3, 0, 0, 0 0, 0.3, 0.7, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="deuteranomaly">
+    <feColorMatrix in="SourceGraphic" values="0.8, 0.2, 0, 0, 0 0.258, 0.742, 0, 0, 0 0, 0.142, 0.858, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="tritanopia">
+    <feColorMatrix in="SourceGraphic" values="0.95, 0.05, 0, 0, 0 0, 0.433, 0.567, 0, 0 0, 0.475, 0.525, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="tritanomaly">
+    <feColorMatrix in="SourceGraphic" values="0.967, 0.033, 0, 0, 0 0, 0.733, 0.267, 0, 0 0, 0.183, 0.817, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="achromatopsia">
+    <feColorMatrix in="SourceGraphic" values="0.299, 0.587, 0.114, 0, 0 0.299, 0.587, 0.114, 0, 0 0.299, 0.587, 0.114, 0, 0 0, 0, 0, 1, 0"/>
+  </filter>
+  <filter id="achromatomaly"><feColorMatrix in="SourceGraphic" values="0.618, 0.320, 0.062, 0, 0 0.163, 0.775, 0.062, 0, 0 0.163, 0.320, 0.516, 0, 0 0, 0, 0, 1, 0"/></filter>
+</defs>
+</svg>
