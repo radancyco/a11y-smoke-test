@@ -11,7 +11,7 @@ layout: null
     "default_popup": "index.html",
     "default_title": "{{ site.name }}"
   },
-  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://radancy.dev; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://radancy.dev https://rawgit.com https://mraccess77.github.io https://www.ssa.gov https://khan.github.io; object-src 'self'",
   "description": "{{ site.description }}",
   "manifest_version": 2,
   "name": "{{ site.title }}",

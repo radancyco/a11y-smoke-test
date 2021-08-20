@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let bodyID = document.body.id;
 
   let pageElement = document.getElementById("inner-content");
+  let pageLoader = document.getElementById("loading-content");
 
   if(pageElement) {
 
@@ -319,7 +320,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    let pageError = "<p class='alert'>We're sorry, the content you are looking for can't be displayed right now. Try refreshing your page. If there is still an issue, you can <a href='" + pageElementHref + "'>access the page directly</a>.</p>";
+    let pageError = document.createElement("p");
+    pageError.classList.add("alert");
+    pageErrorText = document.createTextNode("We're sorry, the content you are looking for can't be displayed right now. Try refreshing your page.");
+    pageError.appendChild(pageErrorText);
+
     let request = new XMLHttpRequest();
 
     request.open("GET", pageElementHref, true);
@@ -331,7 +336,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Success!
 
         let primaryHeading = document.getElementById("primary-heading");
-        primaryHeading.innerHTML += ": <a class='new-tab' href=" + pageTest + ">" + pageTest + "</a>";
+        let primaryHeadingLink = document.createElement("a");
+        primaryHeadingLink.classList.add("new-tab");
+        primaryHeadingLink.setAttribute("href", pageTest);
+        primaryHeadingLinkSpace = document.createTextNode(": ");
+        primaryHeadingLinkText = document.createTextNode(pageTest);
+        primaryHeadingLink.appendChild(primaryHeadingLinkText);
+        primaryHeading.appendChild(primaryHeadingLinkSpace);
+        primaryHeading.appendChild(primaryHeadingLink);
 
         openNewTab();
 
@@ -348,14 +360,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        pageElement.innerHTML = "";
+        pageLoader.remove();
         pageElement.appendChild(fragment);
 
       } else {
 
         // We reached our target server, but it returned an error
 
-        pageElement.innerHTML = pageError;
+        pageLoader.remove();
+        pageElement.appendChild(pageError);
 
       }
 
@@ -365,7 +378,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // There was a connection error of some sort
 
-      pageElement.innerHTML = pageError;
+      pageLoader.remove();
+      pageElement.appendChild(pageError);
 
     };
 
