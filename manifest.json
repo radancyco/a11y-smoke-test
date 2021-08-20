@@ -18,5 +18,12 @@ layout: null
   "permissions": [
     "activeTab"
   ],
-  "version": "{{ site.version }}"
+  "version": "{{ site.version }}",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{ceae4868-0848-4301-b830-0074622a2a10}",
+      "strict_min_version": "87.0",
+      "update_url": "https://services1.tmpwebeng.com/browser-plugin/a11y-smoke-test/firefox/updates.json"
+    }
+  }
 }
