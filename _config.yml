@@ -12,7 +12,7 @@ exclude: [
   packages
 ]
 description: "A tool to help everybody quickly identify baseline accessibility issues."
-destination: _httpdocs
+destination: _extension
 git-url: https://radancy.dev
 highlighter: rouge
 lang: en-US

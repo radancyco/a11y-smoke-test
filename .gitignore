@@ -4,6 +4,7 @@ pkg
 *.swp
 *~
 _httpdocs
+_extension
 .bundle
 .DS_Store
 bbin
