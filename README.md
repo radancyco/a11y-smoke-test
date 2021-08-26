@@ -75,6 +75,10 @@ Review details of current page structure.
 
 ## Release Notes
 
+### 1.0.1
+
+* Small bug fixes, repo configurations, and content changes. 
+
 ### 1.0.0
 
 * Initial Revision
