@@ -75,9 +75,13 @@ Review details of current page structure.
 
 ## Release Notes
 
+### 1.0.2
+
+* Color blindness simulation fixed on Firefox.
+
 ### 1.0.1
 
-* Small bug fixes, repo configurations, and content changes. 
+* Small bug fixes, repo configurations, and content changes.
 
 ### 1.0.0
 
