@@ -190,6 +190,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // Validate HTML by Direct Input
+
+    var formValidation = document.getElementById("submitPartialPage");
+    var formValidationContent = document.getElementById("contentToValidate");
+    var formValidationSubmit = document.getElementById("submitValidate");
+    var topHtml = '<!DOCTYPE html>' + "\n" + '<html lang="en">' + "\n" + '<head>' + "\n\t" + '<meta charset="utf-8">' + "\n\t" + '<title>Untitled Document</title>' + "\n" + '</head>' + "\n" + '<body>' + "\n" + "\n";
+    var bottomHtml = "\n\n</body></html>";
+
+    formValidationSubmit.addEventListener("click", function(e) {
+
+      e.preventDefault();
+
+      var textareaContent = formValidationContent.value;
+
+      var newInput = document.createElement("input");
+      newInput.setAttribute("type", "hidden");
+      newInput.setAttribute("id", "contentField");
+      newInput.setAttribute("name", "content");
+      newInput.setAttribute("value", topHtml + textareaContent + bottomHtml);
+      formValidation.appendChild(newInput);
+
+      formValidation.submit();
+
+    }, false);
+
     function runBookmarklet(scriptName, scriptFragment) {
 
       chrome.tabs.executeScript({

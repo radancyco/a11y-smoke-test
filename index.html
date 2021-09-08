@@ -44,6 +44,20 @@ title: Accessibility Smoke Test
       </li>
     </ul>
 
+    <h2>Validate HTML by Direct Input</h2>
+
+    <form action="https://validator.w3.org/nu/?showsource=yes" enctype="multipart/form-data" id="submitPartialPage" method="post" target="_blank">
+
+      <input name="showsource" type="hidden" value="yes">
+
+      <label for="contentToValidate">Enter the Markup to validate:</label>
+
+      <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="10"></textarea>
+
+      <button class="btn" id="submitValidate">Submit</button>
+
+    </form>
+
     <h2>Validate Color</h2>
 
     <ul>
@@ -335,7 +349,8 @@ title: Accessibility Smoke Test
     <h2>Testing</h2>
 
     <ul>
-      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable.</li>
+      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable and usable.</li>
+      <li>Page zoom should never be intentionally disabled. If the page cannot be zoomed in on at all, it is failure.</li>
     </ul>
 
   </div>
@@ -582,7 +597,7 @@ title: Accessibility Smoke Test
 
     <h2>Testing</h2>
 
-    <p>Validate the page and address or report any major code errors you may discover. Warnings may be omitted, but should be addressed if time permits.</p>
+    <p>Validate the page and address or report any major code errors you may discover. Warnings may be omitted, but should be addressed as time permits.</p>
 
     <ul>
       <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
@@ -645,6 +660,40 @@ title: Accessibility Smoke Test
     </ul>
 
   </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon>Best Practices</button>
+
+<div class="disclosure--content">
+
+  <p>The following issues may not specifically fall under WCAG, but are considered industry-wide best practice and strongly suggested.</p>
+
+  <h2>Accessibility Overlays</h2>
+
+  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
+
+  <ul>
+    <li><a href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
+    <li><a href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
+  </ul>
+
+  <h2>Carousels</h2>
+
+  <p>Radancy UI/UX strongly discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+
+  <h2>New Windows</h2>
+
+  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
+
+  <ul>
+    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
+    <li><b>Trust Users</b> -  Let your users decide if opening a new window is the best course of action.</li>
+    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
+    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent tabnabbing and improve page load between parent and child windows.</li>
+  </ul>
+
+  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
 
 </div>
 

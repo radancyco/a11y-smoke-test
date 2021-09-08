@@ -75,7 +75,13 @@ Review details of current page structure.
 
 ## Release Notes
 
-### 1.0.2
+### 1.0.3 (Beta)
+
+* Added new test rule for 1.4.4: Resize Text. Zoom disabling is a failure.
+* Added new section for best practices. Covering Overlays, Carousels, and New Windows.  
+* Added Validate HTML by Direct Input.
+
+### 1.0.2 (Official Build)
 
 * Color blindness simulation fixed on Firefox.
 
