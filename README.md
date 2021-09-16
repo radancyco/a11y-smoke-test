@@ -80,6 +80,7 @@ Review details of current page structure.
 * Added new test rule for 1.4.4: Resize Text. Zoom disabling is a failure.
 * Added new section for best practices. Covering Overlays, Carousels, and New Windows.  
 * Added Validate HTML by Direct Input.
+* Added "Who is Responsible?" to help facilitate certain tasks.
 
 ### 1.0.2 (Official Build)
 
