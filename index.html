@@ -99,6 +99,44 @@ title: Accessibility Smoke Test
 
 </div>
 
+<button class="disclosure--btn" data-disclosure-icon>Best Practices</button>
+
+<div class="disclosure--content">
+
+  <p>The following issues may not specifically fall under WCAG, but are considered industry-wide best practice and strongly suggested.</p>
+
+  <p><b>Who is responsible?</b> Everybody</p>
+
+  <h2>Accessibility Overlays</h2>
+
+  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
+
+  <ul>
+    <li><a href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
+    <li><a href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
+  </ul>
+
+  <h2>Carousels</h2>
+
+  <p>Radancy UI/UX strongly discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+
+  <p><strong>Important:</strong> Slick is popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>.</p>
+
+  <h2>New Windows</h2>
+
+  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
+
+  <ul>
+    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
+    <li><b>Trust Users</b> -  Let your users decide if opening a new window is the best course of action.</li>
+    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
+    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent tabnabbing and improve page load between parent and child windows.</li>
+  </ul>
+
+  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
+
+</div>
+
 <button class="disclosure--btn" data-disclosure-icon>1.1.1: Non-text Content (Alternative Text) (Level A)</button>
 
 <div class="disclosure--content">
@@ -694,42 +732,6 @@ title: Accessibility Smoke Test
     </ul>
 
   </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>Best Practices</button>
-
-<div class="disclosure--content">
-
-  <p>The following issues may not specifically fall under WCAG, but are considered industry-wide best practice and strongly suggested.</p>
-
-  <p><b>Who is responsible?</b> Everybody</p>
-
-  <h2>Accessibility Overlays</h2>
-
-  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
-
-  <ul>
-    <li><a href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
-    <li><a href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
-  </ul>
-
-  <h2>Carousels</h2>
-
-  <p>Radancy UI/UX strongly discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
-
-  <h2>New Windows</h2>
-
-  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
-
-  <ul>
-    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
-    <li><b>Trust Users</b> -  Let your users decide if opening a new window is the best course of action.</li>
-    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
-    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent tabnabbing and improve page load between parent and child windows.</li>
-  </ul>
-
-  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
 
 </div>
 

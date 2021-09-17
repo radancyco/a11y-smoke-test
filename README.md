@@ -75,12 +75,13 @@ Review details of current page structure.
 
 ## Release Notes
 
-### 1.0.3 (Beta)
+### 1.0.3 (Upcoming Build)
 
 * Added new test rule for 1.4.4: Resize Text. Zoom disabling is a failure.
 * Added new section for best practices. Covering Overlays, Carousels, and New Windows.  
 * Added Validate HTML by Direct Input.
 * Added "Who is Responsible?" to help facilitate certain tasks.
+* Added note to Best Practices regarding [Accessible Slick](https://accessible360.github.io/accessible-slick)
 
 ### 1.0.2 (Official Build)
 
