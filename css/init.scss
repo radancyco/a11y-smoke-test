@@ -14,7 +14,6 @@
 */
 
 @import url("https://radancy.dev/css/init.css");
-@import url("https://radancy.dev/pattern-library/disclosure/init.css");
 
 // Variables
 
@@ -42,16 +41,6 @@ font: inherit;
 
 }
 
-figure {
-margin: 1em 0;
-
-  figcaption {
-  font-size: 13px;
-  margin: 1em 0 0;
-  }
-
-}
-
 footer {
 font-size: 14px;
 margin-top: 2em;
@@ -75,13 +64,11 @@ font-size: 19px;
 }
 
 h3 {
-color: $highlight-color;
 font-size: 18px;
 }
 
 h4 {
 font-size: 16px;
-font-weight: bold;
 }
 
 main {
@@ -128,23 +115,6 @@ background-repeat: no-repeat;
 background-size: 20px;
 display: inline-block;
 min-width: 265px;
-}
-
-.disclosure--btn {
-border-radius: 5px;
-margin: 4px 0;
-
-  &[aria-expanded="true"] {
-  background-color: lightslategray;
-  }
-
-}
-
-.disclosure--content {
-border: 1px #cccccc solid;
-border-radius: 5px;
-margin: 4px 0;
-padding: 0 1em;
 }
 
 .extension-active {

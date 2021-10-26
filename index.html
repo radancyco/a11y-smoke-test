@@ -1,13 +1,14 @@
 ---
 id: home
 meta: true
+id: a11y-smoke-test
 script: true
 title: Accessibility Smoke Test
 ---
 
 <h1 class="heading-small">{{ page.title }} {{ site.version }}</h1>
 
-<button class="disclosure--btn" data-disclosure-icon>Page Validation</button>
+<button class="disclosure--btn" data-disclosure-icon>Validation Tools</button>
 
 <div class="disclosure--content">
 
@@ -23,27 +24,31 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a></li>
-      <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
 
-        <h3>Advanced (Dev Only)</h3>
+        <details>
 
-        <ul>
-          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
+          <summary>Advanced (Dev Only)</summary>
 
-            - <span>Runs validation on entire DOM (Document Object Model), including script generated content.</span>
+          <ul>
+            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-          </li>
-          <li>
+              - <span>Runs validation on entire DOM (Document Object Model), including script generated content.</span>
 
-            <button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
+            </li>
+            <li>
 
-            - <span>Not all errors may affect accessibility. Run on W3C Validator <em>results page</em> to remove non-WCAG issues.</span>
+              <button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
 
-          </li>
-        </ul>
+              - <span>Not all errors may affect accessibility. Run on W3C Validator <em>results page</em> to remove non-WCAG issues.</span>
+
+            </li>
+          </ul>
+
+        </details>
 
       </li>
+      <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a></li>
     </ul>
 
     <h2>Validate HTML by Direct Input</h2>
@@ -56,7 +61,7 @@ title: Accessibility Smoke Test
 
       <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="10"></textarea>
 
-      <button class="btn" id="submitValidate">Submit</button>
+      <button class="btn" id="submitValidate">Validate</button>
 
     </form>
 
@@ -65,6 +70,12 @@ title: Accessibility Smoke Test
     <ul>
       <li><button data-script="contrast" data-fragment="color-contrast">Validate Contrast</button>
       <li><button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
+    </ul>
+
+    <h2>Validate Animation</h2>
+
+    <ul>
+      <li><a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a></li>
     </ul>
 
     <h2>PDF Validation</h2>
@@ -99,677 +110,20 @@ title: Accessibility Smoke Test
 
 </div>
 
-<button class="disclosure--btn" data-disclosure-icon>Best Practices</button>
-
-<div class="disclosure--content">
-
-  <p>The following issues may not specifically fall under WCAG, but are considered industry-wide best practice and strongly suggested.</p>
-
-  <p><b>Who is responsible?</b> Everybody</p>
-
-  <h2>Accessibility Overlays</h2>
-
-  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
-
-  <ul>
-    <li><a href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
-    <li><a href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
-  </ul>
-
-  <h2>Carousels</h2>
-
-  <p>Radancy UI/UX strongly discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
-
-  <p><strong>Important:</strong> Slick is popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>.</p>
-
-  <h2>New Windows</h2>
-
-  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
-
-  <ul>
-    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
-    <li><b>Trust Users</b> -  Let your users decide if opening a new window is the best course of action.</li>
-    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
-    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent tabnabbing and improve page load between parent and child windows.</li>
-  </ul>
-
-  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.1.1: Non-text Content (Alternative Text) (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Provide text alternatives for non-text content. Typically, this involves multimedia (audio, images, video), and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
-
-  <p><b>Who is responsible?</b> Designer, Developer, Copywriter, Content Producers</p>
-
-  <h3>Images</h3>
-
-  <h4>Know the Difference</h4>
-
-  <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
-
-  <ul>
-    <li><strong>Decorative:</strong> Images of an unimportant nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
-    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, without these images, then an alternative text value is required.</li>
-  </ul>
-
-  <h4>Basic Rules</h4>
-
-  <ol>
-    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt".</li>
-    <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value.</li>
-    <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
-    <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
-    <li>If image is purely decorative, then it requires no alternative text value.</li>
-    <li>If image is contained within an interactive element (e.g., a hyperlink or button), then it <em>must</em> contain <em>functional</em> alternative text. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code>.</li>
-    <li>If image within interactive element also contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
-    <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-    <li>If image is deemed informative and is found to be a background image, alternative techniques should be taken to ensure that this information is conveyed to AT users. For example, instead of using CSS to implement an image, use an inline image instead.</li>
-  </ol>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Review images and ensure that the aforementioned rules are met. You can run the following tests to review page images in more depth:</p>
-
-    <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/images.js">Check Alternative Text</button></li>
-      <li><a class="validate-images new-tab" href="images.html">Review All Page Images</a></li>
-    </ul>
-
-  </div>
-
-  <div class="a11y-info">
-
-    <h2>Accessibility Tip</h2>
-
-    <p>Alternative text should be written in a descriptive, yet succinct manner. Think of how you might describe an image to a friend who is blind. For example:</p>
-
-    <figure>
-
-      <img alt="" height="289" loading="lazy" src="img/example-alt.jpg" width="504">
-
-      <figcaption>A little boy sitting on his mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
-
-    </figure>
-
-    <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. <em>Websites are for people; not machines.</em></p>
-
-  </div>
-
-  <h3>Components and Multimedia</h3>
-
-  <h4>Basic Rules</h4>
-
-  <ol>
-    <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you might need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
-    <li>Form inputs have associated text labels. Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
-    <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." title="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
-  </ol>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Review page components and ensure that the aforementioned rules are met. You can run the following tests to review components in more depth:</p>
-
-    <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
-    </ul>
-
-  </div>
-
-  <div class="resource-info">
-
-    <h2>Resources</h2>
-
-    <ul>
-      <li>Not sure if an image should contain alternative text? Check out <a class="new-tab" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt Decision Tree</a></li>
-      <li><a class="new-tab" href="https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/">Your Image Is Probably Not Decorative</a></li>
-      <li><a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">The Anatomy of Accessible Forms: The Problem with Placeholders</a></li>
-      <li><a class="new-tab" href="https://www.nngroup.com/articles/form-design-placeholders/">Placeholders in Form Fields Are Harmful</a></li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.2.2: Captions (Prerecorded) (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Provide captions for videos with audio	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded">Understanding 1.2.2</a></p>
-
-  <p><b>Who is responsible?</b> Everybody</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Video on a page should be manually reviewed. If the video includes dialogue or important information, then it must contain captions <!-- and/or an audio description -->.</li>
-      <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
-    </ul>
-
-    <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity and <strong>strongly</strong> encouraged. Including them would pass <a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded">1.2.1 Prerecorded Audio-only and Video-only</a>, which is not currently included in our baselines, but will be eventually.</p>
-
-  </div>
-
-  <div class="resource-info">
-
-    <h2>Resources</h2>
-
-    <ul>
-      <li><a class="new-tab" href="https://meryl.net/captioned-videos-complete-guide/">The Complete Guide to Captioned Videos by Meryl Evans</a></li>
-      <li><a class="new-tab" href="https://www.w3.org/WAI/media/av/">Making Audio and Video Media Accessible</a></li>
-      <li><a class="new-tab" href="https://www.3playmedia.com/blog/add-audio-description-videos/">How to Add Audio Description by Jaclyn Leduc</a></li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.3.1: Info and Relationships (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Semantic markup is used appropriately. Logical structure, etc.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships">Understanding 1.3.1</a></p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>In addition to validating your page, HTML should be structured and labeled accordingly, so that is makes sense to everybody. Some of the tests below will offer deeper insight into the implementation of the page markup.</p>
-
-    <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
-      <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are page landmarks being used? Do they have an accessible name? Are there too many page landmarks?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page shifts into a different language.</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Is the markup correct and nested properly?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they used for layout purposes?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances, like providing an accessible name to an <code>iframe</code>.</li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.1: Use of Color (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Don't use presentation that relies solely on color. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color">Understanding 1.4.1</a></p>
-
-  <p><b>Who is responsible?</b> Designer, Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Manually ensure that color is not used as the sole method of conveying content or distinguishing visual elements. For example, saying "Please correct all text highlighted in red", would be a failure.</li>
-      <li>For better usability, links should be <strong>underlined by default</strong>. Otherwise, link text must:
-
-        <ol>
-          <li>Have a 3:1 contrast ratio with surrounding body text, and must present a visual indicator (typically an underline) when hovering over or receiving focus.</li>
-          <li>Both link and body text must have a 4.5:1 contrast ratio with the background (3:1 for large text).</li>
-          <li>Links in the header and footer are typically understood to be a link, so the above rules may not apply.</li>
-        </ol>
-
-        <button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
-
-      </li>
-    </ul>
-
-    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with your team and added to your report.</p>
-
-    {% include color-blindness.html %}
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.3: Contrast (Minimum) (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Contrast ratio between text and background is at least <strong>4.5:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">Understanding 1.4.3</a></p>
-
-  <p><b>Who is responsible?</b> Designer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Review page and test any <strong>text</strong> or <strong>images of text</strong> that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
-
-    <ul>
-      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
-      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-    </ul>
-
-    <p>This rule does not apply to the following:</p>
-
-    <ul>
-      <li><strong>Large Text:</strong> Large text and images of large text have a contrast ratio of at least 3:1. <strong>Note:</strong> In WCAG, points are often referred to as the unit of measure in determining the size between regular and large text. However, pixels are much more common on the web. 18pt maps to 24px and 14pt to approximately 18.67px. In CSS, bold text typically has <code>font-weight: bold</code>, or <code>font-weight: 700</code> or greater.</li>
-      <li><strong>Incidental:</strong> Text or images of text that are part of an inactive user interface component (i.e., disabled button), that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
-      <li><strong>Logotypes:</strong> Text that is part of a logo or brand name has no contrast requirement.</li>
-    </ul>
-
-    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with DPM or added to your report.</p>
-
-    {% include color-blindness.html %}
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.4: Resize Text (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Text can be resized to 200% without loss of content or function.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">Understanding 1.4.4</a></p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable and usable.</li>
-      <li>Page zoom should never be intentionally disabled. If the page cannot be zoomed in on at all, it is failure.</li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>1.4.11: Non-text Contrast (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Ensure <em>important</em> visual components, such as images, icons, and buttons, have a contrast ratio of at least <strong>3:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast">Understanding 1.4.11</a></p>
-
-  <p><b>Who is responsible?</b> Designer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Ensure that the visual presentation of the following have a contrast ratio of at least <strong>3:1</strong> against adjacent color(s):</p>
-
-    <ul>
-      <li><strong>User Interface (UI) Components:</strong> Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the browser.</li>
-      <li><strong>Graphical Objects:</strong> Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.</li>
-    </ul>
-
-    <p>Review page and test any UI components or images that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
-
-    <ul>
-      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
-      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-    </ul>
-
-    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with DPM or added to your report.</p>
-
-    {% include color-blindness.html %}
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.1.1: Keyboard (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Accessible by keyboard only.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard">Understanding 2.1.1</a></p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Using your <kbd>Tab</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
-      <li>Anything that receives focus must have an accessible name.</li>
-      <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
-      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
-      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
-      <li>Non-interactive elements, such as a <code>div</code>, should not receive keyboard focus while tabbing.</li>
-    </ul>
-
-    <p><strong>Note:</strong> If focus outlines have been suppressed (which is also a failure), you can <button data-script="https://rawgit.com/pauljadam/bookmarklets/master/focus.js">force focus</button> on the page to see where you are navigating.</p>
-
-  </div>
-
-  <div class="a11y-info">
-
-    <h2>Accessibility Tip</h2>
-
-    <p><em>Buttons do things; hyperlinks take us places.</em></p>
-
-    <p>The difference between using a hyperlink and a button can have a very big impact on accessibility. By using the correct element for the job, we can set the right expectation for AT users and make our code much easier to write. Be sure to read <a class="new-tab" href="https://michaelspellacy.com/pushing-buttons/">Pushing Buttons</a> for more details on why this distinction is critical.</p>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.2.2: Pause, Stop, Hide (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Provide user controls for moving content. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide">Understanding 2.2.2</a></p>
-
-  <p><b>Who is responsible?</b> Designer, Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure.</li>
-    </ul>
-
-  </div>
-
-  <div class="a11y-info">
-
-    <h2>Accessibility Tip</h2>
-
-    <p>Unless there is continuous movement, subtle web (a.k.a micro) animations are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work to avoid creating an unpleasant experience for those who may find animation problematic.</p>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.3.1: Three Flashes or Below Threshold (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>No content flashes more than three times per second.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold">Understanding 2.3.1</a></p>
-
-  <p><b>Who is responsible?</b> Designer, Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that an element on a page may be harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test.</li>
-    </ul>
-
-    <p><strong>Note:</strong> Any failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.4.1: Bypass Blocks (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Provide a 'Skip to Content' link. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks">Understanding 2.4.1</a></p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Areas of a web page that may be cumbersome to navigate through via keyboard or assistive technology, must provide a mechanism to skip over that content. These "Skip" links should be available to <em>all</em> users when needed and not obscure other content on the page when visible. You will often find these links placed before a websites primary navigation, but they can be useful elsewhere. If it takes you a long time to tab through a certain portion of the interface, then this may be a good indication that a skip link is necessary.</li>
-    </ul>
-
-    <figure>
-
-      <img alt="Screen grab of a website, with a 'Skip to Main Content' hyperlink." height="104" loading="lazy" src="img/example-skip-link.jpg" width="506">
-
-      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanism to be present for all user types.</figcaption>
-
-    </figure>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.4.2: Page Titled (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Use helpful and clear page titles.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/page-titled">Understanding 2.4.2</a></p>
-
-  <p><b>Who is responsible?</b> SEO, Copywriter, Content Creators</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Ensure that all pages have a title and that it is useful and adequately describes the page at hand:</p>
-
-    <ul>
-      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialog will appear.)</li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.4.3: Focus Order (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>The navigation order of links, form elements, etc. is logical and intuitive.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">Understanding 2.4.3</a></p>
-
-  <p><b>Who is responsible?</b> Developer, Designer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Navigate through the page using the <kbd>Tab</kbd> key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considered a failure. You can view the focus order with the following tool:
-
-        <ul>
-          <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
-        </ul>
-
-      </li>
-      <li>An interactive element with a tabindex other than 0 will interfere with a pages natural tab order and should be considered a failure. A tabindex with -1 will not interfere with tabbing. You can view tabindexs with the following tool:
-
-        <ul>
-          <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tabindex.js">View Tabindexs</button></li>
-        </ul>
-
-      </li>
-    </ul>
-
-    <p><strong>Note:</strong> If focus outlines have been suppressed (which is also a failure), you can <button data-script="https://rawgit.com/pauljadam/bookmarklets/master/focus.js">force focus</button> on the page to see where you are navigating.</p>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>2.4.7: Focus Visible (Level AA)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must then meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
-
-  <p><b>Who is responsible?</b> Developer, Designer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <ul>
-      <li>Using your <kbd>Tab</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
-      <li>Again, any redesigned focus state must meet a <strong>3:1</strong> contrast ratio. You can run <button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button> to test your foreground and background color of the alternative outline or state.</li>
-      <li>Non-interactive elements should not contain a focus state. The only exception to this rule is if the non-interactive element is accepting temporary focus via <code>tabindex="-1"</code>.</li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>4.1.1: Parsing (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>No major code errors. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">Understanding 4.1.1</a></p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>Validate the page and address or report any major code errors you may discover. Warnings may be omitted, but should be addressed as time permits.</p>
-
-    <ul>
-      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
-
-        <h3>Advanced (Dev Only)</h3>
-
-        <ul>
-          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
-          <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
-        </ul>
-
-      </li>
-    </ul>
-
-  </div>
-
-</div>
-
-<button class="disclosure--btn" data-disclosure-icon>4.1.2: Name, Role, Value (Level A)</button>
-
-<div class="disclosure--content">
-
-  <h2>Overview</h2>
-
-  <p>Build all elements for accessibility. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value">Understanding 4.1.2</a></p>
-
-  <p>Ensure that each element has an accessible name, role, value, state and property which can be properly conveyed to AT users. Using the correct HTML is the first step in creating a more robust UI. For example, one should not use a <code>div</code> element to create a button, but a <code>button</code> element instead! Using the right elements for the job has built in advantages that help convey additional information that allow disabled users to better understrand the component they are engaging with.</p>
-
-  <p><b>Who is responsible?</b> Developer</p>
-
-  <div class="qa-info">
-
-    <h2>Testing</h2>
-
-    <p>The usual suite of tests can be run to take a deep into the code.</p>
-
-    <ul>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - Is ARIA being implemented on the page? Is it used correctly? Do accessible names and descriptions make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - Is form markup correct? Is labeling present and correctly associated with its input field?</li>
-      <li><a class="validate-heading new-tab" href="heading.html">Headings</a> - Does the page have headings? Are they ordered and nested properly?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - Do <code>iframe</code>'s have an accessible name? Does the name make sense?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/landmarks.js">Landmarks</button> - Are page landmarks being used? Do they have an accessible name? Are there too many page landmarks?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lang.js">Language Attributes</button> - Does the page contain a <code>lang</code> attribute on the <code>html</code> element? Is the page multilingual? If so, additional <code>lang</code> attributes should be included where the page shifts into a different language.</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/lists.js">Lists</button> - Are lists present? Is the markup correct and nested properly?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tables.js">Tables</button> - Are tables present? Are they used for layout purposes?</li>
-      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/title.js">Title Attributes</button> - Is the <code>title</code> attribute present? This attribute should only be used in the rarest of circumstances, like providing an accessible name to an <code>iframe</code>.</li>
-    </ul>
-
-    <h3>Validation</h3>
-
-    <ul>
-      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
-
-        <h3>Advanced (Dev Only)</h3>
-
-        <ul>
-          <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
-          <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
-        </ul>
-
-      </li>
-    </ul>
-
-  </div>
-
-</div>
+{% include baselines.html %}
 
 <button class="disclosure--btn" data-disclosure-icon>Other Tools</button>
 
 <div class="disclosure--content">
 
-  <h2>Browser Plugins</h2>
+  <h2>Additional Browser Extensions</h2>
 
   <p>More advanced automated testing can be performed with the following tools:</p>
 
   <ul>
     <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
-    <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimantal, open console to see results)</li>
+    <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimental, open console to see results)</li>
     <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
-  </ul>
-
-  <h2>Screen Readers</h2>
-
-  <p>Good testers listen to and engage with an interface via assistive technology.</p>
-
-  <ul>
-    <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
-
-      <ul>
-        <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
-      </ul>
-
-    </li>
-    <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
-
-      <ul>
-        <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
-      </ul>
-
-    </li>
-    <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
-    <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
   </ul>
 
   <h2>Advanced Testing</h2>
@@ -802,6 +156,29 @@ title: Accessibility Smoke Test
         </ul>
 
     </li>
+  </ul>
+
+  <h2>Screen Readers</h2>
+
+  <p>Good testers listen to and engage with an interface via assistive technology.</p>
+
+  <ul>
+    <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
+
+      <ul>
+        <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
+      </ul>
+
+    </li>
+    <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
+
+      <ul>
+        <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
+      </ul>
+
+    </li>
+    <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
+    <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
   </ul>
 
 </div>

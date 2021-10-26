@@ -1,0 +1,744 @@
+
+<button class="disclosure--btn" data-disclosure-icon id="non-text-content-images">1.1.1: Non-text Content (Alternative Text, Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Provide text alternatives for non-text content, such as images. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
+
+  <p><b>Who is responsible?</b> Designer, Copywriter, Content Producers, Developer</p>
+
+  <h3>Images</h3>
+
+  <h4>Know the Difference</h4>
+
+  <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
+
+  <ul>
+    <li><strong>Decorative:</strong> Images of an unimportant nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
+    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, without these images, then an alternative text value is required.</li>
+  </ul>
+
+  <h4>Basic Rules</h4>
+
+  <ol>
+    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt". Images with a null alt are ignored by assistive technology.</li>
+    <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value.</li>
+    <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
+    <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
+    <li>If image is purely decorative, then it requires no alternative text value.</li>
+    <li>If image is contained within an interactive element (e.g., a hyperlink or button), then it <em>must</em> contain alternative text. More often than not, the value should be more <em>functional</em> in nature. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code></li>
+    <li>If image within interactive element also contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
+    <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
+    <li>If image is deemed informative and is found to be a background image, alternative techniques should be taken to ensure that this information is conveyed to AT users. For example: <code>&lt;div aria-label="Two colleagues working on a PowerPoint presentation." class="hero-banner" role="img"&gt;&lt;div&gt;</code></li>
+  </ol>
+
+  <p><strong>Note:</strong> SVG's are another matter entirely and will be covered here soon. For now, please read <a class="new-tab" href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html#testing-the-svg-element">Contextually Marking up accessible images and SVGs</a>.</p>
+
+  <div class="a11y-info">
+
+    <h2>Accessibility Tip</h2>
+
+    <p>Alternative text should be written in a descriptive, yet succinct manner. Think of how you might describe an image to a friend who is blind. For example:</p>
+
+    <figure>
+
+      <img alt="" height="289" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-alt.jpg" width="504">
+
+      <figcaption>A little boy sitting on his mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
+
+    </figure>
+
+    <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. <em>Websites are for people; not machines.</em></p>
+
+  </div>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Review images and ensure that the aforementioned rules are met.
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    You can run the following tests to review page images in more depth:</p>
+
+    <ul>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/images.js">Check Alternative Text</button></li>
+      <li><a class="validate-images new-tab" href="images.html">Review All Page Images</a></li>
+    </ul>
+
+    {% endif %}
+
+  </div>
+
+  <div class="resource-info">
+
+    <h2>Resources</h2>
+
+    <ul>
+      <li>Not sure if an image should contain alternative text? Check out <a class="new-tab" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt Decision Tree</a></li>
+      <li><a class="new-tab" href="https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/">Your Image Is Probably Not Decorative</a></li>
+      <li><a class="new-tab" href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html">Contextually Marking up accessible images and SVGs</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="non-text-content-components-multimedia">1.1.1: Non-text Content (Components and Multimedia, Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Provide text alternatives for non-text content, such as multimedia (audio, images, video) and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
+
+  <p><b>Who is responsible?</b> Designer, Copywriter, Content Producers, Developer</p>
+
+  <h3>Components and Multimedia</h3>
+
+  <h4>Basic Rules</h4>
+
+  <ol>
+    <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you will need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
+    <li>Form inputs have associated text labels. <strong>Note:</strong> Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
+    <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." aria-label="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
+    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame accurately. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
+  </ol>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Review page components and ensure that the aforementioned rules are met. Here are some important things to be on the lookout for during review:</p>
+
+    <ul>
+      <li>Are <code>label</code> elements associated with specific form controls? Is the <code>label</code> element being hidden with <code>display: none</code>? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/forms.js>View Forms</button>{% endif %}</li>
+      <li>Are <code>iframe</code> and multimedia elements, like <code>audio</code> and <code>video</code> properly labeled? {% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">View Iframes</button>, <button data-script=https://rawgit.com/pauljadam/bookmarklets/master/title.js>View Title Attributes</button>{% endif %}</li>
+      <li>Is ARIA being used to provide a name for user interface controls? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/aria.js>View ARIA</button>{% endif %}</li>
+    </ul>
+
+  </div>
+
+  <div class="resource-info">
+
+    <h2>Resources</h2>
+
+    <ul>
+      <li><a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">The Anatomy of Accessible Forms: The Problem with Placeholders</a></li>
+      <li><a class="new-tab" href="https://www.nngroup.com/articles/form-design-placeholders/">Placeholders in Form Fields Are Harmful</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="captions-pre-recorded">1.2.2: Captions (Prerecorded) (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Provide captions for videos with audio	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded">Understanding 1.2.2</a></p>
+
+  <p><b>Who is responsible?</b> Digital Project Manager, Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Video on a page should be manually reviewed. If the video includes dialogue or important information, then it must contain captions <!-- and/or an audio description -->.</li>
+      <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
+    </ul>
+
+    <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity and <strong>strongly</strong> encouraged. Including them would pass <a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded">1.2.1 Prerecorded Audio-only and Video-only</a>, which is not currently included in our baselines, but will be eventually.</p>
+
+  </div>
+
+  <div class="resource-info">
+
+    <h2>Resources</h2>
+
+    <ul>
+      <li><a class="new-tab" href="https://meryl.net/captioned-videos-complete-guide/">The Complete Guide to Captioned Videos by Meryl Evans</a></li>
+      <li><a class="new-tab" href="https://www.w3.org/WAI/media/av/">Making Audio and Video Media Accessible</a></li>
+      <li><a class="new-tab" href="https://www.3playmedia.com/blog/add-audio-description-videos/">How to Add Audio Description by Jaclyn Leduc</a></li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="info-and-relationships">1.3.1: Info and Relationships (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Semantic markup is used appropriately. Logical structure, etc.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships">Understanding 1.3.1</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>HTML should be structured and labeled accordingly, so that the page makes visual <em>and structural</em> sense to everybody. Here are some important things to be on the lookout for during review:</p>
+
+    <ul>
+      <li>Is semantic markup being used to convey proper structure and meaning to assistive technology users? {% if page.id == "a11y-smoke-test" %}<a class="validate-html new-tab" href=https://validator.w3.org/>Validate Markup</a>{% endif %}</li>
+      <li>Are headings (<code>h1</code>-<code>h6</code>) being used properly to identify content hierarchy? Are any empty headings present? {% if page.id == "a11y-smoke-test" %}<a class="validate-heading new-tab" href="heading.html">Validate Headings</a>{% endif %}</li>
+      <li>Are lists being marked up and implemented correctly? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/lists.js>View Lists</button>{% endif %}</li>
+      <li>Are <code>label</code> elements associated with specific form controls? Is the <code>label</code> element being hidden with <code>display: none</code>? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/forms.js>View Forms</button>{% endif %}</li>
+      <li>Are <code>iframe</code> and multimedia elements, like <code>audio</code> and <code>video</code> properly labeled? {% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">View Iframes</button>, <button data-script=https://rawgit.com/pauljadam/bookmarklets/master/title.js>View Title Attributes</button>{% endif %}</li>
+      <li>Is <code>table</code> markup being used to implement tabular data only? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/tables.js>View Tables</button>{% endif %}</li>
+      <li>Does the page identify its language properly via the <code>lang</code>? Are shifts to other languages present within the page? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/lang.js>View Language</button>{% endif %}</li>
+      <li>Is ARIA being used to properly identify landmarks and regions of a page? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/aria.js>View ARIA</button>{% endif %}</li>
+      <li>Is ARIA being used to provide a name for user interface controls? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/aria.js>View ARIA</button>{% endif %}</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="use-of-color">1.4.1: Use of Color (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Don't use presentation that relies solely on color. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/use-of-color">Understanding 1.4.1</a></p>
+
+  <p><b>Who is responsible?</b> Designer, Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Manually ensure that color is not used as the sole method of conveying content or distinguishing visual elements. For example, saying "Please correct all text highlighted in red", would be a failure.</li>
+      <li>For better usability, links should be <strong>underlined by default</strong>. Otherwise, link text must:
+
+        <ol>
+          <li>Have a 3:1 contrast ratio with surrounding body text, and must present a visual indicator (typically an underline) when hovering over or receiving focus.</li>
+          <li>Both link and body text must have a 4.5:1 contrast ratio with the background (3:1 for large text).</li>
+          <li>Links in the header and footer are typically understood to be a link, so the above rules may not apply.</li>
+        </ol>
+
+        {% if page.id == "a11y-smoke-test" %}
+
+        <button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
+
+        {% endif %}
+
+      </li>
+    </ul>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with DPM (Digital Project Manager) and added to your report.</p>
+
+    {% include color-blindness.html %}
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="contrast-minimum">1.4.3: Contrast (Minimum) (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Contrast ratio between text and background is at least <strong>4.5:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum">Understanding 1.4.3</a></p>
+
+  <p><b>Who is responsible?</b> Designer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Review page and test any <strong>text</strong> or <strong>images of text</strong> that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
+      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+    </ul>
+
+    {% endif %}
+
+    <p>This rule does not apply to the following:</p>
+
+    <ul>
+      <li><strong>Large Text:</strong> Large text and images of large text have a contrast ratio of at least 3:1. <strong>Note:</strong> In WCAG, points are often referred to as the unit of measure in determining the size between regular and large text. However, pixels are much more common on the web. 18pt maps to 24px and 14pt to approximately 18.67px. In CSS, bold text typically has <code>font-weight: bold</code>, or <code>font-weight: 700</code> or greater.</li>
+      <li><strong>Incidental:</strong> Text or images of text that are part of an inactive user interface component (i.e., disabled button), that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
+      <li><strong>Logotypes:</strong> Text that is part of a logo or brand name has no contrast requirement.</li>
+    </ul>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with DPM and added to your report.</p>
+
+    {% include color-blindness.html %}
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="resize-text">1.4.4: Resize Text (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Text can be resized to 200% without loss of content or function.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">Understanding 1.4.4</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable and usable.</li>
+      <li>Page zoom should never be intentionally disabled. If the page cannot be zoomed in on at all, it is failure.</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="non-text-contrast">1.4.11: Non-text Contrast (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Ensure <em>important</em> visual components, such as images, icons, and buttons, have a contrast ratio of at least <strong>3:1</strong>. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast">Understanding 1.4.11</a></p>
+
+  <p><b>Who is responsible?</b> Designer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Ensure that the visual presentation of the following have a contrast ratio of at least <strong>3:1</strong> against adjacent color(s):</p>
+
+    <ul>
+      <li><strong>User Interface (UI) Components:</strong> Visual information required to identify user interface components and states, except for inactive components or where the appearance of the component is determined by the browser.</li>
+      <li><strong>Graphical Objects:</strong> Parts of graphics required to understand the content, except when a particular presentation of graphics is essential to the information being conveyed.</li>
+    </ul>
+
+    <p>Review page and test any UI components or images that you suspect may fail this guideline. Running the WAVE validator may also be helpful.</p>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <ul>
+      <li><button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button></li>
+      <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+    </ul>
+
+    <p>In addition to testing specific color contrast ratios, pages should always be reviewed under various color-blindness or low vision simulations. Any concerns should be flagged with DPM and added to your report.</p>
+
+    {% include color-blindness.html %}
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="keyboard">2.1.1: Keyboard (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Accessible by keyboard only.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/keyboard">Understanding 2.1.1</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Using your <kbd>Tab</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
+      <li>Anything that receives focus must have an accessible name.</li>
+      <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
+      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
+      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
+      <li>Non-interactive elements, such as a <code>div</code>, should not receive keyboard focus while tabbing.</li>
+    </ul>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <p><strong>Note:</strong> If focus outlines have been suppressed (which is also a failure), you can <button data-script="https://rawgit.com/pauljadam/bookmarklets/master/focus.js">force focus</button> on the page to see where you are navigating.</p>
+
+    {% endif %}
+
+  </div>
+
+  <div class="a11y-info">
+
+    <h2>Accessibility Tip</h2>
+
+    <p><em>Buttons do things; hyperlinks take us places.</em></p>
+
+    <p>The difference between using a hyperlink and a button can have a very big impact on accessibility. By using the correct element for the job, we can set the right expectation for AT users and make our code much easier to write. Be sure to read <a class="new-tab" href="https://michaelspellacy.com/pushing-buttons/">Pushing Buttons</a> for more details on why this distinction is critical.</p>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="pause-stop-hide">2.2.2: Pause, Stop, Hide (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Provide user controls for moving content. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/pause-stop-hide">Understanding 2.2.2</a></p>
+
+  <p><b>Who is responsible?</b> Designer, Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Manually check to see if the page contains automatically moving content, such as a carousel or video. If such features have no mechanism to pause them, then this is a failure.</li>
+    </ul>
+
+  </div>
+
+  <div class="a11y-info">
+
+    <h2>Accessibility Tip</h2>
+
+    <p>Unless there is continuous movement, subtle web (a.k.a micro) animations are typically exempt from this rule, but it is strongly recommended that development leverage <a class="new-tab" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion">prefers-reduced-motion</a> in their work to avoid creating an unpleasant experience for those who may find animation problematic.</p>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="three-flashes-or-below">2.3.1: Three Flashes or Below Threshold (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>No content flashes more than three times per second.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold">Understanding 2.3.1</a></p>
+
+  <p><b>Who is responsible?</b> Everybody</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that an element on a page may be harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test.</li>
+    </ul>
+
+    <p><strong>Note:</strong> Any failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="bypass-blocks">2.4.1: Bypass Blocks (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Provide a 'Skip to Content' link. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks">Understanding 2.4.1</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Areas of a web page that may be cumbersome to navigate through via keyboard or assistive technology, must provide a mechanism to skip over that content. These "Skip" links should be available to <em>all</em> users when needed and not obscure other content on the page when visible. You will often find these links placed before a websites primary navigation, but they can be useful elsewhere. If it takes you a long time to tab through a certain portion of the interface, then this may be a good indication that a skip link is necessary.</li>
+    </ul>
+
+    <figure>
+
+      <img alt="Screen grab of a website, with a 'Skip to Main Content' hyperlink." height="104" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-skip-link.jpg" width="506">
+
+      <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanism to be present for all user types.</figcaption>
+
+    </figure>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="page-titled">2.4.2: Page Titled (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Use helpful and clear page titles.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/page-titled">Understanding 2.4.2</a></p>
+
+  <p><b>Who is responsible?</b> SEO, Copywriter, Content Creators</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Ensure that all pages have a title and that it is useful and adequately describes the page at hand.</p>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <ul>
+      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialog will appear.)</li>
+    </ul>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon>2.4.3: Focus Order (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>The navigation order of links, form elements, etc. is logical and intuitive.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-order">Understanding 2.4.3</a></p>
+
+  <p><b>Who is responsible?</b> Developer, Designer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Navigate through the page using the <kbd>Tab</kbd> key on your keyboard, while being mindful of the focus order. Tab stops that are not in a fairly logical visual order should be considered a failure.
+
+        {% if page.id == "a11y-smoke-test" %}
+
+        You can view the focus order with the following tool:
+
+        <ul>
+          <li><button data-script="https://mraccess77.github.io/favlets/focusOrder.js">View Focus Order</button></li>
+        </ul>
+
+        {% endif %}
+
+      </li>
+      <li>An interactive element with a tabindex other than 0 will interfere with a pages natural tab order and should be considered a failure. A tabindex with -1 will not interfere with tabbing.
+
+        {% if page.id == "a11y-smoke-test" %}
+
+        You can view tabindexs with the following tool:
+
+        <ul>
+          <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/tabindex.js">View Tabindexs</button></li>
+        </ul>
+
+        {% endif %}
+
+      </li>
+    </ul>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <p><strong>Note:</strong> If focus outlines have been suppressed (which is also a failure), you can <button data-script="https://rawgit.com/pauljadam/bookmarklets/master/focus.js">force focus</button> on the page to see where you are navigating.</p>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="focus-visible">2.4.7: Focus Visible (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Ensure keyboard focus is visible and clear. Default focus outlines are a browser <em>feature</em> meant to aid those with low vision, and should <em>never</em> be removed without an adequate replacement. If default focus outlines are undesirable, they may be redesigned or an alternative focus state can be used. However, any redesigned outline or alternative focus state must then meet a <strong>3:1</strong> contrast ratio. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/focus-visible">Understanding 2.4.7</a></p>
+
+  <p><b>Who is responsible?</b> Developer, Designer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Using your <kbd>Tab</kbd> key, navigate through the page and review all focus states of interactive elements. If focus state is missing or an alternative and adequate focus state is not provided, then this is a failure.</li>
+      <li>Again, any redesigned focus state must meet a <strong>3:1</strong> contrast ratio.
+
+        {% if page.id == "a11y-smoke-test" %}
+
+        You can run <button data-script="contrast" data-fragment="color-contrast">Validate Color Contrast</button> to test your foreground and background color of the alternative outline or state.
+
+        {% endif %}
+
+      </li>
+      <li>Non-interactive elements should not contain a focus state. The only exception to this rule is if the non-interactive element is accepting temporary focus via <code>tabindex="-1"</code>.</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="focus-order">4.1.1: Parsing (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>No major code errors. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/parsing">Understanding 4.1.1</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <p>Validate the page and address or report any major code errors you may discover. Warnings may be omitted, but should be addressed as time permits.</p>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <ul>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
+
+        <details>
+
+          <summary>Advanced (Dev Only)</summary>
+
+          <ul>
+            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+            <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
+          </ul>
+
+        </details>
+
+      </li>
+    </ul>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="name-role-value">4.1.2: Name, Role, Value (Level A)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Build all elements for accessibility. <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/name-role-value">Understanding 4.1.2</a></p>
+
+  <p>Ensure that each element has an accessible name, role, value, state and property which can be properly conveyed to AT users. How an interface is conveyed to AT users is as equally important to how they are conveyed to users who do not rely on assistive technology to access the web. For example, if a screen reader user accesses a disclosure component, how might the fact that it is opened be conveyed to them? Is the correct state of the component, or any state at all, being presented in this scenario? Using semantic HTML along with properly implemented ARIA can assist us in creating an equal and accessible experience for everybody.</p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <p>The usual suite of tests can be run to take a deep dive into the code.</p>
+
+    {% else %}
+
+    <p>Be sure to ask yourself some of the following questions:</p>
+
+    {% endif %}
+
+    <ul>
+      <li>{% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/aria.js">ARIA</button> - {% endif %}Is ARIA being implemented on the page? Is it used correctly? Do accessible names, roles, values, states and properties make sense? Can HTML be used instead of a custom control?</li>
+      <li>{% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/forms.js">Forms</button> - {% endif %}Is form markup correct? Is labeling present and correctly associated with its input field?</li>
+      <li>{% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">Iframes</button> - {% endif %}Do <code>iframe</code>'s have an accessible name? Does that name describe the contents of the <code>iframe</code> adequately?</li>
+    </ul>
+
+    <h3>Validation</h3>
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <ul>
+      <li><a class="validate-html new-tab" href="https://validator.w3.org/">W3C Validation</a>
+
+        <details>
+
+          <summary>Advanced (Dev Only)</summary>
+
+          <ul>
+            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+            <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
+          </ul>
+
+        </details>
+
+      </li>
+    </ul>
+
+    {% else %}
+
+    <p>Be sure to validate your work.</p>
+
+    {% endif %}
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon>Best Practices</button>
+
+<div class="disclosure--content">
+
+  <p>The following issues may not specifically fall under WCAG, but are considered industry-wide best practice and strongly suggested.</p>
+
+  <p><b>Who is responsible?</b> Everybody</p>
+
+  <h2>Accessibility Overlays</h2>
+
+  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
+
+  <ul>
+    <li><a class="new-tab" href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
+    <li><a class="new-tab" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
+  </ul>
+
+  <h2>Carousels</h2>
+
+  <p>Radancy UI/UX discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+
+  <p><strong>Important:</strong> Slick is popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>, in new implementations.</p>
+
+  <h2>New Windows</h2>
+
+  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
+
+  <ul>
+    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
+    <li><b>Trust Users</b> - Let your users decide if opening a new window is the best course of action.</li>
+    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
+    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent "tabnabbing" and improve page load between parent and child windows.</li>
+  </ul>
+
+  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
+
+  <h2>Focus Outline</h2>
+
+  <p>Focus outlines are never to be removed from interactive elements without an acceptable replacement.
+
+</div>

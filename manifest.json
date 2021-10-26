@@ -17,6 +17,9 @@ layout: null
     "128": "img/icon-128.png"
   },
   "name": "{{ site.title }}",
+  "permissions": [
+    "activeTab"
+  ],
   "version": "{{ site.version }}",
   "browser_specific_settings": {
     "gecko": {
