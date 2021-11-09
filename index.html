@@ -1,5 +1,4 @@
 ---
-id: home
 meta: true
 id: a11y-smoke-test
 script: true
@@ -53,17 +52,23 @@ title: Accessibility Smoke Test
 
     <h2>Validate HTML by Direct Input</h2>
 
-    <form action="https://validator.w3.org/nu/?showsource=yes" enctype="multipart/form-data" id="submitPartialPage" method="post" target="_blank">
+    <details>
 
-      <input name="showsource" type="hidden" value="yes">
+      <summary>Show Form</summary>
 
-      <label for="contentToValidate">Enter the Markup to validate:</label>
+      <form action="https://validator.w3.org/nu/?showsource=yes" enctype="multipart/form-data" id="submitPartialPage" method="post" target="_blank">
 
-      <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="10"></textarea>
+        <input name="showsource" type="hidden" value="yes">
 
-      <button class="btn" id="submitValidate">Validate</button>
+        <label for="contentToValidate">Enter the Markup to validate:</label>
 
-    </form>
+        <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="5"></textarea>
+
+        <button class="btn" id="submitValidate">Validate</button>
+
+      </form>
+
+    </details>
 
     <h2>Validate Color</h2>
 
@@ -116,70 +121,82 @@ title: Accessibility Smoke Test
 
 <div class="disclosure--content">
 
-  <h2>Additional Browser Extensions</h2>
+  <details>
 
-  <p>More advanced automated testing can be performed with the following tools:</p>
+    <summary>Additional Browser Extensions</summary>
 
-  <ul>
-    <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
-    <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimental, open console to see results)</li>
-    <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
-  </ul>
+    <p>More advanced automated testing can be performed with the following tools:</p>
 
-  <h2>Advanced Testing</h2>
+    <ul>
+      <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
+      <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimental, open console to see results)</li>
+      <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
+    </ul>
 
-  <p>More advanced tools and resources for specialized accessibility testers.</p>
+  </details>
 
-  <ul>
-    <li><a class="new-tab" href="https://amp.levelaccess.net/login.php">Level Access AMP</a>
+  <details>
 
-        <h2>Access Assistant</h2>
+    <summary>Advanced Testing</summary>
 
-        <ul>
-          <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=chrome">Chrome Extension</a></li>
-          <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=firefox">Firefox Plugin</a></li>
-          <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=edge">Edge Extension (Beta)</a></li>
-          <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=ie">Internet Explorer 11 Plugin</a></li>
-        </ul>
+    <p>More advanced tools and resources for specialized accessibility testers.</p>
 
-        <h2>Continuum Explorer Pro</h2>
+    <ul>
+      <li><a class="new-tab" href="https://amp.levelaccess.net/login.php">Level Access AMP</a>
 
-        <ul>
-          <li><a class="new=tab" href="https://chrome.google.com/webstore/detail/continuum-explorer-pro/pgkgokkkoamjdmbnegbedepbhbgecplj?hl=en-US">Chrome Extension</a></li>
-        </ul>
+          <h2>Access Assistant</h2>
 
-        <h2>Accessible Color Tools</h2>
+          <ul>
+            <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=chrome">Chrome Extension</a></li>
+            <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=firefox">Firefox Plugin</a></li>
+            <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=edge">Edge Extension (Beta)</a></li>
+            <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=ie">Internet Explorer 11 Plugin</a></li>
+          </ul>
 
-        <ul>
-          <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/accessible-color-picker/bgfhbflmeekopanooidljpnmnljdihld">Accessible Color Picker for Chrome</a></li>
-          <li><a class="new-tab" href="https://www.levelaccess.com/reference/index.php/Color-Contrast-Checker">Color Contrast Checker</a></li>
-        </ul>
+          <h2>Continuum Explorer Pro</h2>
 
-    </li>
-  </ul>
+          <ul>
+            <li><a class="new=tab" href="https://chrome.google.com/webstore/detail/continuum-explorer-pro/pgkgokkkoamjdmbnegbedepbhbgecplj?hl=en-US">Chrome Extension</a></li>
+          </ul>
 
-  <h2>Screen Readers</h2>
+          <h2>Accessible Color Tools</h2>
 
-  <p>Good testers listen to and engage with an interface via assistive technology.</p>
+          <ul>
+            <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/accessible-color-picker/bgfhbflmeekopanooidljpnmnljdihld">Accessible Color Picker for Chrome</a></li>
+            <li><a class="new-tab" href="https://www.levelaccess.com/reference/index.php/Color-Contrast-Checker">Color Contrast Checker</a></li>
+          </ul>
 
-  <ul>
-    <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
-
-      <ul>
-        <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
+        </li>
       </ul>
 
-    </li>
-    <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
+    </details>
+
+    <details>
+
+      <summary>Screen Readers</summary>
+
+      <p>Accessibility testing is not complete until the work has been engaged with via a screen reader. Listening to your work is just as important as visual inspection.</p>
 
       <ul>
-        <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
+        <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
+
+          <ul>
+            <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
+          </ul>
+
+        </li>
+        <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
+
+          <ul>
+            <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
+          </ul>
+
+        </li>
+        <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
+        <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
       </ul>
 
-    </li>
-    <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
-    <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
-  </ul>
+    </details>
 
 </div>
 

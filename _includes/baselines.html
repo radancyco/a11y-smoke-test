@@ -11,48 +11,62 @@
 
   <h3>Images</h3>
 
-  <h4>Know the Difference</h4>
+  <details>
 
-  <p>Images fall into one of two categories: Decorative and Informative. It is very important to understand the difference between these two image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
+    <summary>Understanding Image Categories</summary>
 
-  <ul>
-    <li><strong>Decorative:</strong> Images of an unimportant nature. For example, icons or other visual embellishments. If a page can be understood without these images, then an alternative text value is not required.</li>
-    <li><strong>Informative:</strong> Images of an important nature. These are often images that provide <em>value</em> to the surrounding content. If a page can't be understood or <em>experienced</em> in a similar way to the visual experience, without these images, then an alternative text value is required.</li>
-  </ul>
+    <p>Images fall into one of three categories: Decorative, Informative and Functional. It is very important to understand the difference between these three image types in order to make a more informed decision on whether to include an alternative text value or not.</p>
 
-  <h4>Basic Rules</h4>
+    <ul>
+      <li><strong>Decorative:</strong> Images that add accent or embellish. If content on the page can be experienced and understood without these images, then an alternative text value is not required.</li>
+      <li><strong>Informative:</strong> Images that provide value to the surrounding content. If content on the page can't be experienced or understood without these images, or content is locked within image, then an alternative text value is required.</li>
+      <li><strong>Functional:</strong> Images that indicate action to be taken, rather than a description of the image. Functional images are found within interactive elements, such as hyperlinks or buttons.</li>
+    </ul>
 
-  <ol>
-    <li>All images require an alt <em>attribute</em>, whether they are informative or decorative. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt". Images with a null alt are ignored by assistive technology.</li>
-    <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value.</li>
-    <li>If image is meant to invoke a feeling or emotion, then it should contain an alternative text value.</li>
-    <li>If image contains text, then it must include an alternative text value. Typically verbatim, to match what is embedded in the image.</li>
-    <li>If image is purely decorative, then it requires no alternative text value.</li>
-    <li>If image is contained within an interactive element (e.g., a hyperlink or button), then it <em>must</em> contain alternative text. More often than not, the value should be more <em>functional</em> in nature. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code></li>
-    <li>If image within interactive element also contains text, then the previous rule can be ignored. For example: <code>&lt;a href="..."&gt;&lt;img alt="" src="..."&gt; &lt;span&gt;My Awesome Vacation&lt;/span&gt;&lt;/a&gt;</code></li>
-    <li>In all cases where an alternative text description is deemed necessary, avoid phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-    <li>If image is deemed informative and is found to be a background image, alternative techniques should be taken to ensure that this information is conveyed to AT users. For example: <code>&lt;div aria-label="Two colleagues working on a PowerPoint presentation." class="hero-banner" role="img"&gt;&lt;div&gt;</code></li>
-  </ol>
+  </details>
 
-  <p><strong>Note:</strong> SVG's are another matter entirely and will be covered here soon. For now, please read <a class="new-tab" href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html#testing-the-svg-element">Contextually Marking up accessible images and SVGs</a>.</p>
+  <details>
 
-  <div class="a11y-info">
+    <summary>The Rules</summary>
 
-    <h2>Accessibility Tip</h2>
+    <ol>
+      <li>All inline image elements require an alt attribute. For example: <code>&lt;img alt="" src="..."&gt;</code>. An image with an alt attribute that has no value, is known as a "null alt". Images with a null alt are ignored by assistive technology.</li>
+      <li>If image is informative or contextually important to surrounding content, then it must include an alternative text value. Some things to ask yourself about images:
 
-    <p>Alternative text should be written in a descriptive, yet succinct manner. Think of how you might describe an image to a friend who is blind. For example:</p>
+        <ul>
+          <li>Are they meant as labels?</li>
+          <li>Do they supplement or enhance surrounding content?</li>
+          <li>Are they meant to convey an impression or emotion?</li>
+        </ul>
 
-    <figure>
+      </li>
+      <li>If image contains complex information, then alternative methods of conveying this information will be required as alternative text may not suffice. For example, a graph or chart may require the information be marked-up in HTML and linked to, etc.</li>
+      <li>If image contains text, then it must include an alternative text value if same information not conveyed nearby. Typically verbatim, to match what is embedded in the image.</li>
+      <li>If image is purely decorative, then it requires no alternative text value.</li>
+      <li>If image is functional and contained within an interactive element (e.g., a hyperlink or button), then it must contain alternative text if no other functional text present within. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code></li>
+      <li>Avoid superfluous phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
+      <li>Background images are important if picture within is informative. To address: <code>&lt;div aria-label="..." class="hero-banner" role="img"&gt;&lt;div&gt;</code> or better, use an inline image.</li>
+    </ol>
 
-      <img alt="" height="289" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-alt.jpg" width="504">
+    <div class="a11y-info">
 
-      <figcaption>A little boy sitting on his mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
+      <h2>Accessibility Tip</h2>
 
-    </figure>
+      <p>Alternative text should be written in a descriptive, yet succinct manner. Think of how you might describe an image to a friend who is blind. For example:</p>
 
-    <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. <em>Websites are for people; not machines.</em></p>
+      <figure>
 
-  </div>
+        <img alt="" height="289" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-alt.jpg" width="504">
+
+        <figcaption>A little boy sitting on his mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
+
+      </figure>
+
+      <p><strong>Note:</strong> Unless it is relevant to the image, intentionally including keywords in alternative text descriptions, for the sole benefit of SEO (Search Engine Optimization), is strongly discouraged. <em>Websites are for people; not machines.</em></p>
+
+    </div>
+
+  </details>
 
   <div class="qa-info">
 
@@ -79,6 +93,7 @@
 
     <ul>
       <li>Not sure if an image should contain alternative text? Check out <a class="new-tab" href="https://www.w3.org/WAI/tutorials/images/decision-tree/">An alt Decision Tree</a></li>
+      <li><a class="new-tab" href="https://www.levelaccess.com/resources/quick-tips-writing-meaningful-alt-text-webinar-qa-resources/">Quick Tips for Writing Meaningful Alt Text Webinar</a></li>
       <li><a class="new-tab" href="https://www.smashingmagazine.com/2021/06/img-alt-attribute-alternate-description-decorative/">Your Image Is Probably Not Decorative</a></li>
       <li><a class="new-tab" href="https://www.scottohara.me/blog/2019/05/22/contextual-images-svgs-and-a11y.html">Contextually Marking up accessible images and SVGs</a></li>
     </ul>
@@ -99,14 +114,18 @@
 
   <h3>Components and Multimedia</h3>
 
-  <h4>Basic Rules</h4>
+  <details>
 
-  <ol>
-    <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you will need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
-    <li>Form inputs have associated text labels. <strong>Note:</strong> Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
-    <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." aria-label="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-    <li>Inline frames (iframe) are appropriately titled and describe contents of the frame accurately. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
-  </ol>
+    <summary>The Rules</summary>
+
+    <ol>
+      <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you will need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
+      <li>Form inputs have associated text labels. <strong>Note:</strong> Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
+      <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." aria-label="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
+      <li>Inline frames (iframe) are appropriately titled and describe contents of the frame accurately. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
+    </ol>
+
+  </details>
 
   <div class="qa-info">
 
@@ -150,8 +169,22 @@
     <h2>Testing</h2>
 
     <ul>
-      <li>Video on a page should be manually reviewed. If the video includes dialogue or important information, then it must contain captions <!-- and/or an audio description -->.</li>
+      <li>Video on a page should be manually reviewed. If the video includes spoken dialogue or important information, then it must contain captions <!-- and/or an audio description -->.</li>
       <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
+      <li>Some advanced issues to be on the lookout for include:
+
+        <ul>
+          <li>Caption synchronization. Viewers can tell when captions are out of sync without sound.</li>
+          <li>Caption length. This makes a difference in preventing cognitive overload.</li>
+          <li>Caption position. Bottom except for temporary movement to the top for on-screen text like credits.</li>
+          <li>Sound.</li>
+          <li>Credits. Viewers want to see both captions and credits or whatever is on-screen.</li>
+          <li>Voice changes.</li>
+          <li>Speaker identification</li>
+          <li>Flow / movement</li>
+        </ul>
+
+      </li>
     </ul>
 
     <p><strong>Note:</strong> While not a failure here, providing transcripts with video and audio content is becoming a necessity and <strong>strongly</strong> encouraged. Including them would pass <a href="https://www.w3.org/WAI/WCAG21/Understanding/audio-only-and-video-only-prerecorded">1.2.1 Prerecorded Audio-only and Video-only</a>, which is not currently included in our baselines, but will be eventually.</p>
@@ -445,10 +478,10 @@
     <h2>Testing</h2>
 
     <ul>
-      <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that an element on a page may be harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test.</li>
+      <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that any feature on a page is harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test for you.</li>
     </ul>
 
-    <p><strong>Note:</strong> Any failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
+    <p><strong>Important:</strong> Any suspect animation or failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
 
   </div>
 
@@ -709,36 +742,52 @@
 
   <p><b>Who is responsible?</b> Everybody</p>
 
-  <h2>Accessibility Overlays</h2>
+  <details>
 
-  <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
+    <summary>Accessibility Overlays</summary>
 
-  <ul>
-    <li><a class="new-tab" href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
-    <li><a class="new-tab" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
-  </ul>
+    <p>Use of accessibility overlays are <em>forbidden</em> on Radancy websites. More information can be found here:</p>
 
-  <h2>Carousels</h2>
+    <ul>
+      <li><a class="new-tab" href="https://shouldiuseanaccessibilityoverlay.com/">Should I Use An Accessibility Overlay?</a></li>
+      <li><a class="new-tab" href="https://overlayfactsheet.com/">Overlay Fact Sheet</a></li>
+    </ul>
 
-  <p>Radancy UI/UX discourages use of carousels and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+  </details>
 
-  <p><strong>Important:</strong> Slick is a popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>, in new implementations.</p>
+  <details>
 
-  <h2>New Windows</h2>
+    <summary>Carousels</summary>
 
-  <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
+    <p>Radancy UI/UX discourages use of carousels whenever possible and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
 
-  <ul>
-    <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
-    <li><b>Trust Users</b> - Let your users decide if opening a new window is the best course of action.</li>
-    <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
-    <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent "tabnabbing" and improve page load between parent and child windows.</li>
-  </ul>
+    <p><strong>Important:</strong> Slick is a popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>, in new implementations.</p>
 
-  <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
+  </details>
 
-  <h2>Focus Outline</h2>
+  <details>
 
-  <p>Focus outlines are never to be removed from interactive elements without an acceptable replacement.
+    <summary>New Windows</summary>
+
+    <p>Launching new windows should only occur in the rarest of circumstances and, if required, be approached with care and caution. Here are some points to consider:</p>
+
+    <ul>
+      <li><b>Ask Why</b> - One should have an excellent reason to spawn a new window. Opening new windows, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
+      <li><b>Trust Users</b> - Let your users decide if opening a new window is the best course of action.</li>
+      <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
+      <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent "tabnabbing" and improve page load between parent and child windows.</li>
+    </ul>
+
+    <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
+
+  </details>
+
+  <details>
+
+    <summary>Focus Outline</summary>
+
+    <p>Focus outlines are never to be removed from interactive elements without an acceptable replacement.</p>
+
+  </details>
 
 </div>
