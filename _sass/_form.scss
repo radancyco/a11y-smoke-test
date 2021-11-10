@@ -1,5 +1,6 @@
 form {
 margin: 0 0 1em !important;
+padding: 0 !important;
 
   fieldset {
   border: 0 !important;
@@ -29,19 +30,19 @@ margin: 0 0 1em !important;
     }
 
     input {
-    background-color: transparent;
-    border: 1px #ccc solid !important;
+    background-color: transparent !important;
+    border: 0 !important;
     height: 45px !important;
-    padding: 5px !important;;
+    padding: 0 !important;
     }
 
-    input[type="color"]::-webkit-color-swatch-wrapper {
+    /* input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0 !important;
     }
 
     input[type="color"]::-webkit-color-swatch {
     border: 0 !important;
-    }
+  } */
 
     .btn {
     background-color: #ffcc36 !important;
