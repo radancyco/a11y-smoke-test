@@ -160,6 +160,10 @@ width: 40px;
     color: $highlight-color;
     }
 
+    #permalink:empty {
+    display: none;
+    }
+
     h2, ol, .failure, .details, .stats {
     display: none;
     }
