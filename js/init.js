@@ -380,15 +380,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let permaLink = document.createElement("a");
         permaLink.classList.add("new-tab");
 
-        if (bodyID === "images") {
+
 
           permaLink.setAttribute("href", "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest + "#imagereport");
 
-        } else {
 
-          permaLink.setAttribute("href", "https://validator.w3.org/nu/?showoutline=yes&doc=" + pageTest + "#headingoutline");
-
-        }
 
         permaLinkText = document.createTextNode("Permalink");
         permaLink.appendChild(permaLinkText);
