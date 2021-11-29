@@ -160,11 +160,7 @@ width: 40px;
     color: $highlight-color;
     }
 
-    #permalink:empty {
-    display: none;
-    }
-
-    h2, ol, .failure, .details, .stats {
+    h2, ol, .failure, .details, .stats, .success, #permalink:empty {
     display: none;
     }
 
@@ -190,7 +186,8 @@ width: 40px;
     }
 
     td {
-    background-color: #ccc;
+    background-color: #777;
+    color: #fff;
     }
 
     .headinglevel, .missingheadinglevel {
