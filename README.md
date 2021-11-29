@@ -75,7 +75,11 @@ Review details of current page structure.
 
 ## Release Notes
 
-### 1.0.3 (Upcoming Build)
+### 1.0.4 (Upcoming Build)
+
+* Permalinks in Heading & Image validation. 
+
+### 1.0.3 (Official Build)
 
 * Added new test rule for 1.4.4: Resize Text. Zoom disabling is a failure.
 * Added new section for best practices. Covering Overlays, Carousels, and New Windows.  
@@ -83,7 +87,7 @@ Review details of current page structure.
 * Added "Who is Responsible?" to help facilitate certain tasks.
 * Added note to Best Practices regarding [Accessible Slick](https://accessible360.github.io/accessible-slick)
 
-### 1.0.2 (Official Build)
+### 1.0.2
 
 * Color blindness simulation fixed on Firefox.
 

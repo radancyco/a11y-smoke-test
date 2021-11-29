@@ -342,12 +342,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (bodyID === "images") {
 
       var pageElementHref = "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest;
-      var permaDirectURL = "https://validator.w3.org/nu/?showsource=no&showimagereport=yes&doc=" + pageTest + "#imagereport";
+      var permaDirectURL = "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest + "#imagereport";
 
     } else {
 
       var pageElementHref = "https://validator.w3.org/nu/?showoutline=yes&doc=" + pageTest;
-      var permaDirectURL = "https://validator.w3.org/nu/?showsource=no&showoutline=yes&doc=" + pageTest + "#headingoutline";
+      var permaDirectURL = "https://validator.w3.org/nu/?showoutline=yes&doc=" + pageTest + "#headingoutline";
 
     }
 
