@@ -342,10 +342,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (bodyID === "images") {
 
       var pageElementHref = "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest;
+      var permaDirectURL = "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest + "#imagereport";
 
     } else {
 
       var pageElementHref = "https://validator.w3.org/nu/?showoutline=yes&doc=" + pageTest;
+      var permaDirectURL = "https://validator.w3.org/nu/?showoutline=yes&doc=" + pageTest + "#headingoutline";
 
     }
 
@@ -379,13 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let permaElement = document.getElementById("permalink");
         let permaLink = document.createElement("a");
         permaLink.classList.add("new-tab");
-
-
-
-          permaLink.setAttribute("href", "https://validator.w3.org/nu/?showimagereport=yes&doc=" + pageTest + "#imagereport");
-
-
-
+        permaLink.setAttribute("href", permaDirectURL);
         permaLinkText = document.createTextNode("Permalink");
         permaLink.appendChild(permaLinkText);
         permaElement.appendChild(permaLink);
