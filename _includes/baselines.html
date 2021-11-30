@@ -409,8 +409,8 @@
       <li>Using your <kbd>Tab</kbd> key, navigate through the page and engage with interactive components. Anything that can be used with a pointing device, such as a mouse, must be equally usable via keyboard.</li>
       <li>Anything that receives focus must have an accessible name.</li>
       <li>Ensure that interactive components on the page work when accessed with <kbd>Enter</kbd> key. Buttons will be expected to work with both the <kbd>Enter</kbd> and <kbd>Spacebar</kbd> keys.</li>
-      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal window is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
-      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal windows, in other scenarios it could be an indication of a keyboard trap.</li>
+      <li>See where focus is brought when certain components are engaged with. For example, what happens when a button is accessed and a modal is shown? Will continuing to tab take you behind the modal, or keep you within the modal itself?</li>
+      <li>Does keyboard focus become trapped within any portion of the interface while tabbing? While this is acceptable behavior in modal dialogs, in other scenarios it could be an indication of a keyboard trap.</li>
       <li>Non-interactive elements, such as a <code>div</code>, should not receive keyboard focus while tabbing.</li>
     </ul>
 
@@ -783,8 +783,8 @@
     <ul>
       <li><b>Ask Why</b> - One should have an excellent reason to spawn a new tab. Opening new tabs, just to keep users on your site, is <strong>not</strong> a good enough reason.</li>
       <li><b>Trust Users</b> - Let your users decide if opening a new tab is the best course of action.</li>
-      <li><b>Accessibility</b> - If a new window is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
-      <li><b>Security & Performance</b> - If a new window is a necessity, make use of <code>rel="noopener"</code>. This will prevent "tabnabbing" and improve page load between parent and child tabs.</li>
+      <li><b>Accessibility</b> - If a new tab is a necessity, use <code>aria-label</code> or alternative techniques for assistive technology and <em>include visual indicators</em>.</li>
+      <li><b>Security & Performance</b> - If a new tab is a necessity, make use of <code>rel="noopener"</code>. This will prevent "tabnabbing" and improve page load between parent and child tabs.</li>
     </ul>
 
     <p>You can learn more about this best practice by reading <a class="new-tab" href="https://michaelspellacy.com/the-last-word-on-opening-new-windows/">The Last Word (Maybe) on Opening New Windows</a>.</p>
