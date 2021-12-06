@@ -15,7 +15,7 @@ description: "A tool to help everybody quickly identify baseline accessibility i
 destination: _extension
 git-url: https://radancy.dev
 highlighter: rouge
-lang: en-US
+lang: en
 markdown: kramdown
 name: "Radancy: Accessibility Smoke Test"
 owner-name: Michael Spellacy
