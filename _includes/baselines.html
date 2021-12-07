@@ -111,7 +111,7 @@
 
   <p>Provide text alternatives for non-text content, such as multimedia (audio, images, video) and interactive components (buttons, controls, inputs). <a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/non-text-content">Understanding 1.1.1</a></p>
 
-  <p><b>Who is responsible?</b> Designer, Copywriter, Content Producers, Developer</p>
+  <p><b>Who is responsible?</b> Developer, Designer</p>
 
   <h3>Components and Multimedia</h3>
 
@@ -120,10 +120,10 @@
     <summary>The Rules</summary>
 
     <ol>
-      <li>All interactive components (e.g., buttons, controls, hyperlinks, inputs), must have an accessible name. If text is not explicit in the design of such components, then you may use various methods to provide this information. For example, if a menu or search button has no visual label, you will need to do the following to better describe the control: <code>&lt;button aria-label="Menu"&gt;&lt;/button&gt;</code></li>
-      <li>Form inputs have associated text labels. <strong>Note:</strong> Placeholder values <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">should not be used as a stand-in</a> for a proper label.</li>
-      <li>Multimedia is identified via accessible text. For example: <code>&lt;video src="..." aria-label="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
-      <li>Inline frames (iframe) are appropriately titled and describe contents of the frame accurately. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
+      <li>Ensure that interactive components (e.g., buttons, controls, inputs), have an accessible name. Interactive elements that are not visually labeled, must still include an accessible name.</li>
+      <li>If text is not explicit in the design of a component, then use various methods to provide this information. Accessible names can be applied in various ways, such as with, labels, inclusively hidden techniques, and with ARIA.</li>
+      <li>Ensure that multimedia is identified via accessible text. For example: <code>&lt;video src="..." controls aria-label="My Summer Vacation"&gt;...&lt;/video&gt;</code></li>
+      <li>Ensure that inline frames (iframe) are appropriately titled and describe contents of the frame accurately. For example: <code>&lt;iframe src="..." title="Job Application Form"&gt;...&lt;/iframe&gt;</code>.</li>
     </ol>
 
   </details>
@@ -136,6 +136,7 @@
 
     <ul>
       <li>Are <code>label</code> elements associated with specific form controls? Is the <code>label</code> element being hidden with <code>display: none</code>? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/forms.js>View Forms</button>{% endif %}</li>
+      <li>Are placeholder attributes being used to stand-in for labels? Inappropriate use of placeholders <a class="new-tab" href="https://www.deque.com/blog/accessible-forms-the-problem-with-placeholders/">can have a negative impact</a> on the user experience.</li>
       <li>Are <code>iframe</code> and multimedia elements, like <code>audio</code> and <code>video</code> properly labeled? {% if page.id == "a11y-smoke-test" %}<button data-script="https://rawgit.com/pauljadam/bookmarklets/master/iframes.js">View Iframes</button>, <button data-script=https://rawgit.com/pauljadam/bookmarklets/master/title.js>View Title Attributes</button>{% endif %}</li>
       <li>Is ARIA being used to provide a name for user interface controls? {% if page.id == "a11y-smoke-test" %}<button data-script=https://rawgit.com/pauljadam/bookmarklets/master/aria.js>View ARIA</button>{% endif %}</li>
     </ul>
