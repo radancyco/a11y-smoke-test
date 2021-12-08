@@ -77,7 +77,9 @@ Review details of current page structure.
 
 ### 1.0.4 (Upcoming Build)
 
-* Permalinks in Heading & Image validation. 
+* Permalinks in Heading & Image validation.
+* Refined Components & Multimedia section.
+* Included Structured Data test.
 
 ### 1.0.3 (Official Build)
 

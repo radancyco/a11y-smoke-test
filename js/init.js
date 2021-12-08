@@ -125,6 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    let StructuredDataLink = document.querySelectorAll(".validate-structured-data");
+
+    if(StructuredDataLink){
+
+      StructuredDataLink.forEach(function(link, e){
+
+        let StructuredDataHref = link.href;
+        link.setAttribute("href", StructuredDataHref + "?url=" + url);
+
+      });
+
+    }
+
     let HyperLink = document.querySelectorAll(".validate-links");
 
     if(HyperLink){
