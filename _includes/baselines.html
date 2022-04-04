@@ -15,12 +15,16 @@
 
     <summary>Understanding Image Types</summary>
 
-    <p>Generally, images fall into one of three categories: Decorative, Informative and Functional. It is very important to understand the difference between these three image types in order to make a more informed decision on whether to include an alternative text value or not and what kind of value you may need to add.</p>
+    <p>Generally, images fall into one of several categories. It is very important to understand the difference between these image types in order to make a more informed decision on whether to include an alternative text value or not and what kind of value you may need to add.</p>
 
     <ul>
       <li><strong>Decorative:</strong> Images that add accent or embellish. If content on the page can be experienced and understood without these images, then an alternative text value is not required.</li>
       <li><strong>Functional:</strong> Images that indicate action to be taken, rather than a description of the image. Functional images are found within interactive elements, such as hyperlinks or buttons.</li>
       <li><strong>Informative:</strong> Images that provide value to the surrounding content. If content on the page can't be experienced or understood without these images, or content is locked within image, then an alternative text value is required.</li>
+      <li><strong>Images of Text:</strong> Images that contain text. The alternative text used within this image type should often be verbatim.</li>
+      <li><strong>Complex Images:</strong> Images such as graphs or diagrams. These image often contain detailed information, so alternative text is not adequate here. This content should be conveyed through alternative text equivalents.</li>
+      <li><strong>Groups of Images:</strong> Multiple images that convey a single piece of information. In this case, the text alternative for one image should convey the information for the entire group.</li>
+      <li><strong>Image Maps:</strong> While used rarely, the text alternative for an image that contains multiple clickable areas should provide an overall context for the set of links. Also, each individually clickable area should have alternative text that describes the purpose or destination of the link.</li>
     </ul>
 
   </details>
@@ -496,7 +500,7 @@
       <li>A high rate of flashing can cause potential harm, or even death, in individuals with epilepsy. If you suspect that any feature on a page is harmful, you can download and install <a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a> to see if there is any risk or reach out to the <a href="mailto:a11y@radancy.com">Accessibility Team</a> to perform this test for you.</li>
     </ul>
 
-    <p><strong>Important:</strong> Any suspect animation or failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">Michael Spellacy</a>.</p>
+    <p><strong>Important:</strong> Any suspect animation or failures should be immediately brought to the attention of <a href="mailto:{{ site.owner-email }}">{{ site.owner-name }}</a>.</p>
 
   </div>
 
@@ -761,7 +765,7 @@
 
     <summary>Carousels</summary>
 
-    <p>Radancy UI/UX discourages use of carousels whenever possible and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to see and engage with and are often inaccessible. Approach usage with caution. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+    <p>Radancy UI/UX discourages use of carousels whenever possible and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to access and engage with and are often inaccessible. Approach usage with caution. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
 
     <p><strong>Important:</strong> Slick is a popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>, in new implementations.</p>
 
@@ -769,9 +773,12 @@
 
   <details>
 
-    <summary>Focus Outline</summary>
+    <summary>PDF</summary>
 
-    <p>Focus outlines are never to be removed from interactive elements without an acceptable replacement. See <a href="#focus-visible">2.4.7: Focus Visible</a> for more details.</p>
+    <ul>
+      <li>When possible, a PDF should never be used over HTML. PDF files often have accessibility issues that can only be remediated by a PDF specialist. Should PDF's require accessibility testing and/or remediation, please contact <a href="mailto:{{ site.owner-email }}">{{ site.owner-name }}</a>.</li>
+      <li>When linking to a PDF, it is customary to include the file type, visually, within the link itself. For example: <code>&lt;a href="../docs/legal-waiver.pdf"&gt;Legal Waiver (PDF)&lt;/a&gt;</code>. PDF's are common in our footers but can also be found in other areas of our sites, pointing to brochures or other company related information. By including this helper text, we are setting a better expectation for users as to what will happen when the link is accessed.</li>
+    </ul>
 
   </details>
 
