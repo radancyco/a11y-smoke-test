@@ -46,10 +46,10 @@
       </li>
       <li>If image contains complex information, then alternative methods of conveying this information will be required as alternative text may not suffice. For example, a graph or chart may require the information be marked-up in HTML and linked to, etc.</li>
       <li>If image contains text, then it must include an alternative text value if same information not conveyed nearby. Typically verbatim, to match what is embedded in the image.</li>
-      <li>If image is purely decorative, then it requires no alternative text value. While an <code>img</code> element that is decorative must contain a null alt, a decorative <code>SVG</code> element will require <code>aria-hidden="true"</code>. For example: <code>&lt;svg aria-hidden="true" ... &gt;&lt;svg&gt;</code></li>
+      <li>If image is purely decorative, then it requires no alternative text value. While an <code>img</code> element that is decorative must contain a null alt, a decorative <code>SVG</code> element will require <code>aria-hidden="true"</code>. For example: <code>&lt;svg aria-hidden="true" ... &gt;&lt;/svg&gt;</code></li>
       <li>If image is functional and contained within an interactive element (e.g., a hyperlink or button), then it must contain alternative text if no other functional text present within. For example: <code>&lt;a href="..."&gt;&lt;img alt="My Awesome Vacation (Video)" src="..."&gt;&lt;/a&gt;</code></li>
       <li>Avoid superfluous phrases like "Image of ..." or "Picture of ..." as these are redundant to assistive technology (AT) users.</li>
-      <li>Background images are important if picture within is informative. The first rule of ARIA is to always use HTML, so an <code>&lt;img&gt;</code> element should be used, but in a pinch, the following may be acceptable: <code>&lt;div aria-label="..." role="img"&gt;&lt;div&gt;</code></li>
+      <li>Background images are important if picture within is informative. The first rule of ARIA is to always use HTML, so an <code>&lt;img&gt;</code> element should be used, but in a pinch, the following may be acceptable: <code>&lt;div aria-label="..." role="img"&gt;&lt;/div&gt;</code></li>
     </ol>
 
     <div class="a11y-info">
