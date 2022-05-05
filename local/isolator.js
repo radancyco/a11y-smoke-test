@@ -1,1 +1,100 @@
-javascript:(function()%7B%22use%20strict%22%3Bfunction%20getXpath(e)%7Blet%20t%2Co%3De%2Cn%3De.tagName.toLowerCase()%2Ci%3D%22%22%2Ca%3D%22%22%2Cr%3D%22%22%2Cl%3D%22%22%3Bfor(%3Bo.parentNode%3B)%7Bif((t%3Do.parentNode).tagName)%7Bi%3Dt.tagName.toLowerCase()%3Bconst%20e%3Dt.querySelectorAll(%22%3Ascope%20%3E%20%22%2Bo.tagName)%3Br%3De.length%3E1%3F%22%5B%22%2BparseInt(Array.from(e).indexOf(o)%2B1)%2B%22%5D%22%3A%22%22%2Ca%3D(n%3Do.tagName.toLowerCase())%2Br%2Bl%2Ba%2Cl%3D%22%2F%22%7Do%3Dt%7Dreturn%22%22%3D%3D%3Di%26%26(i%3Dn)%2Ca%3D%22%2F%2F%22%2Bi%2Br%2Bl%2Ba%7Dfunction%20isolate()%7Blet%20e%2Ct%2Co%2Cn%3D!0%2Ci%3D!1%3Bconst%20a%3Ddocument.querySelectorAll(%22*%22)%3Bfunction%20r(t%2Co)%7Be%3Dt%2Co.stopPropagation()%2Ci%7C%7Cs(t)%2Cd(e)%7Dfunction%20l(e)%7Be.classList.remove(%22isolatorHighlight%22)%7Dfunction%20s(e)%7Be.classList.add(%22isolatorHighlight%22)%7Dfunction%20d(e)%7Bconsole.clear()%2Cconsole.log(getXpath(e))%2Co.innerHTML%3DgetXpath(e)%7DArray.from(a).forEach(t%3D%3E%7Bt.addEventListener(%22click%22%2Co%3D%3E%7Bconsole.log(%22preventClicks%20%3D%20%22%2Cn)%2Cn%26%26(!function(t%2Co)%7Be%3Dt%2C%22HTML%22%3D%3D%3Dt.tagName%26%26(n%3D!1)%3B!function(e)%7Bif(!i)%7Bconst%20t%3De.parentNode%2Co%3Dt.childNodes%3B%22HTML%22!%3D%3Dt.tagName%3FArray.from(o).forEach(t%3D%3E%7Bt!%3D%3De%26%26t.remove()%7D)%3Ai%3D!0%7D%7D(t)%7D(t)%2Co.preventDefault())%7D)%2Ct.addEventListener(%22mouseover%22%2Co%3D%3E%7Be%3Dt%2Co.stopPropagation()%2Ci%7C%7Cs(t)%2Cd(e)%7D)%2Ct.addEventListener(%22mouseout%22%2Ce%3D%3E%7Bl(t)%7D)%7D)%2Cfunction()%7Bconst%20e%3Ddocument.createElement(%22style%22)%3Be.textContent%3D%22.isolatorHighlight%7Boutline%3A4px%20solid%20black!important%3Boutline-offset%3A-4px!important%3B-webkit-box-shadow%3A%200px%200px%200px%204px%20%23fff%3B%20box-shadow%3A%200px%200px%200px%204px%20%23fff%3B%7D%23infoPanel%20%7Bz-index%3A1000%3Bfont-size%3A20px%3Bbackground%3Argba(0%2C0%2C0%2C0.8)%3Bcolor%3A%23fff%3Bfont-weight%3Abold%3Bpadding%3A10px%3Bposition%3Afixed%3Bbottom%3A20px%3Bleft%3A20px%3Bfont-family%3Asans-serif%3B%7D%20%23infoPanel%3Aempty%20%7Bvisibility%3Ahidden%3B%7D%20%23infoPanel%20code%20%7Bcolor%3Alime%7D%22%2Cdocument.head.appendChild(e)%7D()%2C(o%3Ddocument.createElement(%22div%22)).setAttribute(%22id%22%2C%22infoPanel%22)%2Co.setAttribute(%22role%22%2C%22status%22)%2Cdocument.body.appendChild(o)%2Cdocument.addEventListener(%22keydown%22%2Cfunction(n)%7Bif(%22ArrowUp%22%3D%3D%3Dn.key%26%26(n.preventDefault()%2Ce.parentNode%26%26%22HTML%22!%3D%3De.tagName%26%26(l(e)%2Cconsole.log(%22currentEl.parentNode%20%3D%20%22%2Ce.parentNode)%2Ct%3De.parentNode%2Cs(e%3Dt))%2Cd(e)%2Co.textContent%3Do.textContent%2B%22%20(Press%20Return%20to%20isolate%20this%20element)%22)%2C%22ArrowLeft%22%3D%3D%3Dn.key%26%26(n.preventDefault()%2Ce.previousElementSibling%26%26(l(e)%2Cr(e%3De.previousElementSibling%2Cn)))%2C%22ArrowRight%22%3D%3D%3Dn.key%26%26(n.preventDefault()%2Ce.nextElementSibling%26%26(l(e)%2Cr(e%3De.nextElementSibling%2Cn)))%2C%22ArrowDown%22%3D%3D%3Dn.key%26%26(n.preventDefault()%2Ce.childNodes.length%3E1))%7Bl(e)%3Blet%20t%2Co%3D!1%3BArray.from(e.childNodes).forEach(e%3D%3E%7B1!%3D%3De.nodeType%7C%7Co%7C%7C(o%3D!0%2Ct%3De)%7D)%2Ct%26%26r(e%3Dt%2Cn)%7D%22Enter%22%3D%3D%3Dn.key%26%26(n.preventDefault()%2Ce.click())%7D)%2Cd(%22Isolator%20started.%20Click%20on%20element%20you%20want%20to%20isolate%20in%20the%20DOM%22)%7Disolate()%3B%7D)()
+javascript: (function () {
+    "use strict";
+    function getXpath(e) {
+        let t,
+            o = e,
+            n = e.tagName.toLowerCase(),
+            i = "",
+            a = "",
+            r = "",
+            l = "";
+        for (; o.parentNode; ) {
+            if ((t = o.parentNode).tagName) {
+                i = t.tagName.toLowerCase();
+                const e = t.querySelectorAll(":scope > " + o.tagName);
+                (r = e.length > 1 ? "[" + parseInt(Array.from(e).indexOf(o) + 1) + "]" : ""), (a = (n = o.tagName.toLowerCase()) + r + l + a), (l = "/");
+            }
+            o = t;
+        }
+        return "" === i && (i = n), (a = "//" + i + r + l + a);
+    }
+    function isolate() {
+        let e,
+            t,
+            o,
+            n = !0,
+            i = !1;
+        const a = document.querySelectorAll("*");
+        function r(t, o) {
+            (e = t), o.stopPropagation(), i || s(t), d(e);
+        }
+        function l(e) {
+            e.classList.remove("isolatorHighlight");
+        }
+        function s(e) {
+            e.classList.add("isolatorHighlight");
+        }
+        function d(e) {
+            console.clear(), console.log(getXpath(e)), (o.innerHTML = getXpath(e));
+        }
+        Array.from(a).forEach((t) => {
+            t.addEventListener("click", (o) => {
+                console.log("preventClicks = ", n),
+                    n &&
+                        (!(function (t, o) {
+                            (e = t), "HTML" === t.tagName && (n = !1);
+                            !(function (e) {
+                                if (!i) {
+                                    const t = e.parentNode,
+                                        o = t.childNodes;
+                                    "HTML" !== t.tagName
+                                        ? Array.from(o).forEach((t) => {
+                                              t !== e && t.remove();
+                                          })
+                                        : (i = !0);
+                                }
+                            })(t);
+                        })(t),
+                        o.preventDefault());
+            }),
+                t.addEventListener("mouseover", (o) => {
+                    (e = t), o.stopPropagation(), i || s(t), d(e);
+                }),
+                t.addEventListener("mouseout", (e) => {
+                    l(t);
+                });
+        }),
+            (function () {
+                const e = document.createElement("style");
+                (e.textContent =
+                    ".isolatorHighlight{outline:4px solid black!important;outline-offset:-4px!important;-webkit-box-shadow: 0px 0px 0px 4px #fff; box-shadow: 0px 0px 0px 4px #fff;}#infoPanel {z-index:1000;font-size:20px;background:rgba(0,0,0,0.8);color:#fff;font-weight:bold;padding:10px;position:fixed;bottom:20px;left:20px;font-family:sans-serif;} #infoPanel:empty {visibility:hidden;} #infoPanel code {color:lime}"),
+                    document.head.appendChild(e);
+            })(),
+            (o = document.createElement("div")).setAttribute("id", "infoPanel"),
+            o.setAttribute("role", "status"),
+            document.body.appendChild(o),
+            document.addEventListener("keydown", function (n) {
+                if (
+                    ("ArrowUp" === n.key &&
+                        (n.preventDefault(),
+                        e.parentNode && "HTML" !== e.tagName && (l(e), console.log("currentEl.parentNode = ", e.parentNode), (t = e.parentNode), s((e = t))),
+                        d(e),
+                        (o.textContent = o.textContent + " (Press Return to isolate this element)")),
+                    "ArrowLeft" === n.key && (n.preventDefault(), e.previousElementSibling && (l(e), r((e = e.previousElementSibling), n))),
+                    "ArrowRight" === n.key && (n.preventDefault(), e.nextElementSibling && (l(e), r((e = e.nextElementSibling), n))),
+                    "ArrowDown" === n.key && (n.preventDefault(), e.childNodes.length > 1))
+                ) {
+                    l(e);
+                    let t,
+                        o = !1;
+                    Array.from(e.childNodes).forEach((e) => {
+                        1 !== e.nodeType || o || ((o = !0), (t = e));
+                    }),
+                        t && r((e = t), n);
+                }
+                "Enter" === n.key && (n.preventDefault(), e.click());
+            }),
+            d("Isolator started. Click on element you want to isolate in the DOM");
+    }
+    isolate();
+})();
