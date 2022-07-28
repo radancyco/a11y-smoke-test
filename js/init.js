@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       HTMLLink.forEach(function(link, e){
 
         let HTMLHref = link.href;
-        link.setAttribute("href", HTMLHref + "nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=" + url);
+        link.setAttribute("href", HTMLHref + "?showsource=yes&showoutline=yes&showimagereport=yes&doc=" + url);
 
       });
 
