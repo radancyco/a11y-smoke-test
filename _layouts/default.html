@@ -13,7 +13,7 @@
 
   <header>
 
-    <img alt="Radancy" height="36" src="img/logo.png" width="220">
+    <img alt="{{ site.company-name }}" height="36" src="img/logo.png" width="220">
 
     {% if page.id == "a11y-smoke-test" %}
 
@@ -32,7 +32,7 @@
   <footer>
 
     <ul>
-      <li><a class="new-tab" href="https://radancy.dev/a11y/">Accessibility at {{ site.company-name }}</a></li>
+      <li><a class="new-tab" href="{{ site.git-url }}/a11y/">Accessibility at {{ site.company-name }}</a></li>
       <li><a class="new-tab" href="about.html">About {{ site.title }}</a></li>
       <li><a class="new-tab" href="mailto:{{ site.team-email }}">Contact Accessibility Team</a></li>
       <li><a class="new-tab" href="https://jira.tmp.com/browse/TCDQ-60657">Report Issue</a></li>
@@ -45,7 +45,7 @@
   {% if page.script %}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://radancy.dev/pattern-library/disclosure/init.js"></script>
+  <script src="{{ site.git-url }}/pattern-library/disclosure/init.js"></script>
 
   {% endif %}
 

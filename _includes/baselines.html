@@ -61,7 +61,7 @@
 
       <figure>
 
-        <img alt="" height="289" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-alt.jpg" width="504">
+        <img alt="" height="289" loading="lazy" src="{{ site.git-url }}/a11y-smoke-test/img/example-alt.jpg" width="504">
 
         <figcaption>A little boy sitting on his mother's lap. Both are smiling and wearing American paraphernalia.</figcaption>
 
@@ -180,7 +180,7 @@
 
     <ul>
       <li>Video on a page should be manually reviewed. If the video includes spoken dialogue or important information, then it must contain captions <!-- and/or an audio description -->.</li>
-      <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="https://radancy.dev/a11y/caption/">Creating Accessible Multimedia</a>.</li>
+      <li>Caption accuracy is also critical. If a video is found to have inaccurate captions, new captions must be produced. See <a class="new-tab" href="{{ site.git-url }}/a11y/caption/">Creating Accessible Multimedia</a>.</li>
       <li>Some advanced issues to be on the lookout for include:
 
         <ul>
@@ -537,7 +537,7 @@
 
     <figure>
 
-      <img alt="Screen grab of a website, with a 'Skip to Main Content' hyperlink." height="104" loading="lazy" src="https://radancy.dev/a11y-smoke-test/img/example-skip-link.jpg" width="506">
+      <img alt="Screen grab of a website, with a 'Skip to Main Content' hyperlink." height="104" loading="lazy" src="{{ site.git-url }}/a11y-smoke-test/img/example-skip-link.jpg" width="506">
 
       <figcaption>An example of a "Skip" link. These links, when present, will display when keyboard testing is performed. If it perfectly normal for the mechanism to be present for all user types.</figcaption>
 
@@ -566,7 +566,7 @@
     {% if page.id == "a11y-smoke-test" %}
 
     <ul>
-      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialog will appear.)</li>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/page-title.js">Show Page Title</button> (Alert dialog will appear.)</li>
     </ul>
 
     {% endif %}
@@ -686,8 +686,8 @@
           <summary>Advanced (Dev Only)</summary>
 
           <ul>
-            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
-            <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
+            <li><button class="new-tab" data-script="{{ site.git-url }}/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+            <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
           </ul>
 
         </details>
@@ -745,8 +745,8 @@
           <summary>Advanced (Dev Only)</summary>
 
           <ul>
-            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
-            <li><button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
+            <li><button class="new-tab" data-script="{{ site.git-url }}/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button></li>
+            <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button></li>
           </ul>
 
         </details>
@@ -776,7 +776,7 @@
 
     <summary>Carousels</summary>
 
-    <p>Radancy UI/UX discourages use of carousels whenever possible and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to access and engage with and are often inaccessible. Approach usage with caution. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
+    <p>{{ site.company-name }} UI/UX discourages use of carousels whenever possible and instead recommends alternative forms of page layout. While carousels may be useful in certain situations, they can bury important content you may wish for users to access and engage with and are often inaccessible. Approach usage with caution. Check out <a class="new-tab" href="https://shouldiuseacarousel.com/">Should I Use A Carousel?</a> for more information.</p>
 
     <p><strong>Important:</strong> Slick is a popular plugin that many developers use to easily implement a carousel. If a carousel is required, please only use the approved version, <a class="new-tab" href="https://accessible360.github.io/accessible-slick/">Accessible Slick</a>, in new implementations.</p>
 
