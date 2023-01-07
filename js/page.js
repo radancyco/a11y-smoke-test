@@ -115,9 +115,10 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
 
   let contrastContainer = document.createElement("div");
   contrastContainer.setAttribute("id", "a11y-smoke-test-contrast");
+  contrastContainer.classList.add("tool-ui");
   document.body.appendChild(contrastContainer);
 
-  if (scriptFragment == "color-contrast") {
+  if (scriptFragment === "color-contrast") {
 
     var contrastForm = '<form action="https://webaim.org/resources/contrastchecker/" id="color-contrast" target="_blank"> <fieldset> <legend>Check Color Contrast</legend> <p>Use this form to validate the contrast of two specific colors combinations.</p><div class="form-fields"> <div> <label for="fcolor-2">Foreground:</label> <input id="fcolor-2" name="fcolor" type="color" value="#0000FF"> </div><div> <label for="bcolor-2">Background:</label> <input id="bcolor-2" name="bcolor" type="color" value="#FFFFFF"> </div><div> <button class="btn">Check</button> </div></div></fieldset></form>';
 
@@ -137,7 +138,7 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
 
   let contrastButton = document.createElement("button");
   contrastButton.setAttribute("aria-label", "Close");
-  contrastButton.setAttribute("id", "contrast-button");
+  contrastButton.classList.add("tool-button");
   contrastButton.addEventListener("click", closeContrast);
   contrastContainer.appendChild(contrastButton);
 
@@ -147,11 +148,91 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
 
   }
 
+} else if (scriptName === "typography") {
+
+  // Ajax Call
+
+  var isTypographyContainer = document.getElementById("a11y-smoke-test-typography");
+
+  if (isTypographyContainer !== null) {
+
+    document.getElementById("a11y-smoke-test-typography").remove();
+
+  }
+
+  let typographyContainer = document.createElement("div");
+  typographyContainer.setAttribute("id", "a11y-smoke-test-typography");
+  typographyContainer.classList.add("tool-ui");
+  document.body.appendChild(typographyContainer);
+
+  if (scriptFragment == "default-font") {
+
+    var changeDefaultFontSize = '<div id="default-font"><p><b style="font-weight: bold !important;">Set Default Font Size:</b> <span id="font-size-display">16px, 100%</span></p><input type="range" min="1.0" max="2.0" step="0.01" value="1.0" id="font-size"></div>';
+
+  } 
+
+  let parser = new DOMParser();
+  let parsed = parser.parseFromString(changeDefaultFontSize, "text/html");
+  let selectedTypography = parsed.getElementById(scriptFragment);
+
+  typographyContainer.appendChild(selectedTypography);
+
+  // Create and append form close button.
+
+  let typeCloseButton = document.createElement("button");
+  typeCloseButton.setAttribute("aria-label", "Close");
+  typeCloseButton.classList.add("tool-button");
+  typeCloseButton.addEventListener("click", closeTypeSizer);
+  typographyContainer.appendChild(typeCloseButton);
+
+  function closeTypeSizer(){
+
+    this.parentNode.remove();
+
+  }
+
+  // Font Range Adjuster
+
+  let fontSizeRange = document.getElementById("font-size");
+  let  fontSizeDisplay = document.getElementById("font-size-display");
+
+  fontSizeRange.addEventListener("input", function() {
+  
+    var size = fontSizeRange.value;
+
+    document.documentElement.style.fontSize = size + "rem";
+
+    let result = size / 0.0625;
+
+    fontSizeDisplay.innerText = result + "px, " + Math.ceil(size * 100) + "%";
+
+  });
+
+} else if (scriptName === "international") {
+
+  if (scriptFragment === "show-rtl") {
+
+    document.documentElement.setAttribute("dir", "rtl");
+
+  }
+
+  if (scriptFragment === "show-ltr") {
+
+    document.documentElement.setAttribute("dir", "ltr");
+
+  }
+
+  if (scriptFragment === "show-lang") {
+
+    alert(document.documentElement.getAttribute("lang"));
+
+  }
+
 } else {
 
   document.body.appendChild(document.createElement("script")).src=scriptName;
 
-  // TODO: Chrome Extension deoug panel throwing error about iframes. Removing for now.
+  // TODO: Chrome Extension debug panel throwing error about iframes. Removing for now.
 
   /* if(scriptName == "iframes") {
 

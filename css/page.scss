@@ -63,7 +63,7 @@ body {
 
 }
 
-#a11y-smoke-test-contrast {
+.tool-ui  {
 background-color: #fff !important;
 border-radius: 5px !important;
 border: 1px #000 solid !important;
@@ -85,6 +85,7 @@ z-index: 2147483647 !important;
   font: inherit !important;
   line-height: inherit !important;
   color: #000 !important;
+  direction: ltr;
   }
 
   *, *::before, *::after {
@@ -93,21 +94,26 @@ z-index: 2147483647 !important;
 
   @import "form";
 
-  #contrast-button {
+  .tool-button { 
   background-image: url("https://radancy.dev/img/btn-close.png") !important;
   background-color: #ffcc36 !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  background-size: 20px !important;
+  background-size: 10px !important;
   border-radius: 5px !important;
   border: 0 !important;
-  height: 35px !important;
+  height: 25px !important;
   min-width: 0 !important;
   padding: 0 !important;
   position: absolute !important;;
   right: 10px !important;
   top: 10px !important;
-  width: 35px !important;
+  width: 25px !important;
   }
 
+}
+
+input[type=range] {
+margin: 1.8em 0;
+width: 100%;
 }

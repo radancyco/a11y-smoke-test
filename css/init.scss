@@ -82,7 +82,6 @@ p, ul {
   border: 0;
   color: blue;
   display: inline-block;
-  //font-size: inherit;
   outline: 0;
   padding: 0;
   text-decoration: underline;
@@ -138,6 +137,7 @@ position: fixed;
 right: 25px;
 top: 16px;
 width: 40px;
+z-index: 1;
 }
 
 #images, #heading, #thanks {
@@ -227,6 +227,6 @@ width: 40px;
     margin-left: 10em;
     }
 
-  }
+  } 
 
 }

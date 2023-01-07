@@ -7,32 +7,30 @@ title: Accessibility Smoke Test
 
 <h1 class="heading-small">{{ page.title }} {{ site.version }}</h1>
 
-<button class="disclosure--btn" data-disclosure-icon>Validation Tools</button>
+<button class="disclosure--btn" data-disclosure-icon>Testing Tools</button>
 
 <div class="disclosure--content">
 
-  <h2>Overview</h2>
-
-  <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
-
-  <p><b>Who is responsible?</b> Everybody</p>
-
   <div class="qa-info">
 
-    <h2>Testing</h2>
+    <h2 class="info-heading">Automated Testing</h2>
 
+    <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
+
+    <p><b>Who is responsible?</b> Everybody</p>
+    
     <ul>
       <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
       <li><a class="validate-html new-tab" href="https://validator.w3.org/nu/">W3C Validation</a>
 
         <details>
 
-          <summary>Advanced (Dev Only)</summary>
+          <summary>Advanced Validation</summary>
 
           <ul>
             <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
-              - <span>Runs validation on entire DOM (Document Object Model), including script generated content.</span>
+              - <span>Runs validation on entire DOM (Document Object Model), including <strong>script generated content</strong>. Cannot be linked to.</span>
 
             </li>
             <li>
@@ -50,7 +48,22 @@ title: Accessibility Smoke Test
       <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a></li>
     </ul>
 
-    <h2>Validate HTML by Direct Input</h2>
+    <h2>Other Validation Tests (Not Mandatory)</h2>
+
+    <ul>
+      <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
+      <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
+      <li><a class="validate-spelling new-tab" href="https://www.w3.org/2002/01/spellchecker">Validate Spelling</a></li>
+      <li><a class="validate-structured-data new-tab" href="https://search.google.com/test/rich-results">Validate Structured Data</a></li>
+    </ul>
+
+    <h2 class="info-heading">Manual Testing</h2>
+
+    <p>Web pages may have deeper problems that automated tools cannot find, so manual testing methods will need to be performed instead. The following are common and useful tools you may use for closer analysis.</p>
+
+    <p><b>Who is responsible?</b> Engineers, Specialists</p>
+
+    <h3>Validate HTML by Direct Input</h3>
 
     <details>
 
@@ -64,26 +77,48 @@ title: Accessibility Smoke Test
 
         <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="5"></textarea>
 
-        <button class="btn" id="submitValidate">Validate</button>
+        <button class="btn" id="submitValidate" type="submit">Validate</button>
 
       </form>
 
     </details>
 
-    <h2>Validate Color</h2>
+    <h3>Color</h3>
 
     <ul>
-      <li><button data-script="contrast" data-fragment="color-contrast">Validate Contrast</button>
-      <li><button data-script="contrast" data-fragment="link-contrast">Validate Link & Text Contrast</button>
+      <li><button data-script="contrast" data-fragment="color-contrast">Test Contrast</button>
+      <li><button data-script="contrast" data-fragment="link-contrast">Test Link & Text Contrast</button>
     </ul>
 
-    <h2>Validate Animation</h2>
+    <h3>Typography</h3>
 
     <ul>
-      <li><a class="new-tab" href="https://trace.umd.edu/peat/">PEAT (Photosensitive Epilepsy Analysis Tool)</a></li>
+      <li><button data-script="typography" data-fragment="default-font">Change Default Font Size</button>
     </ul>
 
-    <h2>PDF Validation</h2>
+    <h3>Internationalization</h3>
+
+    <ul>
+      <li><button data-script="international" data-fragment="show-rtl">Show Right-to-left (RTL)</button>
+      <li><button data-script="international" data-fragment="show-ltr">Show Left-to-right (LTR)</button>
+      <li><button data-script="international" data-fragment="show-lang">Show Document Language</button>
+    </ul>
+
+    <h3>Animation</h3>
+
+    <ul>
+      <li><a class="new-tab" href="https://trace.umd.edu/peat/">Download PEAT (Photosensitive Epilepsy Analysis Tool)</a></li>
+    </ul>
+
+    <p><strong>Note:</strong> Animations that fail PEAT should be brought to the attention of your team immediately. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
+
+    <h3>Visual</h3>
+
+    <ul>
+      <li><button data-script="https://radancy.dev/a11y-bookmarklets/focus.js">Force Focus</button></li>
+    </ul>
+
+    <h3>PDF</h3>
 
     <ul>
       <li><a class="new-tab" href="https://pdfua.foundation/en/pdf-accessibility-checker-pac/register">Download PAC (PDF Accessibility Checker)</a></li>
@@ -91,25 +126,10 @@ title: Accessibility Smoke Test
 
     <p><strong>Note:</strong> PDF remediation is unlike web remediation and will need to go through a third party. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
 
-    <h2>Other Validation Tests</h2>
+    <h2>Other</h2>
 
     <ul>
-      <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
-      <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
-      <li><a class="validate-spelling new-tab" href="https://www.w3.org/2002/01/spellchecker">Validate Spelling</a></li>
-      <li><a class="validate-structured-data new-tab" href="https://search.google.com/test/rich-results">Validate Structured Data</a></li>
-    </ul>
-
-    <h2>Experimental Features</h2>
-
-    <ul>
-      <li>
-
-        <button data-script="https://radancy.dev/a11y-smoke-test/local/isolator.js">Isolate</button>
-
-        - <span>Drill down to and isolate only those portions of markup you wish to see and test.</span>
-
-      </li>
+      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/isolator.js">Isolate Code Blocks</button></li>
     </ul>
 
   </div>
