@@ -363,7 +363,7 @@
 
   <h2>Overview</h2>
 
-  <p>Text can be resized to 200% without loss of content or function.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">Understanding 1.4.4</a></p>
+  <p>Text can be resized to 200% without loss of content or functionality.	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/resize-text">Understanding 1.4.4</a></p>
 
   <p><b>Who is responsible?</b> Developer</p>
 
@@ -372,7 +372,31 @@
     <h2>Testing</h2>
 
     <ul>
-      <li>Use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable and usable.</li>
+      <li>Use your browser settings to increase text size from 16 (100%) to 32 (200%). When 200% is reached, test to see if all page content can still be accessed and that site continues to be fully operable and usable.</li>
+      <li>Captions and images of text are exempt from this rule.</li>
+    </ul>
+
+  </div>
+
+</div>
+
+<button class="disclosure--btn" data-disclosure-icon id="reflow">1.4.10: Reflow (Level AA)</button>
+
+<div class="disclosure--content">
+
+  <h2>Overview</h2>
+
+  <p>Content can be resized without loss of functionality and no horizontal scrollbar (See exceptions).	<a class="new-tab" href="https://www.w3.org/WAI/WCAG21/Understanding/reflow.html">Understanding 1.4.10</a></p>
+
+  <p><b>Who is responsible?</b> Developer</p>
+
+  <div class="qa-info">
+
+    <h2>Testing</h2>
+
+    <ul>
+      <li>Resize browser to 1280 x 1024 and then use <kbd>Control</kbd> (PC) or <kbd>Command</kbd> (Mac) and <kbd>+</kbd> keys to increase zoom level of browser viewport. When 400% is reached, test to see if all page features can be used at this size and that the user does not need to horizontally scroll.</li>
+      <li>There are exceptions for content that requires horizontal and vertical scrolling to be understood. For example, tables, maps, or some charts, if they cannot be made responsive.</li>
       <li>Page zoom should never be intentionally disabled. If the page cannot be zoomed in on at all, it is failure.</li>
     </ul>
 

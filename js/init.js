@@ -12,9 +12,8 @@ layout: null
 */
 
 // TODO: Add alert to extension using setBadge. Example
-
-//chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
-//chrome.browserAction.setBadgeText({text: '!'});
+// chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
+// chrome.browserAction.setBadgeText({text: 'your text'});
 
 document.addEventListener("DOMContentLoaded", () => {
 

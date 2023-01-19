@@ -83,6 +83,11 @@ title: Accessibility Smoke Test
 
     </details>
 
+    <ul>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/reflow-320x256.js">Test Page Reflow (320x256)</button></li>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/reflow-1280x1024.js">Test Page Reflow (1280x1024)</button></li>
+    </ul>
+
     <h3>Color</h3>
 
     <ul>
@@ -99,9 +104,9 @@ title: Accessibility Smoke Test
     <h3>Internationalization</h3>
 
     <ul>
-      <li><button data-script="international" data-fragment="show-rtl">Show Right-to-left (RTL)</button>
-      <li><button data-script="international" data-fragment="show-ltr">Show Left-to-right (LTR)</button>
-      <li><button data-script="international" data-fragment="show-lang">Show Document Language</button>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-rtl.js">Show Right-to-left (RTL)</button>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-ltr.js">Show Left-to-right (LTR)</button>
+      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-lang.js">Show Document Language</button>
     </ul>
 
     <h3>Animation</h3>
@@ -251,6 +256,7 @@ title: Accessibility Smoke Test
       <summary>Testing Resources</summary>
 
       <ul>
+        <li><a class="new-tab" href="https://www.w3.org/WAI/people-use-web/">How People with Disabilities Use the Web (User Stories)</a></li>
         <li><a class="new-tab" href="https://thepaciellogroup.github.io/AT-browser-tests/">HTML Element Test File Index</a></li>
         <li><a class="new-tab" href="https://www.powermapper.com/tests/screen-readers/">PowerMapper - Screen Reader Reliability</a></li>
       </ul>

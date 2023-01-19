@@ -208,26 +208,6 @@ if (scriptName === "grayscale" || scriptName === "textspace" || scriptName === "
 
   });
 
-} else if (scriptName === "international") {
-
-  if (scriptFragment === "show-rtl") {
-
-    document.documentElement.setAttribute("dir", "rtl");
-
-  }
-
-  if (scriptFragment === "show-ltr") {
-
-    document.documentElement.setAttribute("dir", "ltr");
-
-  }
-
-  if (scriptFragment === "show-lang") {
-
-    alert(document.documentElement.getAttribute("lang"));
-
-  }
-
 } else {
 
   document.body.appendChild(document.createElement("script")).src=scriptName;
