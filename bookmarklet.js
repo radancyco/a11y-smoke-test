@@ -37,4 +37,4 @@ function fetchAndAppendFragment(url, selector, target) {
 
 }
 
-fetchAndAppendFragment("https://radancy.dev/a11y-smoke-test/module/", "#a11y-module", "body");
+fetchAndAppendFragment("https://radancy.dev/a11y-smoke-test/module", "#a11y-module", "body");
