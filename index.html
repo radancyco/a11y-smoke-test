@@ -5,6 +5,12 @@ script: true
 title: Accessibility Smoke Test
 ---
 
+
+<a class="btn" href="javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('src', 'https://radancy.dev/a11y-smoke-test/ast.js'); document.body.appendChild(jsCode);}());">Smoke Test</a>
+
+
+<div id="test-me">
+
 <h1 class="heading-small">{{ page.title }} {{ site.version }}</h1>
 
 <button class="disclosure--btn" data-disclosure-icon>Testing Tools</button>
@@ -28,14 +34,14 @@ title: Accessibility Smoke Test
           <summary>Advanced Validation</summary>
 
           <ul>
-            <li><button class="new-tab" data-script="https://radancy.dev/a11y-smoke-test/local/dom-validate.js">W3C Validation (Serialized DOM)</button>
+            <li><button class="new-tab" data-script="../../local/dom-validate.js">W3C Validation (Serialized DOM)</button>
 
               - <span>Runs validation on entire DOM (Document Object Model), including <strong>script generated content</strong>. Cannot be linked to.</span>
 
             </li>
             <li>
 
-              <button data-script="https://radancy.dev/a11y-smoke-test/local/wcag-parsing.js">WCAG Parsing</button>
+              <button data-script="./local/wcag-parsing.js">WCAG Parsing</button>
 
               - <span>Not all errors may affect accessibility. Run on W3C Validator <em>results page</em> to remove non-WCAG issues.</span>
 
@@ -86,8 +92,8 @@ title: Accessibility Smoke Test
     <h3>Magnification</h3>
 
     <ul>
-      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/reflow-320x256.js">Test Page Reflow (320x256)</button></li>
-      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/reflow-1280x1024.js">Test Page Reflow (1280x1024)</button></li>
+      <li><button data-script="local/reflow-320x256.js">Test Page Reflow (320x256)</button></li>
+      <li><button data-script="local/reflow-1280x1024.js">Test Page Reflow (1280x1024)</button></li>
     </ul>
 
     <h3>Color</h3>
@@ -101,15 +107,15 @@ title: Accessibility Smoke Test
 
     <ul>
       <li><button data-script="typography" data-fragment="default-font">Change Default Font Size</button>
-        <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/text-spacing.js">Text Spacing</button></li>
+        <li><button data-script="local/text-spacing.js">Text Spacing</button></li>
     </ul>
 
     <h3>Internationalization</h3>
 
     <ul>
-      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-rtl.js">Show Right-to-left (RTL)</button>
-      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-ltr.js">Show Left-to-right (LTR)</button>
-      <li><button data-script="{{ site.git-url }}/a11y-smoke-test/local/i18n-lang.js">Show Document Language</button>
+      <li><button data-script="local/i18n-rtl.js">Show Right-to-left (RTL)</button>
+      <li><button data-script="local/i18n-ltr.js">Show Left-to-right (LTR)</button>
+      <li><button data-script="local/i18n-lang.js">Show Document Language</button>
     </ul>
 
     <h3>Animation</h3>
@@ -123,7 +129,7 @@ title: Accessibility Smoke Test
     <h3>Visual</h3>
 
     <ul>
-      <li><button data-script="https://radancy.dev/a11y-bookmarklets/focus.js">Force Focus</button></li>
+      <li><button data-script="local/focus.js">Force Focus</button></li>
     </ul>
 
     <h3>PDF</h3>
@@ -137,7 +143,7 @@ title: Accessibility Smoke Test
     <h2>Other</h2>
 
     <ul>
-      <li><button data-script="https://radancy.dev/a11y-smoke-test/local/isolator.js">Isolate Code Blocks</button></li>
+      <li><button data-script="local/isolator.js">Isolate Code Blocks</button></li>
     </ul>
 
   </div>
@@ -162,9 +168,9 @@ title: Accessibility Smoke Test
 
 <button class="disclosure--btn" data-disclosure-icon>Other Tools and Resources</button>
 
-<div class="disclosure--content">
+<div class="disclosure--content"> 
 
-  <details>
+  <!-- details>
 
     <summary>Additional Browser Extensions</summary>
 
@@ -176,7 +182,7 @@ title: Accessibility Smoke Test
       <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
     </ul>
 
-  </details>
+  </details -->
 
   <details>
 
@@ -271,3 +277,5 @@ title: Accessibility Smoke Test
 {% include a11y-overlays.html %}
 
 <!-- TODO: include label in name 2.5.3 Label in Name -->
+
+</div>
