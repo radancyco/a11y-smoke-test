@@ -28,6 +28,6 @@
         
         // Example usage:
         // Fetch from "example.com/page.html", get element "#content", and append it to <body>
-        fetchAndAppendFragment('https://radancy.dev/a11y-smoke-test/', '#module', 'body');
+        fetchAndAppendFragment('https://radancy.dev/a11y-smoke-test/', '#a11y-module', 'body');
         
 
