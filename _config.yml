@@ -27,5 +27,5 @@ sass:
   style: :compressed
 team-email: a11y@radancy.com
 theme-color: "#6E00EE"
-title: "A11y Smoke Test"
+title: "Accessibility Smoke Test"
 version: "1.0.5"

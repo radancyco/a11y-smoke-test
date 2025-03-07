@@ -7,13 +7,9 @@ layout: null
   {{ site.name }} {{ site.version }} - Extension Functionality
 
   Contributor(s):
-  Michael "Spell" Spellacy, Email: michael.spellacy@radancy.com, Twitter: @spellacy, GitHub: michaelspellacy
+  Michael "Spell" Spellacy
 
 */
-
-// TODO: Add alert to extension using setBadge. Example
-// chrome.browserAction.setBadgeBackgroundColor({ color: [255, 0, 0, 255] });
-// chrome.browserAction.setBadgeText({text: 'your text'});
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -228,32 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, false);
 
-    function runBookmarklet(scriptName, scriptFragment) {
-
-      chrome.tabs.executeScript({
-
-        code: "var scriptName = " + JSON.stringify(scriptName) + "; var scriptFragment = " + JSON.stringify(scriptFragment)
-
-      },
-
-      function() {
-
-        chrome.tabs.executeScript({
-
-          file: "js/page.js"
-
-        });
-
-        chrome.tabs.insertCSS({
-
-          file: "css/page.css"
-
-        });
-
-      }
-
-    )};
-
     let a11yButtons = document.querySelectorAll("button[data-script]");
 
     if(a11yButtons) {
@@ -278,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
           let dataScript = button.getAttribute("data-script");
           let dataFragment = button.getAttribute("data-fragment");
 
-          runBookmarklet(dataScript, dataFragment);
           button.setAttribute("disabled", true);
           window.localStorage.setItem(button.id, dataScript);
 
@@ -310,7 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function resetPage() {
 
-    chrome.tabs.executeScript({
+    chrome.scripting.executeScript({
 
       code: "window.location.reload();"
 
