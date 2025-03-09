@@ -4,271 +4,277 @@
 
 <div id="a11y-module">
 
-    <h2 class="heading-small">{{ site.title }} {{ site.version }}</h2>
-    
-    <button class="disclosure--btn" data-disclosure-icon>Testing Tools</button>
-    
-    <div class="disclosure--content">
-    
-      <div class="qa-info">
-    
-        <h2 class="info-heading">Automated Testing</h2>
-    
-        <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
-    
-        <p><b>Who is responsible?</b> Everybody</p>
+    <button>A11y Smoke Test</button>
+
+    <div>
+
+        <h2 class="heading-small">{{ site.title }} {{ site.version }}</h2>
         
-        <ul>
-          <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
-          <li><a class="validate-html new-tab" href="https://validator.w3.org/nu/">W3C Validation</a>
-    
+        <button class="disclosure--btn" data-disclosure-icon>Testing Tools</button>
+        
+        <div class="disclosure--content">
+        
+        <div class="qa-info">
+        
+            <h2 class="info-heading">Automated Testing</h2>
+        
+            <p>Web pages must always be validated. Errors presented in WAVE and the W3C (World Wide Web Consortium) Validator are the most critical issues to address. Accessibility and QA (Quality Assurance) engineers should link directly to validation reports when logging issues.</p>
+        
+            <p><b>Who is responsible?</b> Everybody</p>
+            
+            <ul>
+            <li><a class="validate-a11y new-tab" href="https://wave.webaim.org/">WAVE Validation</a></li>
+            <li><a class="validate-html new-tab" href="https://validator.w3.org/nu/">W3C Validation</a>
+        
+                <details>
+        
+                <summary>Advanced Validation</summary>
+        
+                <ul>
+                    <li><button class="new-tab" data-script="../../local/dom-validate.js">W3C Validation (Serialized DOM)</button>
+        
+                    - <span>Runs validation on entire DOM (Document Object Model), including <strong>script generated content</strong>. Cannot be linked to.</span>
+        
+                    </li>
+                    <li>
+        
+                    <button data-script="./local/wcag-parsing.js">WCAG Parsing</button>
+        
+                    - <span>Not all errors may affect accessibility. Run on W3C Validator <em>results page</em> to remove non-WCAG issues.</span>
+        
+                    </li>
+                </ul>
+        
+                </details>
+        
+            </li>
+            <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a></li>
+            </ul>
+        
+            <h2>Other Validation Tests (Not Mandatory)</h2>
+        
+            <ul>
+            <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
+            <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
+            <li><a class="validate-spelling new-tab" href="https://www.w3.org/2002/01/spellchecker">Validate Spelling</a></li>
+            <li><a class="validate-structured-data new-tab" href="https://search.google.com/test/rich-results">Validate Structured Data</a></li>
+            </ul>
+        
+            <h2 class="info-heading">Manual Testing</h2>
+        
+            <p>Web pages may have deeper problems that automated tools cannot find, so manual testing methods will need to be performed instead. The following are common and useful tools you may use for closer analysis.</p>
+        
+            <p><b>Who is responsible?</b> Engineers, Specialists</p>
+        
+            <h3>Validate HTML by Direct Input</h3>
+        
             <details>
-    
-              <summary>Advanced Validation</summary>
-    
-              <ul>
-                <li><button class="new-tab" data-script="../../local/dom-validate.js">W3C Validation (Serialized DOM)</button>
-    
-                  - <span>Runs validation on entire DOM (Document Object Model), including <strong>script generated content</strong>. Cannot be linked to.</span>
-    
-                </li>
-                <li>
-    
-                  <button data-script="./local/wcag-parsing.js">WCAG Parsing</button>
-    
-                  - <span>Not all errors may affect accessibility. Run on W3C Validator <em>results page</em> to remove non-WCAG issues.</span>
-    
-                </li>
-              </ul>
-    
+        
+            <summary>Show Form</summary>
+        
+            <form action="https://validator.w3.org/nu/?showsource=yes" enctype="multipart/form-data" id="submitPartialPage" method="post" target="_blank">
+        
+                <input name="showsource" type="hidden" value="yes">
+        
+                <label for="contentToValidate">Enter the Markup to validate:</label>
+        
+                <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="5"></textarea>
+        
+                <button class="btn" id="submitValidate" type="submit">Validate</button>
+        
+            </form>
+        
             </details>
-    
-          </li>
-          <li><a class="validate-heading new-tab" href="heading.html">Heading Validation</a></li>
-        </ul>
-    
-        <h2>Other Validation Tests (Not Mandatory)</h2>
-    
-        <ul>
-          <li><a class="validate-css new-tab" href="http://jigsaw.w3.org/css-validator/">Validate CSS</a></li>
-          <li><a class="validate-links new-tab" href="https://validator.w3.org/checklink">Validate Links</a></li>
-          <li><a class="validate-spelling new-tab" href="https://www.w3.org/2002/01/spellchecker">Validate Spelling</a></li>
-          <li><a class="validate-structured-data new-tab" href="https://search.google.com/test/rich-results">Validate Structured Data</a></li>
-        </ul>
-    
-        <h2 class="info-heading">Manual Testing</h2>
-    
-        <p>Web pages may have deeper problems that automated tools cannot find, so manual testing methods will need to be performed instead. The following are common and useful tools you may use for closer analysis.</p>
-    
-        <p><b>Who is responsible?</b> Engineers, Specialists</p>
-    
-        <h3>Validate HTML by Direct Input</h3>
-    
+        
+            <h3>Magnification</h3>
+        
+            <ul>
+            <li><button data-script="local/reflow-320x256.js">Test Page Reflow (320x256)</button></li>
+            <li><button data-script="local/reflow-1280x1024.js">Test Page Reflow (1280x1024)</button></li>
+            </ul>
+        
+            <h3>Color</h3>
+        
+            <ul>
+            <li><button data-script="contrast" data-fragment="color-contrast">Test Contrast</button>
+            <li><button data-script="contrast" data-fragment="link-contrast">Test Link & Text Contrast</button>
+            </ul>
+        
+            <h3>Typography</h3>
+        
+            <ul>
+            <li><button data-script="typography" data-fragment="default-font">Change Default Font Size</button>
+                <li><button data-script="local/text-spacing.js">Text Spacing</button></li>
+            </ul>
+        
+            <h3>Internationalization</h3>
+        
+            <ul>
+            <li><button data-script="local/i18n-rtl.js">Show Right-to-left (RTL)</button>
+            <li><button data-script="local/i18n-ltr.js">Show Left-to-right (LTR)</button>
+            <li><button data-script="local/i18n-lang.js">Show Document Language</button>
+            </ul>
+        
+            <h3>Animation</h3>
+        
+            <ul>
+            <li><a class="new-tab" href="https://trace.umd.edu/peat/">Download PEAT (Photosensitive Epilepsy Analysis Tool)</a></li>
+            </ul>
+        
+            <p><strong>Note:</strong> Animations that fail PEAT should be brought to the attention of your team immediately. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
+        
+            <h3>Visual</h3>
+        
+            <ul>
+            <li><button data-script="local/focus.js">Force Focus</button></li>
+            </ul>
+        
+            <h3>PDF</h3>
+        
+            <ul>
+            <li><a class="new-tab" href="https://pdfua.foundation/en/pdf-accessibility-checker-pac/register">Download PAC (PDF Accessibility Checker)</a></li>
+            </ul>
+        
+            <p><strong>Note:</strong> PDF remediation is unlike web remediation and will need to go through a third party. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
+        
+            <h2>Other</h2>
+        
+            <ul>
+            <li><button data-script="local/isolator.js">Isolate Code Blocks</button></li>
+            </ul>
+        
+        </div>
+        
+        <div class="reminder-info">
+        
+            <h2>Reminder!</h2>
+        
+            <p>Have you tested your page in Axe? All developers should have the Axe devTools extension installed and be using it regularly, during development, to address any critical and serious accessibility issues.</p>
+        
+            <ul>
+            <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US">Chrome</a></li>
+            <li><a class="new-tab" href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/">FireFox</a></li>
+            <li><a class="new-tab" href="https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn">Edge</a></li>
+            </ul>
+        
+        </div>
+        
+        </div>
+        
+        {% include baselines.html %}
+        
+        <button class="disclosure--btn" data-disclosure-icon>Other Tools and Resources</button>
+        
+        <div class="disclosure--content"> 
+        
+        <!-- details>
+        
+            <summary>Additional Browser Extensions</summary>
+        
+            <p>More advanced automated testing can be performed with the following tools:</p>
+        
+            <ul>
+            <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
+            <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimental, open console to see results)</li>
+            <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
+            </ul>
+        
+        </details -->
+        
         <details>
-    
-          <summary>Show Form</summary>
-    
-          <form action="https://validator.w3.org/nu/?showsource=yes" enctype="multipart/form-data" id="submitPartialPage" method="post" target="_blank">
-    
-            <input name="showsource" type="hidden" value="yes">
-    
-            <label for="contentToValidate">Enter the Markup to validate:</label>
-    
-            <textarea cols="60" name="contentToValidate" id="contentToValidate" placeholder="e.g., <p>Hello World!</p>" required rows="5"></textarea>
-    
-            <button class="btn" id="submitValidate" type="submit">Validate</button>
-    
-          </form>
-    
-        </details>
-    
-        <h3>Magnification</h3>
-    
-        <ul>
-          <li><button data-script="local/reflow-320x256.js">Test Page Reflow (320x256)</button></li>
-          <li><button data-script="local/reflow-1280x1024.js">Test Page Reflow (1280x1024)</button></li>
-        </ul>
-    
-        <h3>Color</h3>
-    
-        <ul>
-          <li><button data-script="contrast" data-fragment="color-contrast">Test Contrast</button>
-          <li><button data-script="contrast" data-fragment="link-contrast">Test Link & Text Contrast</button>
-        </ul>
-    
-        <h3>Typography</h3>
-    
-        <ul>
-          <li><button data-script="typography" data-fragment="default-font">Change Default Font Size</button>
-            <li><button data-script="local/text-spacing.js">Text Spacing</button></li>
-        </ul>
-    
-        <h3>Internationalization</h3>
-    
-        <ul>
-          <li><button data-script="local/i18n-rtl.js">Show Right-to-left (RTL)</button>
-          <li><button data-script="local/i18n-ltr.js">Show Left-to-right (LTR)</button>
-          <li><button data-script="local/i18n-lang.js">Show Document Language</button>
-        </ul>
-    
-        <h3>Animation</h3>
-    
-        <ul>
-          <li><a class="new-tab" href="https://trace.umd.edu/peat/">Download PEAT (Photosensitive Epilepsy Analysis Tool)</a></li>
-        </ul>
-    
-        <p><strong>Note:</strong> Animations that fail PEAT should be brought to the attention of your team immediately. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
-    
-        <h3>Visual</h3>
-    
-        <ul>
-          <li><button data-script="local/focus.js">Force Focus</button></li>
-        </ul>
-    
-        <h3>PDF</h3>
-    
-        <ul>
-          <li><a class="new-tab" href="https://pdfua.foundation/en/pdf-accessibility-checker-pac/register">Download PAC (PDF Accessibility Checker)</a></li>
-        </ul>
-    
-        <p><strong>Note:</strong> PDF remediation is unlike web remediation and will need to go through a third party. Please contact <a href="mailto:{{site.owner-email}}">{{site.owner-name}}</a> for more information.</p>
-    
-        <h2>Other</h2>
-    
-        <ul>
-          <li><button data-script="local/isolator.js">Isolate Code Blocks</button></li>
-        </ul>
-    
-      </div>
-    
-      <div class="reminder-info">
-    
-        <h2>Reminder!</h2>
-    
-        <p>Have you tested your page in Axe? All developers should have the Axe devTools extension installed and be using it regularly, during development, to address any critical and serious accessibility issues.</p>
-    
-        <ul>
-          <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-US">Chrome</a></li>
-          <li><a class="new-tab" href="https://addons.mozilla.org/en-US/firefox/addon/axe-devtools/">FireFox</a></li>
-          <li><a class="new-tab" href="https://microsoftedge.microsoft.com/addons/detail/axe-devtools-web-access/kcenlimkmjjkdfcaleembgmldmnnlfkn">Edge</a></li>
-        </ul>
-    
-      </div>
-    
+        
+            <summary>Advanced Testing</summary>
+        
+            <p>More advanced tools and resources for specialized accessibility testers.</p>
+        
+            <ul>
+            <li><a class="new-tab" href="https://amp.levelaccess.net/login.php">Level Access AMP</a>
+        
+                <h2>Access Assistant</h2>
+        
+                <ul>
+                    <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=chrome">Chrome Extension</a></li>
+                    <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=firefox">Firefox Plugin</a></li>
+                    <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=edge">Edge Extension (Beta)</a></li>
+                    <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=ie">Internet Explorer 11 Plugin</a></li>
+                </ul>
+        
+                <h2>Continuum Explorer Pro</h2>
+        
+                <ul>
+                    <li><a class="new=tab" href="https://chrome.google.com/webstore/detail/continuum-explorer-pro/pgkgokkkoamjdmbnegbedepbhbgecplj?hl=en-US">Chrome Extension</a></li>
+                </ul>
+        
+                <h2>Accessible Color Tools</h2>
+        
+                <ul>
+                    <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/accessible-color-picker/bgfhbflmeekopanooidljpnmnljdihld">Accessible Color Picker for Chrome</a></li>
+                    <li><a class="new-tab" href="https://www.levelaccess.com/reference/index.php/Color-Contrast-Checker">Color Contrast Checker</a></li>
+                </ul>
+        
+                </li>
+            </ul>
+        
+            </details>
+        
+            <details>
+        
+            <summary>Third-party Testing</summary>
+        
+            <p>While automated and manual testing techniques can take us far, they will never equal the lived experience of individuals who are disabled, so having people with disabilites test your websites and products is a must.</p>
+        
+            <ul>
+                <li><a class="new-tab" href="https://access-works.com/">Access Works</a></li>
+                <li><a class="new-tab" href="https://theweco.com/">WeCo Digital Accessibility</a></li>
+            </ul>
+        
+            </details>
+        
+            <details>
+        
+            <summary>Screen Readers</summary>
+        
+            <p>Accessibility testing is not complete until the work has been engaged with via a screen reader. Listening to your work is just as important as visual inspection.</p>
+        
+            <ul>
+                <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
+        
+                <ul>
+                    <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
+                </ul>
+        
+                </li>
+                <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
+        
+                <ul>
+                    <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
+                </ul>
+        
+                </li>
+                <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
+                <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
+            </ul>
+        
+            </details>
+        
+            <details>
+        
+            <summary>Testing Resources</summary>
+        
+            <ul>
+                <li><a class="new-tab" href="https://www.w3.org/WAI/people-use-web/">How People with Disabilities Use the Web (User Stories)</a></li>
+                <li><a class="new-tab" href="https://thepaciellogroup.github.io/AT-browser-tests/">HTML Element Test File Index</a></li>
+                <li><a class="new-tab" href="https://www.powermapper.com/tests/screen-readers/">PowerMapper - Screen Reader Reliability</a></li>
+            </ul>
+        
+            </details>
+        
+        </div>
+        
+        {% include a11y-overlays.html %}
+        
+        <!-- TODO: include label in name 2.5.3 Label in Name -->
+
     </div>
-    
-    {% include baselines.html %}
-    
-    <button class="disclosure--btn" data-disclosure-icon>Other Tools and Resources</button>
-    
-    <div class="disclosure--content"> 
-    
-      <!-- details>
-    
-        <summary>Additional Browser Extensions</summary>
-    
-        <p>More advanced automated testing can be performed with the following tools:</p>
-    
-        <ul>
-          <li><button data-script="https://www.ssa.gov/accessibility/andi/andi.js">ANDI</button></li>
-          <li><button data-script="https://rawgit.com/pauljadam/bookmarklets/master/axe.js">aXe Results</button> (Experimental, open console to see results)</li>
-          <li><button data-script="https://khan.github.io/tota11y/dist/tota11y.min.js">Tota11y</button></li>
-        </ul>
-    
-      </details -->
-    
-      <details>
-    
-        <summary>Advanced Testing</summary>
-    
-        <p>More advanced tools and resources for specialized accessibility testers.</p>
-    
-        <ul>
-          <li><a class="new-tab" href="https://amp.levelaccess.net/login.php">Level Access AMP</a>
-    
-              <h2>Access Assistant</h2>
-    
-              <ul>
-                <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=chrome">Chrome Extension</a></li>
-                <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=firefox">Firefox Plugin</a></li>
-                <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=edge">Edge Extension (Beta)</a></li>
-                <li><a class="new-tab" href="https://amp.levelaccess.net/download/assistant.php?version=2&amp;browser=ie">Internet Explorer 11 Plugin</a></li>
-              </ul>
-    
-              <h2>Continuum Explorer Pro</h2>
-    
-              <ul>
-                <li><a class="new=tab" href="https://chrome.google.com/webstore/detail/continuum-explorer-pro/pgkgokkkoamjdmbnegbedepbhbgecplj?hl=en-US">Chrome Extension</a></li>
-              </ul>
-    
-              <h2>Accessible Color Tools</h2>
-    
-              <ul>
-                <li><a class="new-tab" href="https://chrome.google.com/webstore/detail/accessible-color-picker/bgfhbflmeekopanooidljpnmnljdihld">Accessible Color Picker for Chrome</a></li>
-                <li><a class="new-tab" href="https://www.levelaccess.com/reference/index.php/Color-Contrast-Checker">Color Contrast Checker</a></li>
-              </ul>
-    
-            </li>
-          </ul>
-    
-        </details>
-    
-        <details>
-    
-          <summary>Third-party Testing</summary>
-    
-          <p>While automated and manual testing techniques can take us far, they will never equal the lived experience of individuals who are disabled, so having people with disabilites test your websites and products is a must.</p>
-    
-          <ul>
-            <li><a class="new-tab" href="https://access-works.com/">Access Works</a></li>
-            <li><a class="new-tab" href="https://theweco.com/">WeCo Digital Accessibility</a></li>
-          </ul>
-    
-        </details>
-    
-        <details>
-    
-          <summary>Screen Readers</summary>
-    
-          <p>Accessibility testing is not complete until the work has been engaged with via a screen reader. Listening to your work is just as important as visual inspection.</p>
-    
-          <ul>
-            <li><a class="new-tab" href="https://support.freedomscientific.com/Downloads/JAWS">JAWS (Paid, 30 Minute Mode)</a>
-    
-              <ul>
-                <li><a href="https://webaim.org/resources/shortcuts/jaws">Keyboard Shortcuts for JAWS</a></li>
-              </ul>
-    
-            </li>
-            <li><a class="new-tab" href="https://www.nvaccess.org/download/">NVDA (Free)</a>
-    
-              <ul>
-                <li><a href="https://webaim.org/resources/shortcuts/nvda">Keyboard Shortcuts for NVDA</a></li>
-              </ul>
-    
-            </li>
-            <li><a class="new-tab" href="https://support.apple.com/guide/mac-help/change-voiceover-preferences-accessibility-mh40578/mac">VoiceOver for Mac</a></li>
-            <li><a class="new-tab" href="https://support.microsoft.com/en-us/windows/hear-text-read-aloud-with-narrator-040f16c1-4632-b64e-110a-da4a0ac56917">Windows Narrator</a></li>
-          </ul>
-    
-        </details>
-    
-        <details>
-    
-          <summary>Testing Resources</summary>
-    
-          <ul>
-            <li><a class="new-tab" href="https://www.w3.org/WAI/people-use-web/">How People with Disabilities Use the Web (User Stories)</a></li>
-            <li><a class="new-tab" href="https://thepaciellogroup.github.io/AT-browser-tests/">HTML Element Test File Index</a></li>
-            <li><a class="new-tab" href="https://www.powermapper.com/tests/screen-readers/">PowerMapper - Screen Reader Reliability</a></li>
-          </ul>
-    
-        </details>
-    
-    </div>
-    
-    {% include a11y-overlays.html %}
-    
-    <!-- TODO: include label in name 2.5.3 Label in Name -->
     
 </div>
