@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+  <meta content="noindex, nofollow" name="robots">{% if page.meta %}
+  <meta content="{{ site. description }}" name="description">{% endif %}
+  <link href="css/init.css" rel="stylesheet">
+  <link href="img/icon-32.png" rel="icon">
+  <title>{{ page.title }} - {{ site.company-name }}</title>
+</head>
+<body id="{{ page.path | replace:'.html',''|  replace:'.md','' | replace:'_','' | replace: '/', '-'}}">
+
+  <header>
+
+    <img alt="{{ site.company-name }}" height="36" src="img/logo.png" width="220">
+
+    {% if page.id == "a11y-smoke-test" %}
+
+    <button aria-label="Reset Page" class="btn reset" id="btn-reset"></button>
+
+    {% endif %}
+
+  </header>
+
+  <main>
+
+    {{ content }}
+
+  </main>
+
+  <footer>
+
+    <ul>
+      <li><a class="new-tab" href="{{ site.git-url }}/a11y/">Accessibility at {{ site.company-name }}</a></li>
+      <li><a class="new-tab" href="about.html">About {{ site.title }}</a></li>
+      <li><a class="new-tab" href="mailto:{{ site.team-email }}">Contact Accessibility Team</a></li>
+      <li><a class="new-tab" href="https://jira.tmp.com/browse/TCDQ-60657">Report Issue</a></li>
+    </ul>
+
+    <p><small>&copy; {{ "now" | date: "%Y" }} {{ site.company-name }}. An equal opportunity employer.</small></p>
+
+  </footer>
+
+  {% if page.script %}
+
+
+
+  {% endif %}
+
+
+
+</body>
+</html>

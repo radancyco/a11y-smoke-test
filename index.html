@@ -2,4 +2,6 @@
 title: Accessibility Smoke Test Bookmarklet
 ---
 
-<a class="btn" href="javascript: (function () { var jsCode = document.createElement('script'); jsCode.setAttribute('src', 'https://radancy.dev/a11y-smoke-test/bookmarklet.js'); document.body.appendChild(jsCode);}());">{{ site.title }} v{{ site.version }}</a>
+<p>Drag the below bookmarklet to your browser's bookmark folder or bar. When on a specifc page, click on the bookmarklet to run it.</p>
+
+<a class="btn" href="javascript:(function(){window.location.href='https://radancy.dev/a11y-smoke-test/bookmarklet.html';})();">{{ site.title }} v{{ site.version }}</a>
